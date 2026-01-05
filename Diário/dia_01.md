@@ -1,7 +1,7 @@
 # 📅 Relato do Dia 01 — Planejamento e Estruturação do Ubby
 
-**Data:** 01/01/2026
-**Foco do dia:** Definição de escopo, documentação técnica (ADS) e design de sistemas.
+- **Data:** 01/01/2026
+- **Foco do dia:** Definição de escopo, documentação técnica (ADS) e design de sistemas.
 
 ---
 
