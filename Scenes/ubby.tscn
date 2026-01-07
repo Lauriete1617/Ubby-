@@ -1,15 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://hun4tcrgvufd"]
+[gd_scene load_steps=14 format=3 uid="uid://hun4tcrgvufd"]
 
 [ext_resource type="Texture2D" uid="uid://2gvuy8cewd6c" path="res://Assets/Sprites/Ubby/Ubby Default.png" id="1_fgfy8"]
 [ext_resource type="Script" uid="uid://bpxdgw33bhcku" path="res://Scripts/ubby.gd" id="1_w3r7f"]
 [ext_resource type="Texture2D" uid="uid://b3gw3hnrtsfik" path="res://Assets/Sprites/Ubby/Ubby comemorando.png" id="3_1ajfk"]
 [ext_resource type="Texture2D" uid="uid://c44p2iwsh1g0v" path="res://Assets/Sprites/Partículas/Corações.png" id="4_dtxv0"]
+[ext_resource type="Texture2D" uid="uid://dksj7c2nh1eyr" path="res://Assets/Sprites/Acessórios/Óculos.png" id="4_ed5l2"]
+[ext_resource type="Texture2D" uid="uid://e8liipwd5nc3" path="res://Assets/Sprites/Partículas/estrelas.png" id="6_arljs"]
 
-[sub_resource type="Animation" id="Animation_w3r7f"]
-resource_name = "Default"
-
-[sub_resource type="Animation" id="Animation_1ajfk"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_fgfy8"]
+resource_name = "Carinho"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,10 +16,10 @@ tracks/0/path = NodePath("AnimationPlayer/Visual/Corpo:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.36666667, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,7 +31,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_fgfy8")]
+"values": [ExtResource("3_1ajfk")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -44,7 +43,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [2]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -56,8 +55,23 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [2]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Visual/Acessórios/SlotOculos:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(570, 295)]
+}
+
+[sub_resource type="Animation" id="Animation_w3r7f"]
+resource_name = "Default"
 
 [sub_resource type="Animation" id="Animation_dtxv0"]
 resource_name = "Idle"
@@ -111,9 +125,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [3]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Visual/Acessórios/SlotOculos:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.747536),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(570, 295)]
+}
 
-[sub_resource type="Animation" id="Animation_fgfy8"]
-resource_name = "Carinho"
+[sub_resource type="Animation" id="Animation_1ajfk"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -121,10 +147,10 @@ tracks/0/path = NodePath("AnimationPlayer/Visual/Corpo:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.36666667, 0.76666665),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -136,7 +162,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_1ajfk")]
+"values": [ExtResource("1_fgfy8")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -148,7 +174,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [1]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -160,7 +186,19 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [3]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Visual/Acessórios/SlotOculos:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(570, 295)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ajfk"]
@@ -200,6 +238,10 @@ vframes = 3
 [node name="Acessórios" type="Node" parent="AnimationPlayer/Visual"]
 
 [node name="SlotOculos" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
+position = Vector2(570, 295)
+scale = Vector2(4.90625, 5)
+texture = ExtResource("4_ed5l2")
+vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(568, 308)
@@ -208,5 +250,33 @@ shape = SubResource("CapsuleShape2D_w3r7f")
 [node name="Partículas" type="Node" parent="."]
 
 [node name="ParticulasCarinho" type="CPUParticles2D" parent="Partículas"]
+position = Vector2(660, 253)
+emitting = false
+amount = 6
 texture = ExtResource("4_dtxv0")
+one_shot = true
+explosiveness = 0.9
+emission_shape = 1
+emission_sphere_radius = 45.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, -100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+scale_amount_min = 0.1
+color_ramp = SubResource("Gradient_ed5l2")
+
+[node name="ParticulasEstrelas" type="CPUParticles2D" parent="Partículas"]
+position = Vector2(660, 253)
+emitting = false
+amount = 30
+texture = ExtResource("6_arljs")
+one_shot = true
+explosiveness = 0.9
+emission_shape = 1
+emission_sphere_radius = 45.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, -100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+scale_amount_min = 0.1
 color_ramp = SubResource("Gradient_ed5l2")
