@@ -1,51 +1,56 @@
 extends Node
 
-# --- INVENTÁRIO VISUAL ---
-# Aqui guarda o ID do item que está em cada parte do corpo.
-# Usar -1 para dizer que o slot está "vazio".
+# --- VISUAL ATUAL---
 var acessorios = {
-	"oculos": -1,
+	"oculos": -1, # Lembra que pode ser String "" ou -1, mantém padrão
 	"chapeu": -1,
 	"roupa": -1,
 	"sapatos": -1,
 	"pescoço": -1
 }
 
+# --- ITENS ADQUIRIDOS ---
+var moedas: int = 500 
+var itens_desbloqueados: Array = []
 # --- ESTADOS ---
 var fome = 100
 var sono = 100
 var felicidade = 100
 
 func _ready():
-	# Assim que o jogo abre, tenta carregar os dados
 	carregar_jogo()
 
 func carregar_jogo():
-	# 1. Verifica se o arquivo existe antes de tentar ler
 	if not FileAccess.file_exists("user://savegame.save"):
-		return # Se não existe, não faz nada (usa os valores padrão)
+		return 
 
-	# 2. Abre o arquivo para LEITURA
 	var file = FileAccess.open("user://savegame.save", FileAccess.READ)
-	
-	# 3. Pega os dados guardados
 	var dados_salvos = file.get_var()
 	
-	# 4. Atualiza as nossas variáveis com o que estava no arquivo
 	if dados_salvos:
+		# Carrega os estados antigos
 		acessorios = dados_salvos["acessorios"]
 		fome = dados_salvos["fome"]
 		sono = dados_salvos["sono"]
 		felicidade = dados_salvos["felicidade"]
-		print("Jogo carregado com sucesso!")
+		
+		# --- NOVO: Carrega o dinheiro e inventário ---
+		# Usamos o 'get' com valor padrão, caso seja um save antigo que não tinha isso ainda
+		moedas = dados_salvos.get("moedas", 500) 
+		itens_desbloqueados = dados_salvos.get("itens_desbloqueados", [])
+		
+		print("Jogo carregado! Moedas: ", moedas)
 
 func salvar_jogo():
 	var file = FileAccess.open("user://savegame.save", FileAccess.WRITE)	
-	# Criamos o dicionário DIRETAMENTE dentro dos parênteses da função
+	
+	# Agora salvamos TUDO
 	file.store_var({
 		"acessorios": acessorios,
 		"fome": fome,
 		"sono": sono,
-		"felicidade": felicidade
+		"felicidade": felicidade,
+		"moedas": moedas, # <-- Adicionado
+		"itens_desbloqueados": itens_desbloqueados # <-- Adicionado
 	})
-	print("Jogo salvo com sucesso!") # Uma mensagem para sabermos que funcionou
+	print("Jogo salvo com sucesso!")

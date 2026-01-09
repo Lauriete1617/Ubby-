@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bci64wgd76opg"]
+
+[ext_resource type="Script" uid="uid://c1u2psuaboatw" path="res://Scripts/item_loja.gd" id="1_loxgc"]
+
+[node name="Item loja" type="Button"]
+custom_minimum_size = Vector2(300, 300)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_loxgc")
+
+[node name="Preço" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -29.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1, 0.9494632)
+theme_override_font_sizes/font_size = 32
+text = "🪙 0  "
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
