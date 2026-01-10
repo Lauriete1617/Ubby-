@@ -4,14 +4,15 @@ extends CharacterBody2D
 @onready var particulas_carinho: CPUParticles2D = $Partículas/ParticulasCarinho
 @onready var particulas_estrelas: CPUParticles2D = $Partículas/ParticulasEstrelas
 
-# O nó que vai mostrar a imagem dos óculos
+# --- REFERÊNCIAS VISUAIS (SLOTS) ---
 @onready var slot_oculos: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotOculos
+@onready var slot_chapeu: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotChapeu
+@onready var slot_pescoço: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotPescoço
+@onready var slot_sapato: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotSapato
+@onready var slot_roupa: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotRoupa
 
-# --- O CATÁLOGO (AQUI QUE A MÁGICA ACONTECE) ---
-# Dicionário que liga o "Nome do ID" ao "Arquivo de Imagem"
-var catalogo_texturas = {
-	# "ID_QUE_TU_USA_NA_LOJA": preload("CAMINHO_DA_IMAGEM")
-	#ÓCULOS
+# --- CATÁLOGOS ---
+var catalogo_oculos = {
 	"oculos_roxo": preload("res://Assets/Sprites/Acessórios/Óculos roxo.png"), 
 	"oculos_de_grau": preload("res://Assets/Sprites/Acessórios/Óculos de grau.png"),
 	"tapa_olho": preload("res://Assets/Sprites/Acessórios/Tapa olho.png"),
@@ -23,46 +24,76 @@ var catalogo_texturas = {
 	"mascara_dormir": preload("res://Assets/Sprites/Acessórios/Máscara de dormir.png"),
 	"oculos_de_sol": preload("res://Assets/Sprites/Acessórios/Óculos de madame.png"),
 	"oculos_vermelho": preload("res://Assets/Sprites/Acessórios/Óculos vermelho.png"),
-	#CHAPÉUS
+}
+
+var catalogo_chapeu = {
 	"laço": preload("res://Assets/Sprites/Ícones/Laço.png"),
 	"chapeu_palha": preload("res://Assets/Sprites/Acessórios/Chapéu de palha.png"),
 	"chapeu_pirata": preload("res://Assets/Sprites/Acessórios/Chapéu pirata.png"),
 	"boné": preload("res://Assets/Sprites/Acessórios/Boné.png"),
-	# PESCOÇO
+	"flor": preload("res://Assets/Sprites/Acessórios/Flor.png")
+}
+
+var catalogo_pescoço = {
 	"medalha": preload("res://Assets/Sprites/Acessórios/Medalha.png"),
-	#ROUPAS
-	"avental_cozinha": preload("res://Assets/Sprites/Acessórios/Avental de cozinha.png"),
-	#SAPATOS
-	"sapato_branco": preload("res://Assets/Sprites/Acessórios/Sapato branco.png"),
+}
+
+var catalogo_roupa = {
+	"avental_cozinha": preload("res://Assets/Sprites/Acessórios/Avental de cozinha.png"),	
+}
+
+var catalogo_sapato = {
+	"sapato_branco": preload("res://Assets/Sprites/Acessórios/Sapato branco.png"),	
 }
 
 func _ready() -> void:
 	atualizar_visual()
-	
-	# Começa a animação de respirar
 	animation.play("Idle")
 
 func atualizar_visual():
-	# 1. Pergunta ao Global: "Qual o nome do óculos que estou usando?"
-	var id_salvo = Global.acessorios["oculos"]
+	# Agora chamamos a função auxiliar para CADA parte do corpo
+	# (O Slot Visual, O ID salvo no Global, O Catálogo correto)
 	
-	# 2. Verifica se não tem nada equipado (pode ser -1, nulo ou string vazia)
-	if str(id_salvo) == "-1" or id_salvo == "" or id_salvo == null:
-		slot_oculos.visible = false
-		print("Ubby sem óculos.")
+	# 1. Óculos
+	atualizar_slot_individual(slot_oculos, Global.acessorios["oculos"], catalogo_oculos)
 	
-	# 3. Se tiver algo, procura no catálogo
-	elif id_salvo in catalogo_texturas:
-		slot_oculos.visible = true
-		slot_oculos.texture = catalogo_texturas[id_salvo] # Carrega a imagem!
-		print("Ubby vestiu: ", id_salvo)
-		
-	# 4. Segurança: Se o ID existir no Global mas não no Catálogo (ex: erro de digitação)
-	else:
-		print("ERRO: O item '", id_salvo, "' está salvo, mas não achei a imagem no catálogo!")
-		slot_oculos.visible = false
+	# 2. Chapéu
+	atualizar_slot_individual(slot_chapeu, Global.acessorios["chapeu"], catalogo_chapeu)
+	
+	# 3. Pescoço (Cuidado com a chave no Global se tem cedilha ou não)
+	# Assumindo que no Global.gd a chave é "pescoço"
+	atualizar_slot_individual(slot_pescoço, Global.acessorios["pescoço"], catalogo_pescoço)
+	
+	# 4. Roupa
+	atualizar_slot_individual(slot_roupa, Global.acessorios["roupa"], catalogo_roupa)
+	
+	# 5. Sapatos (No Global.gd a chave é "sapato" ou "sapatos"? Verifica isso!)
+	# Vou usar "sapato" igual ao botão da loja
+	atualizar_slot_individual(slot_sapato, Global.acessorios["sapato"], catalogo_sapato)
 
-# --- INTERAÇÃO (CARINHO) ---
+# --- NOVA FUNÇÃO INTELIGENTE ---
+# Ela recebe o slot e o item e faz o trabalho sujo de verificar tudo
+func atualizar_slot_individual(sprite_slot, id_item, catalogo):
+	# Segurança: Converte para string
+	var id_str = str(id_item)
+	
+	# 1. Verifica se é para remover (vazio, -1, null)
+	if id_str == "-1" or id_str == "" or id_str == "null":
+		sprite_slot.visible = false
+		sprite_slot.texture = null
+		
+	# 2. Verifica se o item existe no catálogo específico
+	elif id_item in catalogo:
+		sprite_slot.visible = true
+		sprite_slot.texture = catalogo[id_item]
+		# print("Equipado: ", id_item) # Descomenta se quiser debug
+		
+	# 3. Se deu erro (tá no Global mas não no catálogo)
+	else:
+		print("Erro visual: Item '", id_item, "' não encontrado neste catálogo.")
+		sprite_slot.visible = false
+
+# --- INTERAÇÃO ---
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		dar_carinho()

@@ -237,7 +237,28 @@ vframes = 3
 [node name="Acessórios" type="Node" parent="AnimationPlayer/Visual"]
 
 [node name="SlotOculos" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
+z_index = 5
 position = Vector2(570, 295)
+scale = Vector2(4.90625, 5)
+
+[node name="SlotChapeu" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
+z_index = 5
+position = Vector2(571, 295)
+scale = Vector2(4.90625, 5)
+
+[node name="SlotPescoço" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
+z_index = 5
+position = Vector2(570, 295)
+scale = Vector2(4.90625, 5)
+
+[node name="SlotSapato" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
+z_index = 5
+position = Vector2(570, 315)
+scale = Vector2(4.90625, 5)
+
+[node name="SlotRoupa" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
+z_index = 5
+position = Vector2(570, 299)
 scale = Vector2(4.90625, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

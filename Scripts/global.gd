@@ -5,7 +5,7 @@ var acessorios = {
 	"oculos": -1,
 	"chapeu": -1,
 	"roupa": -1,
-	"sapatos": -1,
+	"sapato": -1,
 	"pescoço": -1
 }
 

@@ -1,110 +1,149 @@
 extends Control
 
-# Botão para fechar a central de estilo
+# --- REFERÊNCIAS VISUAIS (UI) ---
 @onready var fechar: Button = $Fechar
-# Mostra quantas moedas o player tem
 @onready var text_moedas: Label = $HBoxContainer/Provador/Moedas
+@onready var botao_acao: Button = $HBoxContainer/Provador/botao_acao
 
-# Variável de Controle
-var item_selecionado = null 
-
-# Botão de compra
-@onready var botao_acao: Button = $HBoxContainer/Provador/botao_acao # Verifica maiúsculas/minúsculas no nome do nó!
-
-# Referências do Manequim
+# --- REFERÊNCIAS DOS MANEQUINS ---
 @onready var manequim_oculos = $"HBoxContainer/Provador/ManequimUbby/Manequim_oculos"
 @onready var manequim_chapeus: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_chapeus
 @onready var manequim_pescoço: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_pescoço
 @onready var manequim_sapato: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_sapato
 @onready var manequim_roupas: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_roupas
 
+# --- VARIÁVEIS DE CONTROLE ---
+var item_selecionado = null 
 @export var grades_de_itens: Array[GridContainer]
 
 func _ready():
-	# Começa escondendo o botão grande, pois ninguém foi clicado ainda
+	# Começa escondendo o botão grande e atualizando o dinheiro
 	botao_acao.visible = false
 	atualizar_moedas_visual()
 	
-	# Conecta os botões da grade
+	# Conecta todos os botões das grades automaticamente
 	for grade in grades_de_itens:
 		for botao in grade.get_children():
 			if botao.has_signal("pressed"):
 				botao.pressed.connect(_on_item_clicado.bind(botao))
 				
-				# MELHORIA: Esconder preço nos itens que já tenho logo de cara
+				# Se eu já comprei o item, esconde a etiqueta de preço na prateleira
 				if botao.id_item in Global.itens_desbloqueados:
-					# Precisamos acessar o Label dentro do botão. 
-					# Como o script ItemLoja tem 'texto_preço', usamos ele:
 					botao.texto_preço.visible = false
 
 func atualizar_moedas_visual():
 	text_moedas.text = "🪙 " + str(Global.moedas)
 
+# --- QUANDO CLICAS NUM ITEM NA PRATELEIRA ---
 func _on_item_clicado(botao):
+	limpar_tudo()
 	print("Item selecionado: ", botao.id_item)
 	item_selecionado = botao 
+	botao_acao.visible = true # Mostra o botão de ação
 	
-	# Faz o botão de ação aparecer
-	botao_acao.visible = true
-	
-	# 1. Visual: Mostra no manequim
-	if botao.tipo == "oculos":
-		manequim_oculos.texture = botao.textura_item
-	elif botao.tipo == "chapeu":
-		manequim_chapeus.texture = botao.textura_item
-	elif botao.tipo == "pescoço":
-		manequim_pescoço.texture = botao.textura_item
-	elif botao.tipo == "sapato":
-		manequim_sapato.texture = botao.textura_item
-	elif botao.tipo == "roupa":
-		manequim_roupas.texture = botao.textura_item
-	elif botao.tipo == "remover":
-		pass
-	
-	# 2. Lógica: Decide se é COMPRAR ou EQUIPAR
+	# 1. VISUAL: Veste o manequim para testar (Preview)
+	match botao.tipo:
+		"oculos":
+			manequim_oculos.texture = botao.textura_item
+		"chapeu":
+			manequim_chapeus.texture = botao.textura_item
+		"pescoço":
+			manequim_pescoço.texture = botao.textura_item
+		"sapato":
+			manequim_sapato.texture = botao.textura_item
+		"roupa":
+			manequim_roupas.texture = botao.textura_item
+
+	# 2. LÓGICA DO BOTÃO (O Cérebro da Loja)
 	if botao.id_item in Global.itens_desbloqueados:
-		botao_acao.text = "EQUIPAR"
-		botao_acao.disabled = false
+		# Se já comprei, verifico: Já estou usando ISSO agora?
+		var item_atual_no_global = Global.acessorios[botao.tipo]
 		
-		# Esconde o preço no item da prateleira (feedback visual)
-		botao.texto_preço.visible = false
+		if str(item_atual_no_global) == botao.id_item:
+			# Se já estou usando, o botão serve para remover
+			botao_acao.text = "REMOVER"
+			botao_acao.disabled = false
+		else:
+			# Se tenho o item mas não estou usando, serve para equipar
+			botao_acao.text = "EQUIPAR"
+			botao_acao.disabled = false
+			
+		botao.texto_preço.visible = false 
+		
 	else:
-		botao_acao.text = "COMPRAR " + str(botao.preco) + " 🪙"
-		
+		# Se não tenho, o botão serve para comprar... SE tiver dinheiro!
 		if Global.moedas >= botao.preco:
+			botao_acao.text = "COMPRAR " + str(botao.preco) + " 🪙"
 			botao_acao.disabled = false 
 		else:
+			# Feedback visual no próprio botão
+			botao_acao.text = "FALTA DINHEIRO" # Ou "SALDO INSUFICIENTE"
 			botao_acao.disabled = true 
 
+# --- QUANDO CLICAS NO BOTÃO GRANDE (COMPRAR / EQUIPAR / REMOVER) ---
 func _on_botao_acao_pressed():
 	if item_selecionado == null:
 		return
 
-	# CENÁRIO 1: EQUIPAR
+	# CENÁRIO A: JÁ É MEU (Pode ser Equipar ou Remover)
 	if item_selecionado.id_item in Global.itens_desbloqueados:
-		Global.acessorios[item_selecionado.tipo] = item_selecionado.id_item # Cuidado com String vs Int aqui!
-		Global.salvar_jogo()
-		print("Item equipado!")
 		
-		botao_acao.text = "EQUIPADO!"
-		botao_acao.disabled = true 
+		if botao_acao.text == "REMOVER":
+			# -- AÇÃO DE REMOVER --
+			# 1. Atualiza o Global para vazio (-1)
+			Global.acessorios[item_selecionado.tipo] = -1
+			Global.salvar_jogo()
+			
+			# 2. Limpa o visual do manequim
+			limpar_manequim_visual(item_selecionado.tipo)
+			
+			print("Item removido!")
+			
+			# 3. RESET TOTAL (O que tu pediste)
+			item_selecionado = null # Esquece o item
+			botao_acao.visible = false # Esconde o botão
+			
+		else:
+			# -- AÇÃO DE EQUIPAR --
+			Global.acessorios[item_selecionado.tipo] = item_selecionado.id_item
+			Global.salvar_jogo()
+			print("Item equipado!")
+			botao_acao.text = "REMOVER" # Botão vira Remover agora
 
-	# CENÁRIO 2: COMPRAR
+	# CENÁRIO B: NÃO É MEU (Comprar)
 	else:
 		if Global.moedas >= item_selecionado.preco:
+			# Desconta grana e salva
 			Global.moedas -= item_selecionado.preco
 			Global.itens_desbloqueados.append(item_selecionado.id_item)
 			Global.salvar_jogo()
 			
-			# Atualiza o visual das moedas lá em cima
 			atualizar_moedas_visual()
 			
-			# Atualiza o botão para "EQUIPAR"
+			# Atualiza o botão instantaneamente para "EQUIPAR"
 			_on_item_clicado(item_selecionado)
 			
 		else:
+			# Essa parte teoricamente não acontece pois o botão estaria disabled,
+			# mas mantemos por segurança.
 			print("Sem dinheiro!")
 
 func _on_fechar_pressed() -> void:
-	# Troca de cena para voltar ao quarto (em vez de fechar o jogo)
 	get_tree().change_scene_to_file("res://Scenes/ubby.tscn")
+
+# --- FUNÇÃO AUXILIAR PARA LIMPAR O VISUAL ---
+func limpar_manequim_visual(tipo):
+	match tipo:
+		"oculos": manequim_oculos.texture = null
+		"chapeu": manequim_chapeus.texture = null
+		"pescoço": manequim_pescoço.texture = null
+		"sapato": manequim_sapato.texture = null
+		"roupa": manequim_roupas.texture = null
+
+# Apaga tudo que tá no manequim naquele momento
+func limpar_tudo():
+	manequim_oculos.texture = null
+	manequim_chapeus.texture = null
+	manequim_pescoço.texture = null
+	manequim_sapato.texture = null
+	manequim_roupas.texture = null
