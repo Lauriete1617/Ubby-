@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://c1u2psuaboatw" path="res://Scripts/item_loja.gd" id="1_loxgc"]
 
 [node name="Item loja" type="Button"]
-custom_minimum_size = Vector2(300, 300)
+custom_minimum_size = Vector2(180, 180)
 offset_right = 8.0
 offset_bottom = 8.0
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_loxgc")
 
 [node name="Preço" type="Label" parent="."]

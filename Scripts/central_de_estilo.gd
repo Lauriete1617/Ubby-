@@ -13,6 +13,10 @@ var item_selecionado = null
 
 # Referências do Manequim
 @onready var manequim_oculos = $"HBoxContainer/Provador/ManequimUbby/Manequim_oculos"
+@onready var manequim_chapeus: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_chapeus
+@onready var manequim_pescoço: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_pescoço
+@onready var manequim_sapato: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_sapato
+@onready var manequim_roupas: TextureRect = $HBoxContainer/Provador/ManequimUbby/Manequim_roupas
 
 @export var grades_de_itens: Array[GridContainer]
 
@@ -46,6 +50,16 @@ func _on_item_clicado(botao):
 	# 1. Visual: Mostra no manequim
 	if botao.tipo == "oculos":
 		manequim_oculos.texture = botao.textura_item
+	elif botao.tipo == "chapeu":
+		manequim_chapeus.texture = botao.textura_item
+	elif botao.tipo == "pescoço":
+		manequim_pescoço.texture = botao.textura_item
+	elif botao.tipo == "sapato":
+		manequim_sapato.texture = botao.textura_item
+	elif botao.tipo == "roupa":
+		manequim_roupas.texture = botao.textura_item
+	elif botao.tipo == "remover":
+		pass
 	
 	# 2. Lógica: Decide se é COMPRAR ou EQUIPAR
 	if botao.id_item in Global.itens_desbloqueados:

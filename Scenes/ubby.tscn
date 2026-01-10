@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://hun4tcrgvufd"]
+[gd_scene load_steps=13 format=3 uid="uid://hun4tcrgvufd"]
 
 [ext_resource type="Texture2D" uid="uid://2gvuy8cewd6c" path="res://Assets/Sprites/Ubby/Ubby Default.png" id="1_fgfy8"]
 [ext_resource type="Script" uid="uid://bpxdgw33bhcku" path="res://Scripts/ubby.gd" id="1_w3r7f"]
 [ext_resource type="Texture2D" uid="uid://b3gw3hnrtsfik" path="res://Assets/Sprites/Ubby/Ubby comemorando.png" id="3_1ajfk"]
 [ext_resource type="Texture2D" uid="uid://c44p2iwsh1g0v" path="res://Assets/Sprites/Partículas/Corações.png" id="4_dtxv0"]
-[ext_resource type="Texture2D" uid="uid://dksj7c2nh1eyr" path="res://Assets/Sprites/Acessórios/Óculos.png" id="4_ed5l2"]
 [ext_resource type="Texture2D" uid="uid://e8liipwd5nc3" path="res://Assets/Sprites/Partículas/estrelas.png" id="6_arljs"]
 
 [sub_resource type="Animation" id="Animation_fgfy8"]
@@ -240,8 +239,6 @@ vframes = 3
 [node name="SlotOculos" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
 position = Vector2(570, 295)
 scale = Vector2(4.90625, 5)
-texture = ExtResource("4_ed5l2")
-vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(568, 308)

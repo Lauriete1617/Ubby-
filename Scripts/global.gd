@@ -2,7 +2,7 @@ extends Node
 
 # --- VISUAL ATUAL---
 var acessorios = {
-	"oculos": -1, # Lembra que pode ser String "" ou -1, mantém padrão
+	"oculos": -1,
 	"chapeu": -1,
 	"roupa": -1,
 	"sapatos": -1,
@@ -50,7 +50,7 @@ func salvar_jogo():
 		"fome": fome,
 		"sono": sono,
 		"felicidade": felicidade,
-		"moedas": moedas, # <-- Adicionado
-		"itens_desbloqueados": itens_desbloqueados # <-- Adicionado
+		"moedas": moedas,
+		"itens_desbloqueados": itens_desbloqueados
 	})
 	print("Jogo salvo com sucesso!")
