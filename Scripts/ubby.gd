@@ -24,26 +24,48 @@ var catalogo_oculos = {
 	"mascara_dormir": preload("res://Assets/Sprites/Acessórios/Máscara de dormir.png"),
 	"oculos_de_sol": preload("res://Assets/Sprites/Acessórios/Óculos de madame.png"),
 	"oculos_vermelho": preload("res://Assets/Sprites/Acessórios/Óculos vermelho.png"),
+	"oculos_meme": preload("res://Assets/Sprites/Acessórios/Óculos meme.png")
 }
 
 var catalogo_chapeu = {
-	"laço": preload("res://Assets/Sprites/Ícones/Laço.png"),
+	"laço": preload("res://Assets/Sprites/Acessórios/Laço.png"),
 	"chapeu_palha": preload("res://Assets/Sprites/Acessórios/Chapéu de palha.png"),
 	"chapeu_pirata": preload("res://Assets/Sprites/Acessórios/Chapéu pirata.png"),
 	"boné": preload("res://Assets/Sprites/Acessórios/Boné.png"),
-	"flor": preload("res://Assets/Sprites/Acessórios/Flor.png")
+	"flor": preload("res://Assets/Sprites/Acessórios/Flor.png"),
+	"coroa": preload("res://Assets/Sprites/Acessórios/Coroa.png"),
+	"natal": preload("res://Assets/Sprites/Acessórios/Gorro de natal.png"),
+	"fone": preload("res://Assets/Sprites/Acessórios/Fone.png"),
+	"brincos": preload("res://Assets/Sprites/Acessórios/Brincos.png"),
+	"tiara": preload("res://Assets/Sprites/Acessórios/Tiara.png"),
 }
 
 var catalogo_pescoço = {
 	"medalha": preload("res://Assets/Sprites/Acessórios/Medalha.png"),
+	"colar": preload("res://Assets/Sprites/Acessórios/Colar.png"),
+	"cachecol": preload("res://Assets/Sprites/Acessórios/Cachecol.png"),
 }
 
 var catalogo_roupa = {
-	"avental_cozinha": preload("res://Assets/Sprites/Acessórios/Avental de cozinha.png"),	
+	"avental_cozinha": preload("res://Assets/Sprites/Acessórios/Avental de cozinha.png"),
+	"vestido_princesa": preload("res://Assets/Sprites/Acessórios/Vestido princesa.png"),
+	"roupa_rei": preload("res://Assets/Sprites/Acessórios/Roupa de rei.png"),
+	"roupa_pirata1": preload("res://Assets/Sprites/Acessórios/Roupa pirata1.png"),
+	"roupa_pirata2": preload("res://Assets/Sprites/Acessórios/Roupa pirata2.png"),
+	"pijama": preload("res://Assets/Sprites/Acessórios/Pijama.png"),
 }
 
 var catalogo_sapato = {
-	"sapato_branco": preload("res://Assets/Sprites/Acessórios/Sapato branco.png"),	
+	"sapato_branco": preload("res://Assets/Sprites/Acessórios/Sapato branco.png"),
+	"sapato_preto": preload("res://Assets/Sprites/Acessórios/Sapato preto.png"),
+	"sapato_vermelho": preload("res://Assets/Sprites/Acessórios/Sapatato vermelho.png"),
+	"sapato_laranja": preload("res://Assets/Sprites/Acessórios/Sapato laranja.png"),
+	"sapato_amarelo": preload("res://Assets/Sprites/Acessórios/Sapato amarelo.png"),
+	"sapato_verde": preload("res://Assets/Sprites/Acessórios/Sapato verde.png"),
+	"sapato_azul": preload("res://Assets/Sprites/Acessórios/Sapato azul.png"),
+	"sapato_azul_marinho": preload("res://Assets/Sprites/Acessórios/Sapato azul marinho.png"),
+	"sapato_roxo": preload("res://Assets/Sprites/Acessórios/Sapato roxo.png"),
+	"sapato_rosa": preload("res://Assets/Sprites/Acessórios/Sapato rosa.png")
 }
 
 func _ready() -> void:

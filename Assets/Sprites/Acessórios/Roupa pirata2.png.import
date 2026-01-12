@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmo742x2fbkja"
-path="res://.godot/imported/Ícone chapéu de palha.png-fae2f24f6720292314a79a5bae704846.ctex"
+uid="uid://bp28pui2foc4j"
+path="res://.godot/imported/Roupa pirata2.png-76d623b84433e5e393c6965fb935fcc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Ícone chapéu de palha.png"
-dest_files=["res://.godot/imported/Ícone chapéu de palha.png-fae2f24f6720292314a79a5bae704846.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Roupa pirata2.png"
+dest_files=["res://.godot/imported/Roupa pirata2.png-76d623b84433e5e393c6965fb935fcc3.ctex"]
 
 [params]
 

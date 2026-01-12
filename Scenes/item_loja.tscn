@@ -1,14 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://bci64wgd76opg"]
+[gd_scene load_steps=5 format=3 uid="uid://bci64wgd76opg"]
 
 [ext_resource type="Script" uid="uid://c1u2psuaboatw" path="res://Scripts/item_loja.gd" id="1_loxgc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loxgc"]
+bg_color = Color(0.19215687, 0.1882353, 0.30980393, 0.4117647)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.69803923)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkfx5"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbxgf"]
+bg_color = Color(0.39607844, 0.64705884, 0.68235296, 0.6862745)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="Item loja" type="Button"]
 custom_minimum_size = Vector2(180, 180)
 offset_right = 8.0
 offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_loxgc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wkfx5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wbxgf")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_loxgc")
+preco = 0
 
 [node name="Preço" type="Label" parent="."]
 layout_mode = 1

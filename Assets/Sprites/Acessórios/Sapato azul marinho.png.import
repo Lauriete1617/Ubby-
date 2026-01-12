@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2a5ch1bredrl"
-path="res://.godot/imported/Ícone boné.png-a94247fb8724dd1cf8bafb2ceedb8532.ctex"
+uid="uid://cbqpnvfr27wjt"
+path="res://.godot/imported/Sapato azul marinho.png-e556aa74d6a76006afb0c3307197efa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Ícone boné.png"
-dest_files=["res://.godot/imported/Ícone boné.png-a94247fb8724dd1cf8bafb2ceedb8532.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Sapato azul marinho.png"
+dest_files=["res://.godot/imported/Sapato azul marinho.png-e556aa74d6a76006afb0c3307197efa0.ctex"]
 
 [params]
 

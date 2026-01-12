@@ -1,36 +1,83 @@
-[gd_scene load_steps=32 format=3 uid="uid://c45dfgbgoe2i1"]
+[gd_scene load_steps=58 format=3 uid="uid://c45dfgbgoe2i1"]
 
 [ext_resource type="Script" uid="uid://bj5pw20bduul4" path="res://Scripts/central_de_estilo.gd" id="1_c7rnf"]
 [ext_resource type="PackedScene" uid="uid://bci64wgd76opg" path="res://Scenes/item_loja.tscn" id="1_grlex"]
 [ext_resource type="Texture2D" uid="uid://dq0expn1bdclf" path="res://Assets/Sprites/Ubby/Ubby Corpo.png" id="2_j1h47"]
 [ext_resource type="Texture2D" uid="uid://c22f5geysmcg4" path="res://Assets/Sprites/Acessórios/Óculos de grau.png" id="2_ucgf8"]
 [ext_resource type="Texture2D" uid="uid://b4baacjtde4bg" path="res://Assets/Sprites/Acessórios/Óculos roxo.png" id="3_4nkwd"]
-[ext_resource type="Texture2D" uid="uid://b0wsvrcn36w50" path="res://Assets/Sprites/Ícones/Ícone laço.png" id="4_540g3"]
 [ext_resource type="Texture2D" uid="uid://kx7r0anh850l" path="res://Assets/Sprites/Acessórios/Tapa olho.png" id="4_c7rnf"]
+[ext_resource type="Texture2D" uid="uid://dn8o5vi20udcq" path="res://Assets/Sprites/Acessórios/Laço.png" id="4_tg3su"]
 [ext_resource type="Texture2D" uid="uid://cdftsghe56bfj" path="res://Assets/Sprites/Acessórios/Monóculo.png" id="5_j1h47"]
-[ext_resource type="Texture2D" uid="uid://hrch1l71cxgr" path="res://Assets/Sprites/Ícones/Laço.png" id="5_jfby0"]
 [ext_resource type="Texture2D" uid="uid://bhqosi4ohpjau" path="res://Assets/Sprites/Acessórios/Óculos de coração.png" id="6_540g3"]
-[ext_resource type="Texture2D" uid="uid://bmo742x2fbkja" path="res://Assets/Sprites/Ícones/Ícone chapéu de palha.png" id="6_hios1"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone chapéu de palha.png" id="6_hios1"]
 [ext_resource type="Texture2D" uid="uid://b50e38nvb8j5p" path="res://Assets/Sprites/Acessórios/Chapéu de palha.png" id="7_f6tmy"]
-[ext_resource type="Texture2D" uid="uid://bgkyn33yqlc1" path="res://Assets/Sprites/Ícones/Ícone chapéu pirata.png" id="8_gmcqr"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone chapéu pirata.png" id="8_gmcqr"]
 [ext_resource type="Texture2D" uid="uid://h1yrfkw5tkpt" path="res://Assets/Sprites/Ícones/Ícone fechar.png" id="9_540g3"]
 [ext_resource type="Texture2D" uid="uid://caafkvlmt45id" path="res://Assets/Sprites/Acessórios/Chapéu pirata.png" id="9_hfuo0"]
-[ext_resource type="Texture2D" uid="uid://c2a5ch1bredrl" path="res://Assets/Sprites/Ícones/Ícone boné.png" id="10_gmcqr"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone boné.png" id="10_gmcqr"]
 [ext_resource type="Texture2D" uid="uid://ccg2w61p4s015" path="res://Assets/Sprites/Acessórios/Boné.png" id="11_hfuo0"]
-[ext_resource type="Texture2D" uid="uid://d3bvakww1o8vq" path="res://Assets/Sprites/Ícones/Ícone flor.png" id="12_1rx22"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone flor.png" id="12_1rx22"]
 [ext_resource type="Texture2D" uid="uid://casqx5yp0tghp" path="res://Assets/Sprites/Acessórios/Flor.png" id="13_5qg0u"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone coroa.png" id="14_6ia5c"]
+[ext_resource type="Texture2D" uid="uid://bpjvtc7d87453" path="res://Assets/Sprites/Acessórios/Gorro de natal.png" id="15_2ise6"]
+[ext_resource type="Texture2D" uid="uid://dd8pi07l5ukkl" path="res://Assets/Sprites/Acessórios/Coroa.png" id="15_3d8fr"]
+[ext_resource type="Texture2D" uid="uid://cwihp5iiuv4lr" path="res://Assets/Sprites/Acessórios/Fone.png" id="16_clcqm"]
 [ext_resource type="Texture2D" uid="uid://r4mn1fa85va7" path="res://Assets/Sprites/Acessórios/Óculos laranja.png" id="17_0ofa0"]
+[ext_resource type="Texture2D" uid="uid://eviain3588rc" path="res://Assets/Sprites/Acessórios/Brincos.png" id="17_uxti1"]
 [ext_resource type="Texture2D" uid="uid://c43m1pdxapsyu" path="res://Assets/Sprites/Acessórios/Óculos nerd.png" id="18_p1qul"]
+[ext_resource type="Texture2D" uid="uid://lp8amfgu7qc5" path="res://Assets/Sprites/Acessórios/Tiara.png" id="18_t2cs2"]
 [ext_resource type="Texture2D" uid="uid://85cixujwbx8n" path="res://Assets/Sprites/Acessórios/Óculos redondo.png" id="19_6qtox"]
 [ext_resource type="Texture2D" uid="uid://dhonyev11ghip" path="res://Assets/Sprites/Acessórios/Óculos de madame.png" id="20_yqd82"]
 [ext_resource type="Texture2D" uid="uid://dhhxi0ru5uqw0" path="res://Assets/Sprites/Acessórios/Máscara de dormir.png" id="21_x7uv0"]
 [ext_resource type="Texture2D" uid="uid://bap8ho5v5elkp" path="res://Assets/Sprites/Acessórios/Óculos vermelho.png" id="22_1qx7x"]
-[ext_resource type="Texture2D" uid="uid://do2h3vwehvoi5" path="res://Assets/Sprites/Ícones/Ícone avental de cozinha.png" id="23_6qtox"]
-[ext_resource type="Texture2D" uid="uid://doppcc3wf2nvf" path="res://Assets/Sprites/Ícones/Ícone medalha.png" id="23_x7uv0"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone avental de cozinha.png" id="23_6qtox"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone medalha.png" id="23_x7uv0"]
 [ext_resource type="Texture2D" uid="uid://cdm6ho06c0gi" path="res://Assets/Sprites/Acessórios/Medalha.png" id="24_1qx7x"]
 [ext_resource type="Texture2D" uid="uid://bjfk0vhujrc7k" path="res://Assets/Sprites/Acessórios/Avental de cozinha.png" id="24_yqd82"]
-[ext_resource type="Texture2D" uid="uid://n6p5tka2rh3f" path="res://Assets/Sprites/Ícones/ícone sapato branco.png" id="27_tab50"]
+[ext_resource type="Texture2D" uid="uid://d3k2g3mw66e8m" path="res://Assets/Sprites/Acessórios/Óculos meme.png" id="27_uvbks"]
+[ext_resource type="Texture2D" uid="uid://cxyiw6gbrr8kc" path="res://Assets/Sprites/Acessórios/Colar.png" id="28_kx5ti"]
 [ext_resource type="Texture2D" uid="uid://dwujjwurfrpnc" path="res://Assets/Sprites/Acessórios/Sapato branco.png" id="28_ury07"]
+[ext_resource type="Texture2D" uid="uid://xupmrx6pmsoi" path="res://Assets/Sprites/Acessórios/Cachecol.png" id="30_4fkvv"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone vestido princesa.png" id="31_44ghp"]
+[ext_resource type="Texture2D" uid="uid://dgjvhkok6s5kd" path="res://Assets/Sprites/Acessórios/Vestido princesa.png" id="32_17iqf"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone roupa de rei.png" id="33_8sdst"]
+[ext_resource type="Texture2D" uid="uid://bok8bhi27ld7v" path="res://Assets/Sprites/Acessórios/Roupa de rei.png" id="34_tg3su"]
+[ext_resource type="Texture2D" uid="uid://jjubujbmyrpu" path="res://Assets/Sprites/Acessórios/Roupa pirata1.png" id="35_xp5kf"]
+[ext_resource type="Texture2D" uid="uid://bp28pui2foc4j" path="res://Assets/Sprites/Acessórios/Roupa pirata2.png" id="36_kx5ti"]
+[ext_resource type="Texture2D" uid="uid://dmesu1olgng5c" path="res://Assets/Sprites/Acessórios/Pijama.png" id="36_xp5kf"]
+[ext_resource type="Texture2D" uid="uid://dg4jbb5pkxetu" path="res://Assets/Sprites/Acessórios/Sapato preto.png" id="39_wgerj"]
+[ext_resource type="Texture2D" uid="uid://xtpltqva61ei" path="res://Assets/Sprites/Acessórios/Sapatato vermelho.png" id="40_2ise6"]
+[ext_resource type="Texture2D" uid="uid://b7ri3d7hwvkbc" path="res://Assets/Sprites/Acessórios/Sapato laranja.png" id="41_4fkvv"]
+[ext_resource type="Texture2D" uid="uid://bmrhw5mcjr6oj" path="res://Assets/Sprites/Acessórios/Sapato amarelo.png" id="42_uvbks"]
+[ext_resource type="Texture2D" uid="uid://ggxvlqwiahjf" path="res://Assets/Sprites/Acessórios/Sapato verde.png" id="43_clcqm"]
+[ext_resource type="Texture2D" uid="uid://7x23p08cctn8" path="res://Assets/Sprites/Acessórios/Sapato azul.png" id="44_uxti1"]
+[ext_resource type="Texture2D" uid="uid://cbqpnvfr27wjt" path="res://Assets/Sprites/Acessórios/Sapato azul marinho.png" id="45_t2cs2"]
+[ext_resource type="Texture2D" uid="uid://dqnx23rdbcgbv" path="res://Assets/Sprites/Acessórios/Sapato roxo.png" id="46_e2v7c"]
+[ext_resource type="Texture2D" uid="uid://b11eqdramjukw" path="res://Assets/Sprites/Acessórios/Sapato rosa.png" id="47_qd5h5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rx22"]
+bg_color = Color(1, 0.55955654, 0.9853055, 0.29803923)
+border_width_left = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qg0u"]
+bg_color = Color(0.23815134, 3.792703e-05, 0.23773903, 0.29803923)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ia5c"]
+bg_color = Color(1, 0.56078434, 0.9843137, 0.29803923)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
 
 [node name="Central de estilo" type="Control" node_paths=PackedStringArray("grades_de_itens")]
 layout_mode = 3
@@ -140,7 +187,14 @@ text = "🪙 000  "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-current_tab = 4
+theme_override_constants/side_margin = 0
+theme_override_constants/tab_separation = 5
+theme_override_constants/icon_separation = 5
+theme_override_font_sizes/font_size = 24
+theme_override_styles/panel = SubResource("StyleBoxFlat_1rx22")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_5qg0u")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_6ia5c")
+current_tab = 2
 
 [node name="Chapéus" type="GridContainer" parent="HBoxContainer/Abas"]
 visible = false
@@ -154,10 +208,10 @@ metadata/_tab_index = 0
 
 [node name="Laço" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("4_540g3")
+icon = ExtResource("4_tg3su")
 id_item = "laço"
 preco = 35
-textura_item = ExtResource("5_jfby0")
+textura_item = ExtResource("4_tg3su")
 tipo = "chapeu"
 
 [node name="Chapéu de palha" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
@@ -190,6 +244,46 @@ icon = ExtResource("12_1rx22")
 id_item = "flor"
 preco = 200
 textura_item = ExtResource("13_5qg0u")
+tipo = "chapeu"
+
+[node name="Coroa" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("14_6ia5c")
+id_item = "coroa"
+preco = 420
+textura_item = ExtResource("15_3d8fr")
+tipo = "chapeu"
+
+[node name="Natal" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("15_2ise6")
+id_item = "natal"
+preco = 300
+textura_item = ExtResource("15_2ise6")
+tipo = "chapeu"
+
+[node name="Fone" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("16_clcqm")
+id_item = "fone"
+preco = 300
+textura_item = ExtResource("16_clcqm")
+tipo = "chapeu"
+
+[node name="Brincos" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("17_uxti1")
+id_item = "brincos"
+preco = 60
+textura_item = ExtResource("17_uxti1")
+tipo = "chapeu"
+
+[node name="Tiara" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("18_t2cs2")
+id_item = "tiara"
+preco = 250
+textura_item = ExtResource("18_t2cs2")
 tipo = "chapeu"
 
 [node name="Óculos" type="GridContainer" parent="HBoxContainer/Abas"]
@@ -270,6 +364,7 @@ size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
 icon = ExtResource("19_6qtox")
 id_item = "oculos_redondo"
+preco = 60
 textura_item = ExtResource("19_6qtox")
 
 [node name="Óculos de sol" parent="HBoxContainer/Abas/Óculos" instance=ExtResource("1_grlex")]
@@ -299,8 +394,16 @@ id_item = "oculos_vermelho"
 preco = 250
 textura_item = ExtResource("22_1qx7x")
 
+[node name="Óculos meme" parent="HBoxContainer/Abas/Óculos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+theme_override_constants/h_separation = 15
+icon = ExtResource("27_uvbks")
+id_item = "oculos_meme"
+preco = 300
+textura_item = ExtResource("27_uvbks")
+
 [node name="Pescoço" type="GridContainer" parent="HBoxContainer/Abas"]
-visible = false
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
@@ -316,13 +419,29 @@ preco = 300
 textura_item = ExtResource("24_1qx7x")
 tipo = "pescoço"
 
+[node name="Colar" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("28_kx5ti")
+id_item = "colar"
+preco = 280
+textura_item = ExtResource("28_kx5ti")
+tipo = "pescoço"
+
+[node name="Cachecol" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("30_4fkvv")
+id_item = "cachecol"
+preco = 160
+textura_item = ExtResource("30_4fkvv")
+tipo = "pescoço"
+
 [node name="Roupas" type="GridContainer" parent="HBoxContainer/Abas"]
 visible = false
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
-columns = 3
+columns = 4
 metadata/_tab_index = 3
 
 [node name="Avental de cozinha" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
@@ -333,20 +452,133 @@ preco = 200
 textura_item = ExtResource("24_yqd82")
 tipo = "roupa"
 
+[node name="Vestido de princesa" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("31_44ghp")
+id_item = "vestido_princesa"
+preco = 380
+textura_item = ExtResource("32_17iqf")
+tipo = "roupa"
+
+[node name="Roupa de rei" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("33_8sdst")
+id_item = "roupa_rei"
+preco = 500
+textura_item = ExtResource("34_tg3su")
+tipo = "roupa"
+
+[node name="Roupa de pirata 1" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("35_xp5kf")
+id_item = "roupa_pirata1"
+preco = 225
+textura_item = ExtResource("35_xp5kf")
+tipo = "roupa"
+
+[node name="Roupa de pirata 2" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("36_kx5ti")
+id_item = "roupa_pirata2"
+preco = 200
+textura_item = ExtResource("36_kx5ti")
+tipo = "roupa"
+
+[node name="Pijama" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("36_xp5kf")
+id_item = "pijama"
+preco = 100
+textura_item = ExtResource("36_xp5kf")
+tipo = "roupa"
+
 [node name="Sapatos" type="GridContainer" parent="HBoxContainer/Abas"]
+visible = false
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
-columns = 3
+columns = 4
 metadata/_tab_index = 4
 
 [node name="Sapato branco" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("27_tab50")
+icon = ExtResource("28_ury07")
 id_item = "sapato_branco"
 preco = 25
 textura_item = ExtResource("28_ury07")
+tipo = "sapato"
+
+[node name="Bota marrom" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("39_wgerj")
+id_item = "sapato_preto"
+preco = 25
+textura_item = ExtResource("39_wgerj")
+tipo = "sapato"
+
+[node name="Sapato vermelho" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("40_2ise6")
+id_item = "sapato_vermelho"
+preco = 25
+textura_item = ExtResource("40_2ise6")
+tipo = "sapato"
+
+[node name="Sapato laranja" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("41_4fkvv")
+id_item = "sapato_laranja"
+preco = 25
+textura_item = ExtResource("41_4fkvv")
+tipo = "sapato"
+
+[node name="Sapato amarelo" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("42_uvbks")
+id_item = "sapato_amarelo"
+preco = 25
+textura_item = ExtResource("42_uvbks")
+tipo = "sapato"
+
+[node name="Sapato verde" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("43_clcqm")
+id_item = "sapato_verde"
+preco = 25
+textura_item = ExtResource("43_clcqm")
+tipo = "sapato"
+
+[node name="Sapato azul" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("44_uxti1")
+id_item = "sapato_azul"
+preco = 25
+textura_item = ExtResource("44_uxti1")
+tipo = "sapato"
+
+[node name="Sapato azul marinho" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("45_t2cs2")
+id_item = "sapato_azul_marinho"
+preco = 25
+textura_item = ExtResource("45_t2cs2")
+tipo = "sapato"
+
+[node name="Sapato roxo" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("46_e2v7c")
+id_item = "sapato_roxo"
+preco = 25
+textura_item = ExtResource("46_e2v7c")
+tipo = "sapato"
+
+[node name="Sapato rosa" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("47_qd5h5")
+id_item = "sapato_rosa"
+preco = 25
+textura_item = ExtResource("47_qd5h5")
 tipo = "sapato"
 
 [node name="Fechar" type="Button" parent="."]

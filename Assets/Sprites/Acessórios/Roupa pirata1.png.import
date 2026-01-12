@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hrch1l71cxgr"
-path="res://.godot/imported/Laço.png-91820fa89d0b039db54baf493dc62cbd.ctex"
+uid="uid://jjubujbmyrpu"
+path="res://.godot/imported/Roupa pirata1.png-aeccd0882ede0f50e2b2f0b218fe397d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Laço.png"
-dest_files=["res://.godot/imported/Laço.png-91820fa89d0b039db54baf493dc62cbd.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Roupa pirata1.png"
+dest_files=["res://.godot/imported/Roupa pirata1.png-aeccd0882ede0f50e2b2f0b218fe397d.ctex"]
 
 [params]
 

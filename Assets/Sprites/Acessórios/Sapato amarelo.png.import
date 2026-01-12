@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do2h3vwehvoi5"
-path="res://.godot/imported/Ícone avental de cozinha.png-b0ba11013dbeb87b1a9db574311b6206.ctex"
+uid="uid://bmrhw5mcjr6oj"
+path="res://.godot/imported/Sapato amarelo.png-72a858901f8fb7459f0ec0682934269b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Ícone avental de cozinha.png"
-dest_files=["res://.godot/imported/Ícone avental de cozinha.png-b0ba11013dbeb87b1a9db574311b6206.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Sapato amarelo.png"
+dest_files=["res://.godot/imported/Sapato amarelo.png-72a858901f8fb7459f0ec0682934269b.ctex"]
 
 [params]
 

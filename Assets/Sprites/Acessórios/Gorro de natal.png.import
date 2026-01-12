@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doppcc3wf2nvf"
-path="res://.godot/imported/Ícone medalha.png-e7d0a38d41ff01daef5628198d3f2d97.ctex"
+uid="uid://bpjvtc7d87453"
+path="res://.godot/imported/Gorro de natal.png-0b0ef01d4ac16504a2a7baf09b89de09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Ícone medalha.png"
-dest_files=["res://.godot/imported/Ícone medalha.png-e7d0a38d41ff01daef5628198d3f2d97.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Gorro de natal.png"
+dest_files=["res://.godot/imported/Gorro de natal.png-0b0ef01d4ac16504a2a7baf09b89de09.ctex"]
 
 [params]
 

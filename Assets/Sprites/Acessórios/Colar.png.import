@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n6p5tka2rh3f"
-path="res://.godot/imported/ícone sapato branco.png-c5248c8a81185013a2b81c241b88c316.ctex"
+uid="uid://cxyiw6gbrr8kc"
+path="res://.godot/imported/Colar.png-81d6141363293551f3eade69f8256766.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/ícone sapato branco.png"
-dest_files=["res://.godot/imported/ícone sapato branco.png-c5248c8a81185013a2b81c241b88c316.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Colar.png"
+dest_files=["res://.godot/imported/Colar.png-81d6141363293551f3eade69f8256766.ctex"]
 
 [params]
 

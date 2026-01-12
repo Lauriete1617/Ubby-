@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3bvakww1o8vq"
-path="res://.godot/imported/Ícone flor.png-9e100f8ce2bb9c40542cec8c3c592392.ctex"
+uid="uid://lp8amfgu7qc5"
+path="res://.godot/imported/Tiara.png-c6dabe10695b39cd6bc476034ce77537.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Ícone flor.png"
-dest_files=["res://.godot/imported/Ícone flor.png-9e100f8ce2bb9c40542cec8c3c592392.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Tiara.png"
+dest_files=["res://.godot/imported/Tiara.png-c6dabe10695b39cd6bc476034ce77537.ctex"]
 
 [params]
 

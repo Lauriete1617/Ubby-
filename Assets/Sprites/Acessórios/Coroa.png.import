@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgkyn33yqlc1"
-path="res://.godot/imported/Ícone chapéu pirata.png-6b4c656877d504347d86bc154fdff501.ctex"
+uid="uid://dd8pi07l5ukkl"
+path="res://.godot/imported/Coroa.png-b5193c85d31e1e907cb55c29bf8dd93d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Ícone chapéu pirata.png"
-dest_files=["res://.godot/imported/Ícone chapéu pirata.png-6b4c656877d504347d86bc154fdff501.ctex"]
+source_file="res://Assets/Sprites/Acessórios/Coroa.png"
+dest_files=["res://.godot/imported/Coroa.png-b5193c85d31e1e907cb55c29bf8dd93d.ctex"]
 
 [params]
 

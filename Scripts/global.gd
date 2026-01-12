@@ -10,7 +10,7 @@ var acessorios = {
 }
 
 # --- ITENS ADQUIRIDOS ---
-var moedas: int = 500 
+var moedas: int = 1000 
 var itens_desbloqueados: Array = []
 # --- ESTADOS ---
 var fome = 100
