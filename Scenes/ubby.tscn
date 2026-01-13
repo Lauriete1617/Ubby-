@@ -237,7 +237,7 @@ vframes = 3
 [node name="Acessórios" type="Node" parent="AnimationPlayer/Visual"]
 
 [node name="SlotOculos" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
-z_index = 5
+z_index = 6
 position = Vector2(570, 295)
 scale = Vector2(4.90625, 5)
 
@@ -247,7 +247,7 @@ position = Vector2(571, 295)
 scale = Vector2(4.90625, 5)
 
 [node name="SlotPescoço" type="Sprite2D" parent="AnimationPlayer/Visual/Acessórios"]
-z_index = 5
+z_index = 6
 position = Vector2(570, 295)
 scale = Vector2(4.90625, 5)
 

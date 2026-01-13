@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c45dfgbgoe2i1"]
+[gd_scene load_steps=66 format=3 uid="uid://c45dfgbgoe2i1"]
 
 [ext_resource type="Script" uid="uid://bj5pw20bduul4" path="res://Scripts/central_de_estilo.gd" id="1_c7rnf"]
 [ext_resource type="PackedScene" uid="uid://bci64wgd76opg" path="res://Scenes/item_loja.tscn" id="1_grlex"]
@@ -9,18 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://dn8o5vi20udcq" path="res://Assets/Sprites/Acessórios/Laço.png" id="4_tg3su"]
 [ext_resource type="Texture2D" uid="uid://cdftsghe56bfj" path="res://Assets/Sprites/Acessórios/Monóculo.png" id="5_j1h47"]
 [ext_resource type="Texture2D" uid="uid://bhqosi4ohpjau" path="res://Assets/Sprites/Acessórios/Óculos de coração.png" id="6_540g3"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone chapéu de palha.png" id="6_hios1"]
 [ext_resource type="Texture2D" uid="uid://b50e38nvb8j5p" path="res://Assets/Sprites/Acessórios/Chapéu de palha.png" id="7_f6tmy"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone chapéu pirata.png" id="8_gmcqr"]
 [ext_resource type="Texture2D" uid="uid://h1yrfkw5tkpt" path="res://Assets/Sprites/Ícones/Ícone fechar.png" id="9_540g3"]
 [ext_resource type="Texture2D" uid="uid://caafkvlmt45id" path="res://Assets/Sprites/Acessórios/Chapéu pirata.png" id="9_hfuo0"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone boné.png" id="10_gmcqr"]
 [ext_resource type="Texture2D" uid="uid://ccg2w61p4s015" path="res://Assets/Sprites/Acessórios/Boné.png" id="11_hfuo0"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone flor.png" id="12_1rx22"]
 [ext_resource type="Texture2D" uid="uid://casqx5yp0tghp" path="res://Assets/Sprites/Acessórios/Flor.png" id="13_5qg0u"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone coroa.png" id="14_6ia5c"]
+[ext_resource type="Texture2D" uid="uid://3k8exhgygg4j" path="res://Assets/Sprites/Acessórios/Touca de cetim.png" id="14_qd5h5"]
 [ext_resource type="Texture2D" uid="uid://bpjvtc7d87453" path="res://Assets/Sprites/Acessórios/Gorro de natal.png" id="15_2ise6"]
 [ext_resource type="Texture2D" uid="uid://dd8pi07l5ukkl" path="res://Assets/Sprites/Acessórios/Coroa.png" id="15_3d8fr"]
+[ext_resource type="Texture2D" uid="uid://bxml6sg7oollw" path="res://Assets/Sprites/Acessórios/Cartola.png" id="15_35cdp"]
 [ext_resource type="Texture2D" uid="uid://cwihp5iiuv4lr" path="res://Assets/Sprites/Acessórios/Fone.png" id="16_clcqm"]
 [ext_resource type="Texture2D" uid="uid://r4mn1fa85va7" path="res://Assets/Sprites/Acessórios/Óculos laranja.png" id="17_0ofa0"]
 [ext_resource type="Texture2D" uid="uid://eviain3588rc" path="res://Assets/Sprites/Acessórios/Brincos.png" id="17_uxti1"]
@@ -30,30 +27,41 @@
 [ext_resource type="Texture2D" uid="uid://dhonyev11ghip" path="res://Assets/Sprites/Acessórios/Óculos de madame.png" id="20_yqd82"]
 [ext_resource type="Texture2D" uid="uid://dhhxi0ru5uqw0" path="res://Assets/Sprites/Acessórios/Máscara de dormir.png" id="21_x7uv0"]
 [ext_resource type="Texture2D" uid="uid://bap8ho5v5elkp" path="res://Assets/Sprites/Acessórios/Óculos vermelho.png" id="22_1qx7x"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone avental de cozinha.png" id="23_6qtox"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone medalha.png" id="23_x7uv0"]
 [ext_resource type="Texture2D" uid="uid://cdm6ho06c0gi" path="res://Assets/Sprites/Acessórios/Medalha.png" id="24_1qx7x"]
 [ext_resource type="Texture2D" uid="uid://bjfk0vhujrc7k" path="res://Assets/Sprites/Acessórios/Avental de cozinha.png" id="24_yqd82"]
 [ext_resource type="Texture2D" uid="uid://d3k2g3mw66e8m" path="res://Assets/Sprites/Acessórios/Óculos meme.png" id="27_uvbks"]
 [ext_resource type="Texture2D" uid="uid://cxyiw6gbrr8kc" path="res://Assets/Sprites/Acessórios/Colar.png" id="28_kx5ti"]
 [ext_resource type="Texture2D" uid="uid://dwujjwurfrpnc" path="res://Assets/Sprites/Acessórios/Sapato branco.png" id="28_ury07"]
+[ext_resource type="Texture2D" uid="uid://bdoyqrmhpqd7b" path="res://Assets/Sprites/Acessórios/Colar de flores.png" id="29_smnh6"]
+[ext_resource type="Texture2D" uid="uid://6cfwlj8tn1n0" path="res://Assets/Sprites/Acessórios/Cordão de girassol.png" id="30_2ise6"]
 [ext_resource type="Texture2D" uid="uid://xupmrx6pmsoi" path="res://Assets/Sprites/Acessórios/Cachecol.png" id="30_4fkvv"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone vestido princesa.png" id="31_44ghp"]
+[ext_resource type="Texture2D" uid="uid://crs3yuct3c3te" path="res://Assets/Sprites/Acessórios/Babador.png" id="31_clcqm"]
 [ext_resource type="Texture2D" uid="uid://dgjvhkok6s5kd" path="res://Assets/Sprites/Acessórios/Vestido princesa.png" id="32_17iqf"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Ícones/Ícone roupa de rei.png" id="33_8sdst"]
+[ext_resource type="Texture2D" uid="uid://bjmgex7idcap5" path="res://Assets/Sprites/Acessórios/Fone no pescoço.png" id="32_uxti1"]
+[ext_resource type="Texture2D" uid="uid://bakkvorl4ifq0" path="res://Assets/Sprites/Acessórios/Colar de pérolas.png" id="33_e2v7c"]
+[ext_resource type="Texture2D" uid="uid://b4bacfttyjrav" path="res://Assets/Sprites/Acessórios/Gravata.png" id="34_qd5h5"]
 [ext_resource type="Texture2D" uid="uid://bok8bhi27ld7v" path="res://Assets/Sprites/Acessórios/Roupa de rei.png" id="34_tg3su"]
 [ext_resource type="Texture2D" uid="uid://jjubujbmyrpu" path="res://Assets/Sprites/Acessórios/Roupa pirata1.png" id="35_xp5kf"]
 [ext_resource type="Texture2D" uid="uid://bp28pui2foc4j" path="res://Assets/Sprites/Acessórios/Roupa pirata2.png" id="36_kx5ti"]
+[ext_resource type="Texture2D" uid="uid://bakgpiafgb34a" path="res://Assets/Sprites/Acessórios/Roupa estampada.png" id="36_ttrb2"]
 [ext_resource type="Texture2D" uid="uid://dmesu1olgng5c" path="res://Assets/Sprites/Acessórios/Pijama.png" id="36_xp5kf"]
+[ext_resource type="Texture2D" uid="uid://b2uf6vax56k1i" path="res://Assets/Sprites/Acessórios/gravata_borboleta.png" id="37_fx14p"]
+[ext_resource type="Texture2D" uid="uid://b2egernplvvnu" path="res://Assets/Sprites/Acessórios/Moletom.png" id="38_4fkvv"]
+[ext_resource type="Texture2D" uid="uid://ckhg306ptd2q8" path="res://Assets/Sprites/Acessórios/Câmera.png" id="38_i15og"]
+[ext_resource type="Texture2D" uid="uid://0p1dm8a0x5i7" path="res://Assets/Sprites/Acessórios/Bandana.png" id="39_4f047"]
+[ext_resource type="Texture2D" uid="uid://cirneynkudqsh" path="res://Assets/Sprites/Acessórios/Jardineira.png" id="39_4fkvv"]
 [ext_resource type="Texture2D" uid="uid://dg4jbb5pkxetu" path="res://Assets/Sprites/Acessórios/Sapato preto.png" id="39_wgerj"]
 [ext_resource type="Texture2D" uid="uid://xtpltqva61ei" path="res://Assets/Sprites/Acessórios/Sapatato vermelho.png" id="40_2ise6"]
 [ext_resource type="Texture2D" uid="uid://b7ri3d7hwvkbc" path="res://Assets/Sprites/Acessórios/Sapato laranja.png" id="41_4fkvv"]
 [ext_resource type="Texture2D" uid="uid://bmrhw5mcjr6oj" path="res://Assets/Sprites/Acessórios/Sapato amarelo.png" id="42_uvbks"]
+[ext_resource type="Texture2D" uid="uid://ba7cy0tkx1y81" path="res://Assets/Sprites/Acessórios/Roupa basquete.png" id="42_uxti1"]
 [ext_resource type="Texture2D" uid="uid://ggxvlqwiahjf" path="res://Assets/Sprites/Acessórios/Sapato verde.png" id="43_clcqm"]
 [ext_resource type="Texture2D" uid="uid://7x23p08cctn8" path="res://Assets/Sprites/Acessórios/Sapato azul.png" id="44_uxti1"]
 [ext_resource type="Texture2D" uid="uid://cbqpnvfr27wjt" path="res://Assets/Sprites/Acessórios/Sapato azul marinho.png" id="45_t2cs2"]
 [ext_resource type="Texture2D" uid="uid://dqnx23rdbcgbv" path="res://Assets/Sprites/Acessórios/Sapato roxo.png" id="46_e2v7c"]
+[ext_resource type="Texture2D" uid="uid://btek2275pr4va" path="res://Assets/Sprites/Acessórios/Roupa básica.png" id="47_fx14p"]
 [ext_resource type="Texture2D" uid="uid://b11eqdramjukw" path="res://Assets/Sprites/Acessórios/Sapato rosa.png" id="47_qd5h5"]
+[ext_resource type="Texture2D" uid="uid://dkgokcpmgbs2x" path="res://Assets/Sprites/Acessórios/Terno.png" id="48_v41l6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rx22"]
 bg_color = Color(1, 0.55955654, 0.9853055, 0.29803923)
@@ -216,7 +224,7 @@ tipo = "chapeu"
 
 [node name="Chapéu de palha" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("6_hios1")
+icon = ExtResource("7_f6tmy")
 id_item = "chapeu_palha"
 preco = 160
 textura_item = ExtResource("7_f6tmy")
@@ -224,7 +232,7 @@ tipo = "chapeu"
 
 [node name="Chapéu pirata" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("8_gmcqr")
+icon = ExtResource("9_hfuo0")
 id_item = "chapeu_pirata"
 preco = 300
 textura_item = ExtResource("9_hfuo0")
@@ -232,7 +240,7 @@ tipo = "chapeu"
 
 [node name="Boné" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("10_gmcqr")
+icon = ExtResource("11_hfuo0")
 id_item = "boné"
 preco = 200
 textura_item = ExtResource("11_hfuo0")
@@ -240,7 +248,7 @@ tipo = "chapeu"
 
 [node name="Flor" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("12_1rx22")
+icon = ExtResource("13_5qg0u")
 id_item = "flor"
 preco = 200
 textura_item = ExtResource("13_5qg0u")
@@ -248,7 +256,7 @@ tipo = "chapeu"
 
 [node name="Coroa" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("14_6ia5c")
+icon = ExtResource("15_3d8fr")
 id_item = "coroa"
 preco = 420
 textura_item = ExtResource("15_3d8fr")
@@ -284,6 +292,22 @@ icon = ExtResource("18_t2cs2")
 id_item = "tiara"
 preco = 250
 textura_item = ExtResource("18_t2cs2")
+tipo = "chapeu"
+
+[node name="Touca de cetim" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("14_qd5h5")
+id_item = "touca_cetim"
+preco = 280
+textura_item = ExtResource("14_qd5h5")
+tipo = "chapeu"
+
+[node name="Cartola" parent="HBoxContainer/Abas/Chapéus" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("15_35cdp")
+id_item = "cartola"
+preco = 300
+textura_item = ExtResource("15_35cdp")
 tipo = "chapeu"
 
 [node name="Óculos" type="GridContainer" parent="HBoxContainer/Abas"]
@@ -408,12 +432,12 @@ custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
-columns = 3
+columns = 4
 metadata/_tab_index = 2
 
 [node name="Medalha" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("23_x7uv0")
+icon = ExtResource("24_1qx7x")
 id_item = "medalha"
 preco = 300
 textura_item = ExtResource("24_1qx7x")
@@ -435,6 +459,78 @@ preco = 160
 textura_item = ExtResource("30_4fkvv")
 tipo = "pescoço"
 
+[node name="Colar de flores" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("29_smnh6")
+id_item = "colar_flores"
+preco = 80
+textura_item = ExtResource("29_smnh6")
+tipo = "pescoço"
+
+[node name="Cordão de girassol" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("30_2ise6")
+id_item = "cordao_girassol"
+preco = 60
+textura_item = ExtResource("30_2ise6")
+tipo = "pescoço"
+
+[node name="Babador" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("31_clcqm")
+id_item = "babador"
+preco = 120
+textura_item = ExtResource("31_clcqm")
+tipo = "pescoço"
+
+[node name="Fone no pescoço" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("32_uxti1")
+id_item = "fone_pescoço"
+preco = 180
+textura_item = ExtResource("32_uxti1")
+tipo = "pescoço"
+
+[node name="Colar de pérolas" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("33_e2v7c")
+id_item = "colar_perolas"
+preco = 380
+textura_item = ExtResource("33_e2v7c")
+tipo = "pescoço"
+
+[node name="Gravata" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("34_qd5h5")
+id_item = "gravata"
+preco = 240
+textura_item = ExtResource("34_qd5h5")
+tipo = "pescoço"
+
+[node name="Gravata borboleta" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("37_fx14p")
+id_item = "gravata_borboleta"
+preco = 240
+textura_item = ExtResource("37_fx14p")
+tipo = "pescoço"
+
+[node name="Câmera" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("38_i15og")
+id_item = "camera"
+preco = 210
+textura_item = ExtResource("38_i15og")
+tipo = "pescoço"
+
+[node name="Bandana" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("39_4f047")
+id_item = "bandana"
+preco = 130
+textura_item = ExtResource("39_4f047")
+tipo = "pescoço"
+
 [node name="Roupas" type="GridContainer" parent="HBoxContainer/Abas"]
 visible = false
 custom_minimum_size = Vector2(180, 180)
@@ -446,7 +542,7 @@ metadata/_tab_index = 3
 
 [node name="Avental de cozinha" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("23_6qtox")
+icon = ExtResource("24_yqd82")
 id_item = "avental_cozinha"
 preco = 200
 textura_item = ExtResource("24_yqd82")
@@ -454,7 +550,7 @@ tipo = "roupa"
 
 [node name="Vestido de princesa" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("31_44ghp")
+icon = ExtResource("32_17iqf")
 id_item = "vestido_princesa"
 preco = 380
 textura_item = ExtResource("32_17iqf")
@@ -462,7 +558,7 @@ tipo = "roupa"
 
 [node name="Roupa de rei" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
 layout_mode = 2
-icon = ExtResource("33_8sdst")
+icon = ExtResource("34_tg3su")
 id_item = "roupa_rei"
 preco = 500
 textura_item = ExtResource("34_tg3su")
@@ -490,6 +586,54 @@ icon = ExtResource("36_xp5kf")
 id_item = "pijama"
 preco = 100
 textura_item = ExtResource("36_xp5kf")
+tipo = "roupa"
+
+[node name="Roupa estampada" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("36_ttrb2")
+id_item = "roupa_estampada"
+preco = 145
+textura_item = ExtResource("36_ttrb2")
+tipo = "roupa"
+
+[node name="Moletom" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("38_4fkvv")
+id_item = "moletom"
+preco = 260
+textura_item = ExtResource("38_4fkvv")
+tipo = "roupa"
+
+[node name="Jardineira" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("39_4fkvv")
+id_item = "jardineira"
+preco = 300
+textura_item = ExtResource("39_4fkvv")
+tipo = "roupa"
+
+[node name="Basquete" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("42_uxti1")
+id_item = "basquete"
+preco = 320
+textura_item = ExtResource("42_uxti1")
+tipo = "roupa"
+
+[node name="Roupa básica" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("47_fx14p")
+id_item = "roupa_basica"
+preco = 180
+textura_item = ExtResource("47_fx14p")
+tipo = "roupa"
+
+[node name="Terno" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
+layout_mode = 2
+icon = ExtResource("48_v41l6")
+id_item = "terno"
+preco = 400
+textura_item = ExtResource("48_v41l6")
 tipo = "roupa"
 
 [node name="Sapatos" type="GridContainer" parent="HBoxContainer/Abas"]

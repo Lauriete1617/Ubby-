@@ -38,12 +38,23 @@ var catalogo_chapeu = {
 	"fone": preload("res://Assets/Sprites/Acessórios/Fone.png"),
 	"brincos": preload("res://Assets/Sprites/Acessórios/Brincos.png"),
 	"tiara": preload("res://Assets/Sprites/Acessórios/Tiara.png"),
+	"touca_cetim": preload("res://Assets/Sprites/Acessórios/Touca de cetim.png"),
+	"cartola": preload("res://Assets/Sprites/Acessórios/Cartola.png")
 }
 
 var catalogo_pescoço = {
 	"medalha": preload("res://Assets/Sprites/Acessórios/Medalha.png"),
 	"colar": preload("res://Assets/Sprites/Acessórios/Colar.png"),
 	"cachecol": preload("res://Assets/Sprites/Acessórios/Cachecol.png"),
+	"colar_flores": preload("res://Assets/Sprites/Acessórios/Colar de flores.png"),
+	"cordao_girassol": preload("res://Assets/Sprites/Acessórios/Cordão de girassol.png"),
+	"babador": preload("res://Assets/Sprites/Acessórios/Babador.png"),
+	"fone_pescoço": preload("res://Assets/Sprites/Acessórios/Fone no pescoço.png"),
+	"colar_perolas": preload("res://Assets/Sprites/Acessórios/Colar de pérolas.png"),
+	"gravata": preload("res://Assets/Sprites/Acessórios/Gravata.png"),
+	"gravata_borboleta": preload("res://Assets/Sprites/Acessórios/gravata_borboleta.png"),
+	"camera": preload("res://Assets/Sprites/Acessórios/Câmera.png"),
+	"bandana": preload("res://Assets/Sprites/Acessórios/Bandana.png")
 }
 
 var catalogo_roupa = {
@@ -53,6 +64,12 @@ var catalogo_roupa = {
 	"roupa_pirata1": preload("res://Assets/Sprites/Acessórios/Roupa pirata1.png"),
 	"roupa_pirata2": preload("res://Assets/Sprites/Acessórios/Roupa pirata2.png"),
 	"pijama": preload("res://Assets/Sprites/Acessórios/Pijama.png"),
+	"roupa_estampada": preload("res://Assets/Sprites/Acessórios/Roupa estampada.png"),
+	"moletom": preload("res://Assets/Sprites/Acessórios/Moletom.png"),
+	"jardineira": preload("res://Assets/Sprites/Acessórios/Jardineira.png"),
+	"basquete": preload("res://Assets/Sprites/Acessórios/Roupa basquete.png"),
+	"roupa_basica": preload("res://Assets/Sprites/Acessórios/Roupa básica.png"),
+	"terno": preload("res://Assets/Sprites/Acessórios/Terno.png")
 }
 
 var catalogo_sapato = {
