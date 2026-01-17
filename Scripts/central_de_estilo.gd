@@ -129,7 +129,7 @@ func _on_botao_acao_pressed():
 			print("Sem dinheiro!")
 
 func _on_fechar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/ubby.tscn")
+	get_tree().change_scene_to_file("res://Scenes/casa.tscn")
 
 # --- FUNÇÃO AUXILIAR PARA LIMPAR O VISUAL ---
 func limpar_manequim_visual(tipo):

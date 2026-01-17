@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
-@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var animation: AnimatedSprite2D = $Visual/Corpo
 @onready var particulas_carinho: CPUParticles2D = $Partículas/ParticulasCarinho
 @onready var particulas_estrelas: CPUParticles2D = $Partículas/ParticulasEstrelas
 
 # --- REFERÊNCIAS VISUAIS (SLOTS) ---
-@onready var slot_oculos: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotOculos
-@onready var slot_chapeu: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotChapeu
-@onready var slot_pescoço: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotPescoço
-@onready var slot_sapato: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotSapato
-@onready var slot_roupa: Sprite2D = $AnimationPlayer/Visual/Acessórios/SlotRoupa
+@onready var slot_oculos: Sprite2D = $Visual/Acessórios/SlotOculos
+@onready var slot_chapeu: Sprite2D = $Visual/Acessórios/SlotChapeu
+@onready var slot_pescoço: Sprite2D = $Visual/Acessórios/SlotPescoço
+@onready var slot_sapato: Sprite2D = $Visual/Acessórios/SlotSapato
+@onready var slot_roupa: Sprite2D = $Visual/Acessórios/SlotRoupa
 
 # --- CATÁLOGOS ---
 var catalogo_oculos = {

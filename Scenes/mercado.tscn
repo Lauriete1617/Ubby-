@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsbg6t3fq7f7g"]
+
+[ext_resource type="Texture2D" uid="uid://h1yrfkw5tkpt" path="res://Assets/Sprites/Ícones/Ícone fechar.png" id="1_5yqv4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5yog"]
+bg_color = Color(0.72156864, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3g11d"]
+
+[node name="Mercado" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="painel de informacoes" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5yog")
+
+[node name="Informacoes" type="VBoxContainer" parent="HBoxContainer/painel de informacoes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Label_nome" type="Label" parent="HBoxContainer/painel de informacoes/Informacoes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
+text = "Nome"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="imagem_comida" type="TextureRect" parent="HBoxContainer/painel de informacoes/Informacoes"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Label_preco" type="Label" parent="HBoxContainer/painel de informacoes/Informacoes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
+text = "Preco"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/painel de informacoes/Informacoes"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label_saciedade" type="Label" parent="HBoxContainer/painel de informacoes/Informacoes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
+text = "Saciedade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_bonus" type="Label" parent="HBoxContainer/painel de informacoes/Informacoes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
+text = "Bonus"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_descricao" type="Label" parent="HBoxContainer/painel de informacoes/Informacoes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
+text = "Descricao funny"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fechar" type="Button" parent="HBoxContainer/painel de informacoes"]
+layout_mode = 0
+offset_right = 29.204292
+offset_bottom = 32.610546
+scale = Vector2(2.7393231, 2.453194)
+icon = ExtResource("1_5yqv4")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="botao_acao" type="Button" parent="HBoxContainer/painel de informacoes"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Comprar"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
