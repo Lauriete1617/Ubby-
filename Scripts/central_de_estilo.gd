@@ -16,6 +16,10 @@ extends Control
 var item_selecionado = null 
 @export var grades_de_itens: Array[GridContainer]
 
+# --- SONS ---
+@onready var sfx_botão: AudioStreamPlayer2D = $"Sons/SFX Botão"
+@onready var sfx_compra: AudioStreamPlayer2D = $"Sons/SFX Compra"
+
 func _ready():
 	# Começa escondendo o botão grande e atualizando o dinheiro
 	botao_acao.visible = false
@@ -37,6 +41,7 @@ func atualizar_moedas_visual():
 # --- QUANDO CLICAS NUM ITEM NA PRATELEIRA ---
 func _on_item_clicado(botao):
 	limpar_tudo()
+	sfx_botão.play()
 	print("Item selecionado: ", botao.id_item)
 	item_selecionado = botao 
 	botao_acao.visible = true # Mostra o botão de ação
@@ -114,6 +119,7 @@ func _on_botao_acao_pressed():
 	else:
 		if Global.moedas >= item_selecionado.preco:
 			# Desconta grana e salva
+			sfx_compra.play()
 			Global.moedas -= item_selecionado.preco
 			Global.itens_desbloqueados.append(item_selecionado.id_item)
 			Global.salvar_jogo()

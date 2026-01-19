@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c45dfgbgoe2i1"]
+[gd_scene load_steps=68 format=3 uid="uid://c45dfgbgoe2i1"]
 
 [ext_resource type="Script" uid="uid://bj5pw20bduul4" path="res://Scripts/central_de_estilo.gd" id="1_c7rnf"]
 [ext_resource type="PackedScene" uid="uid://bci64wgd76opg" path="res://Scenes/item_loja.tscn" id="1_grlex"]
@@ -62,6 +62,8 @@
 [ext_resource type="Texture2D" uid="uid://btek2275pr4va" path="res://Assets/Sprites/Acessórios/Roupa básica.png" id="47_fx14p"]
 [ext_resource type="Texture2D" uid="uid://b11eqdramjukw" path="res://Assets/Sprites/Acessórios/Sapato rosa.png" id="47_qd5h5"]
 [ext_resource type="Texture2D" uid="uid://dkgokcpmgbs2x" path="res://Assets/Sprites/Acessórios/Terno.png" id="48_v41l6"]
+[ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="63_4f047"]
+[ext_resource type="AudioStream" uid="uid://dpikhp6tw354w" path="res://Assets/Efeitos sonoros/Compra.wav" id="64_t8hfp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rx22"]
 bg_color = Color(1, 0.55955654, 0.9853055, 0.29803923)
@@ -188,6 +190,7 @@ anchor_right = 1.0
 offset_left = -48.0
 offset_bottom = 29.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0.25882354, 0.21176471, 0.43137255, 1)
 theme_override_font_sizes/font_size = 32
 text = "🪙 000  "
 
@@ -734,6 +737,14 @@ icon = ExtResource("9_540g3")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Sons" type="Node" parent="."]
+
+[node name="SFX Botão" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("63_4f047")
+
+[node name="SFX Compra" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("64_t8hfp")
 
 [connection signal="pressed" from="HBoxContainer/Provador/botao_acao" to="." method="_on_botao_acao_pressed"]
 [connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]

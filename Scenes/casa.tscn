@@ -373,6 +373,10 @@ shape = SubResource("RectangleShape2D_wgknj")
 z_index = 5
 position = Vector2(163, 144)
 
+[node name="Sons" type="Node2D" parent="."]
+
+[node name="SFX Geladeira" type="AudioStreamPlayer2D" parent="Sons"]
+
 [connection signal="input_event" from="Moveis/Cama+Abajur/Cama" to="Moveis/Cama+Abajur" method="_on_cama_input_event"]
 [connection signal="input_event" from="Moveis/Cama+Abajur/Abajur" to="Moveis/Cama+Abajur" method="_on_abajur_input_event"]
 [connection signal="input_event" from="Moveis/Armario/Area2D" to="Moveis/Armario" method="_on_area_2d_input_event"]

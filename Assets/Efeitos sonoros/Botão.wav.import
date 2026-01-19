@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfb1m7qox0rub"
+path="res://.godot/imported/Botão.wav-1f13e44c3c5e864cd128f3b6457ccb40.sample"
+
+[deps]
+
+source_file="res://Assets/Efeitos sonoros/Botão.wav"
+dest_files=["res://.godot/imported/Botão.wav-1f13e44c3c5e864cd128f3b6457ccb40.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

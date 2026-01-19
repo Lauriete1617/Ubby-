@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpikhp6tw354w"
+path="res://.godot/imported/Compra.wav-2f5c39d15d6820451e41ffe221d9ae21.sample"
+
+[deps]
+
+source_file="res://Assets/Efeitos sonoros/Compra.wav"
+dest_files=["res://.godot/imported/Compra.wav-2f5c39d15d6820451e41ffe221d9ae21.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
