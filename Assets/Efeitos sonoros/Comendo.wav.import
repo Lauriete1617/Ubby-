@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0u80pm803ngf"
+path="res://.godot/imported/Comendo.wav-03500cc4aa6a51ca65c852ed7d24ff1b.sample"
+
+[deps]
+
+source_file="res://Assets/Efeitos sonoros/Comendo.wav"
+dest_files=["res://.godot/imported/Comendo.wav-03500cc4aa6a51ca65c852ed7d24ff1b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

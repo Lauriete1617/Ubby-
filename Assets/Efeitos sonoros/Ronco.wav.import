@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2qhhpuoi6geq"
+path="res://.godot/imported/Ronco.wav-cc0e7ca9f3ca69f903a4f3a245acff7d.sample"
+
+[deps]
+
+source_file="res://Assets/Efeitos sonoros/Ronco.wav"
+dest_files=["res://.godot/imported/Ronco.wav-cc0e7ca9f3ca69f903a4f3a245acff7d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

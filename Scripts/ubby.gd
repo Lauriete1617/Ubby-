@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var particulas_carinho: CPUParticles2D = $Partículas/ParticulasCarinho
 @onready var particulas_estrelas: CPUParticles2D = $Partículas/ParticulasEstrelas
 
+# --- EFEITOS SONOROS ---
+@onready var sfx_carinho: AudioStreamPlayer2D = $"Sons/SFX Carinho"
+
 # --- REFERÊNCIAS VISUAIS (SLOTS) ---
 @onready var slot_oculos: Sprite2D = $Visual/Acessórios/SlotOculos
 @onready var slot_chapeu: Sprite2D = $Visual/Acessórios/SlotChapeu
@@ -138,6 +141,7 @@ func _input_event(viewport, event, shape_idx):
 		dar_carinho()
 
 func dar_carinho():
+	sfx_carinho.play()
 	particulas_carinho.emitting = true
 	animation.play("Carinho")
 	await animation.animation_finished

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5d7x57awgkem"
+path="res://.godot/imported/Roupa.wav-ccc08832c7fc4255ffd20a211c4d95f2.sample"
+
+[deps]
+
+source_file="res://Assets/Efeitos sonoros/Roupa.wav"
+dest_files=["res://.godot/imported/Roupa.wav-ccc08832c7fc4255ffd20a211c4d95f2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr8u43xpwuukp"
+path="res://.godot/imported/Armário.wav-047811f6ebd1f5b052d234eacd53c059.sample"
+
+[deps]
+
+source_file="res://Assets/Efeitos sonoros/Armário.wav"
+dest_files=["res://.godot/imported/Armário.wav-047811f6ebd1f5b052d234eacd53c059.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

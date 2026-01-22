@@ -15,8 +15,8 @@ extends Control
 @onready var label_descricao: Label = $"HBoxContainer/painel de informacoes/MarginContainer/Informacoes/Label_descricao"
 @onready var text_moedas: Label = $"HBoxContainer/painel de informacoes/text moedas"
 # --- BOTÕES DE AÇÃO ---
-@onready var fechar: Button = $"HBoxContainer/painel de informacoes/Fechar"
 @onready var botao_acao: Button = $"HBoxContainer/painel de informacoes/MarginContainer/Informacoes/botao_acao"
+@onready var fechar: Button = $"HBoxContainer/painel de informacoes/Fechar"
 # --- CENA PARA INSTANCIAR ---
 @export var item_loja: PackedScene
 # --- SONS ---
@@ -49,10 +49,6 @@ func _ready() -> void:
 		
 		# Conecta o clique (IMPORTANTE: usando .bind para passar o ID)
 		novo_botao.pressed.connect(_on_item_clicado.bind(id))
-
-func _on_fechar_pressed() -> void:
-	print("Terminando as compras")
-	get_tree().change_scene_to_file("res://Scenes/casa.tscn")
 
 # Chamada quando clica num item da lista
 func _on_item_clicado(id_recebido: String):
@@ -135,3 +131,7 @@ func _on_botao_acao_pressed() -> void:
 
 func atualizar_moedas_visual():
 	text_moedas.text = "🪙 " + str(Global.moedas)
+
+func _on_fechar_pressed() -> void:
+	print("Terminando as compras...")
+	get_tree().change_scene_to_file("res://Scenes/casa.tscn")

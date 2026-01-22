@@ -34,16 +34,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_f5yog")
 
-[node name="Fechar" type="Button" parent="HBoxContainer/painel de informacoes"]
-layout_mode = 0
-offset_right = 29.204292
-offset_bottom = 32.610546
-scale = Vector2(2.7393231, 2.453194)
-icon = ExtResource("1_5yqv4")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
 [node name="Label_bem_vindo" type="Label" parent="HBoxContainer/painel de informacoes"]
 layout_mode = 1
 anchors_preset = 8
@@ -170,6 +160,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Comprar"
 
+[node name="Fechar" type="Button" parent="HBoxContainer/painel de informacoes"]
+layout_mode = 0
+offset_right = 29.204292
+offset_bottom = 32.610546
+scale = Vector2(2.7393231, 2.453194)
+icon = ExtResource("1_5yqv4")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -189,5 +189,5 @@ stream = ExtResource("4_y2kuj")
 [node name="SFX Compra" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("5_77mib")
 
-[connection signal="pressed" from="HBoxContainer/painel de informacoes/Fechar" to="." method="_on_fechar_pressed"]
 [connection signal="pressed" from="HBoxContainer/painel de informacoes/MarginContainer/Informacoes/botao_acao" to="." method="_on_botao_acao_pressed"]
+[connection signal="pressed" from="HBoxContainer/painel de informacoes/Fechar" to="." method="_on_fechar_pressed"]

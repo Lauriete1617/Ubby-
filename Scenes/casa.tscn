@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://b0og1r8bdrfe1"]
+[gd_scene load_steps=64 format=3 uid="uid://b0og1r8bdrfe1"]
 
 [ext_resource type="Texture2D" uid="uid://co1a6xum441p3" path="res://Assets/Sprites/Cenário/Background.png" id="1_mnn6b"]
 [ext_resource type="Texture2D" uid="uid://chqf817qqhkqr" path="res://Assets/Sprites/Cenário/Cama e abajur (aceso).png" id="2_cnf3q"]
@@ -26,6 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://b33f04uqpfame" path="res://Assets/Sprites/Cenário/Mesa.png" id="14_scnwl"]
 [ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="17_f4bqc"]
 [ext_resource type="Script" uid="uid://2b0e6k6um113" path="res://Scripts/geladeira+balcao.gd" id="23_2n0dc"]
+[ext_resource type="AudioStream" uid="uid://cko0qd7tbmyaf" path="res://Assets/Efeitos sonoros/Geladeira.wav" id="27_4djbf"]
+[ext_resource type="AudioStream" uid="uid://1m3s4xk15bye" path="res://Assets/Efeitos sonoros/Abajur.wav" id="27_4kde6"]
+[ext_resource type="AudioStream" uid="uid://cr8u43xpwuukp" path="res://Assets/Efeitos sonoros/Armário.wav" id="29_36ky3"]
+[ext_resource type="AudioStream" uid="uid://2qhhpuoi6geq" path="res://Assets/Efeitos sonoros/Ronco.wav" id="30_a1gkn"]
+[ext_resource type="AudioStream" uid="uid://c4da8n25lwjj" path="res://Assets/Efeitos sonoros/TV.mp3" id="31_d5p6k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlrcj"]
 atlas = ExtResource("2_wg2mn")
@@ -376,6 +381,20 @@ position = Vector2(163, 144)
 [node name="Sons" type="Node2D" parent="."]
 
 [node name="SFX Geladeira" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("27_4djbf")
+
+[node name="SFX Abajur" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("27_4kde6")
+
+[node name="SFX Armário" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("29_36ky3")
+
+[node name="SFX Ronco" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("30_a1gkn")
+
+[node name="SFX TV" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("31_d5p6k")
+volume_db = -15.0
 
 [connection signal="input_event" from="Moveis/Cama+Abajur/Cama" to="Moveis/Cama+Abajur" method="_on_cama_input_event"]
 [connection signal="input_event" from="Moveis/Cama+Abajur/Abajur" to="Moveis/Cama+Abajur" method="_on_abajur_input_event"]
