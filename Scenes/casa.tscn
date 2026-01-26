@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://b0og1r8bdrfe1"]
+[gd_scene load_steps=65 format=3 uid="uid://b0og1r8bdrfe1"]
 
 [ext_resource type="Texture2D" uid="uid://co1a6xum441p3" path="res://Assets/Sprites/Cenário/Background.png" id="1_mnn6b"]
 [ext_resource type="Texture2D" uid="uid://chqf817qqhkqr" path="res://Assets/Sprites/Cenário/Cama e abajur (aceso).png" id="2_cnf3q"]
@@ -26,11 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://b33f04uqpfame" path="res://Assets/Sprites/Cenário/Mesa.png" id="14_scnwl"]
 [ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="17_f4bqc"]
 [ext_resource type="Script" uid="uid://2b0e6k6um113" path="res://Scripts/geladeira+balcao.gd" id="23_2n0dc"]
+[ext_resource type="Script" uid="uid://db4yciqureqx" path="res://Scripts/mesa.gd" id="26_36ky3"]
 [ext_resource type="AudioStream" uid="uid://cko0qd7tbmyaf" path="res://Assets/Efeitos sonoros/Geladeira.wav" id="27_4djbf"]
 [ext_resource type="AudioStream" uid="uid://1m3s4xk15bye" path="res://Assets/Efeitos sonoros/Abajur.wav" id="27_4kde6"]
 [ext_resource type="AudioStream" uid="uid://cr8u43xpwuukp" path="res://Assets/Efeitos sonoros/Armário.wav" id="29_36ky3"]
 [ext_resource type="AudioStream" uid="uid://2qhhpuoi6geq" path="res://Assets/Efeitos sonoros/Ronco.wav" id="30_a1gkn"]
-[ext_resource type="AudioStream" uid="uid://c4da8n25lwjj" path="res://Assets/Efeitos sonoros/TV.mp3" id="31_d5p6k"]
+[ext_resource type="AudioStream" uid="uid://bjdtiskt3at2f" path="res://Assets/Efeitos sonoros/TV.ogg" id="31_4djbf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlrcj"]
 atlas = ExtResource("2_wg2mn")
@@ -367,6 +368,7 @@ texture = ExtResource("13_84ph8")
 [node name="Mesa" type="Sprite2D" parent="Moveis"]
 position = Vector2(287, 147)
 texture = ExtResource("14_scnwl")
+script = ExtResource("26_36ky3")
 
 [node name="Area2D" type="Area2D" parent="Moveis/Mesa"]
 
@@ -393,7 +395,7 @@ stream = ExtResource("29_36ky3")
 stream = ExtResource("30_a1gkn")
 
 [node name="SFX TV" type="AudioStreamPlayer2D" parent="Sons"]
-stream = ExtResource("31_d5p6k")
+stream = ExtResource("31_4djbf")
 volume_db = -15.0
 
 [connection signal="input_event" from="Moveis/Cama+Abajur/Cama" to="Moveis/Cama+Abajur" method="_on_cama_input_event"]
@@ -401,3 +403,4 @@ volume_db = -15.0
 [connection signal="input_event" from="Moveis/Armario/Area2D" to="Moveis/Armario" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="Moveis/TV+Rack/Area2D" to="Moveis/TV+Rack" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="Moveis/Geladeira+Balcao/Area2D" to="Moveis/Geladeira+Balcao" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Moveis/Mesa/Area2D" to="Moveis/Mesa" method="_on_area_2d_input_event"]

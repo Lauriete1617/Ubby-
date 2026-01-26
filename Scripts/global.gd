@@ -193,3 +193,24 @@ func salvar_jogo():
 		# Não salvamos o CARDAPIO aqui.
 	})
 	print("Jogo salvo com sucesso!")
+
+func consumir_item(id_item: String):
+	if not CARDAPIO.has(id_item):
+		print("ERRO! item inexistente")
+		return
+	var dados = CARDAPIO[id_item]
+	print("Consumindo: " + dados["nome"])
+# --- ESTATÍSTICAS ---
+	fome += dados["fome"]
+	fome = clamp (fome, 0, 100)
+	sono += dados["energia"]
+	sono = clamp(sono, 0, 100)
+	felicidade += dados["felicidade"]
+	felicidade = clamp(felicidade, 0 ,100)
+# --- DMINUIR DO INVENTARIO --- 
+	if inventario_comidas.has(id_item):
+		inventario_comidas[id_item] -= 1
+		if inventario_comidas[id_item] <= 0:
+			inventario_comidas.erase(id_item)
+			print(dados["nome"] + " acabou")
+	salvar_jogo()

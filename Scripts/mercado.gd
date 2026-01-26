@@ -22,6 +22,7 @@ extends Control
 # --- SONS ---
 @onready var sfx_botão: AudioStreamPlayer2D = $"Sons/SFX Botão"
 @onready var sfx_compra: AudioStreamPlayer2D = $"Sons/SFX Compra"
+@onready var sfx_sair: AudioStreamPlayer2D = $"Sons/SFX Sair"
 # --- VARIÁVEIS ---
 var item_selecionado = ""
 
@@ -134,4 +135,6 @@ func atualizar_moedas_visual():
 
 func _on_fechar_pressed() -> void:
 	print("Terminando as compras...")
+	sfx_sair.play()
+	await sfx_sair.finished
 	get_tree().change_scene_to_file("res://Scenes/casa.tscn")

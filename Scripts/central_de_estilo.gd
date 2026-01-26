@@ -19,6 +19,7 @@ var item_selecionado = null
 # --- SONS ---
 @onready var sfx_botão: AudioStreamPlayer2D = $"Sons/SFX Botão"
 @onready var sfx_compra: AudioStreamPlayer2D = $"Sons/SFX Compra"
+@onready var sfx_sair: AudioStreamPlayer2D = $"Sons/SFX Sair"
 
 func _ready():
 	# Começa escondendo o botão grande e atualizando o dinheiro
@@ -132,9 +133,12 @@ func _on_botao_acao_pressed():
 		else:
 			# Essa parte teoricamente não acontece pois o botão estaria disabled,
 			# mas mantemos por segurança.
+			sfx_sair.play()
 			print("Sem dinheiro!")
 
 func _on_fechar_pressed() -> void:
+	sfx_sair.play()
+	await sfx_sair.finished
 	get_tree().change_scene_to_file("res://Scenes/casa.tscn")
 
 # --- FUNÇÃO AUXILIAR PARA LIMPAR O VISUAL ---

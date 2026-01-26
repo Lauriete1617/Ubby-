@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://c45dfgbgoe2i1"]
+[gd_scene load_steps=69 format=3 uid="uid://c45dfgbgoe2i1"]
 
 [ext_resource type="Script" uid="uid://bj5pw20bduul4" path="res://Scripts/central_de_estilo.gd" id="1_c7rnf"]
 [ext_resource type="PackedScene" uid="uid://bci64wgd76opg" path="res://Scenes/item_loja.tscn" id="1_grlex"]
@@ -64,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://dkgokcpmgbs2x" path="res://Assets/Sprites/Acessórios/Terno.png" id="48_v41l6"]
 [ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="63_4f047"]
 [ext_resource type="AudioStream" uid="uid://dpikhp6tw354w" path="res://Assets/Efeitos sonoros/Compra.wav" id="64_t8hfp"]
+[ext_resource type="AudioStream" uid="uid://b2bmayia14l02" path="res://Assets/Efeitos sonoros/Negado.wav" id="65_ddjvy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rx22"]
 bg_color = Color(1, 0.55955654, 0.9853055, 0.29803923)
@@ -745,6 +746,9 @@ stream = ExtResource("63_4f047")
 
 [node name="SFX Compra" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("64_t8hfp")
+
+[node name="SFX Sair" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("65_ddjvy")
 
 [connection signal="pressed" from="HBoxContainer/Provador/botao_acao" to="." method="_on_botao_acao_pressed"]
 [connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]
