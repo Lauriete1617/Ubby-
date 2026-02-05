@@ -1,10 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://c45dfgbgoe2i1"]
+[gd_scene load_steps=70 format=3 uid="uid://c45dfgbgoe2i1"]
 
 [ext_resource type="Script" uid="uid://bj5pw20bduul4" path="res://Scripts/central_de_estilo.gd" id="1_c7rnf"]
 [ext_resource type="PackedScene" uid="uid://bci64wgd76opg" path="res://Scenes/item_loja.tscn" id="1_grlex"]
 [ext_resource type="Texture2D" uid="uid://dq0expn1bdclf" path="res://Assets/Sprites/Ubby/Ubby Corpo.png" id="2_j1h47"]
 [ext_resource type="Texture2D" uid="uid://c22f5geysmcg4" path="res://Assets/Sprites/Acessórios/Óculos de grau.png" id="2_ucgf8"]
 [ext_resource type="Texture2D" uid="uid://b4baacjtde4bg" path="res://Assets/Sprites/Acessórios/Óculos roxo.png" id="3_4nkwd"]
+[ext_resource type="Texture2D" uid="uid://bayxvm5sp4jms" path="res://Assets/Sprites/Ícones/Ícone moeda.png" id="3_6mb53"]
 [ext_resource type="Texture2D" uid="uid://kx7r0anh850l" path="res://Assets/Sprites/Acessórios/Tapa olho.png" id="4_c7rnf"]
 [ext_resource type="Texture2D" uid="uid://dn8o5vi20udcq" path="res://Assets/Sprites/Acessórios/Laço.png" id="4_tg3su"]
 [ext_resource type="Texture2D" uid="uid://cdftsghe56bfj" path="res://Assets/Sprites/Acessórios/Monóculo.png" id="5_j1h47"]
@@ -193,23 +194,30 @@ offset_bottom = 29.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.25882354, 0.21176471, 0.43137255, 1)
 theme_override_font_sizes/font_size = 32
-text = "🪙 000  "
+text = "000  "
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Provador/Moedas"]
+layout_mode = 0
+offset_left = -39.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = 33.0
+texture = ExtResource("3_6mb53")
 
 [node name="Abas" type="TabContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_constants/side_margin = 0
-theme_override_constants/tab_separation = 5
-theme_override_constants/icon_separation = 5
+theme_override_constants/tab_separation = 2
+theme_override_constants/icon_separation = 2
 theme_override_font_sizes/font_size = 24
 theme_override_styles/panel = SubResource("StyleBoxFlat_1rx22")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_5qg0u")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_6ia5c")
-current_tab = 2
+current_tab = 0
 
 [node name="Chapéus" type="GridContainer" parent="HBoxContainer/Abas"]
-visible = false
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
@@ -314,6 +322,19 @@ preco = 300
 textura_item = ExtResource("15_35cdp")
 tipo = "chapeu"
 
+[node name="Cor" type="GridContainer" parent="HBoxContainer/Abas"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+metadata/_tab_index = 1
+
+[node name="Cor padrão" parent="HBoxContainer/Abas/Cor" instance=ExtResource("1_grlex")]
+layout_mode = 2
+id_item = "padrao"
+tipo = "cor"
+
 [node name="Óculos" type="GridContainer" parent="HBoxContainer/Abas"]
 visible = false
 custom_minimum_size = Vector2(180, 180)
@@ -322,7 +343,7 @@ size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
 columns = 4
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
 [node name="Óculos de grau" parent="HBoxContainer/Abas/Óculos" instance=ExtResource("1_grlex")]
 layout_mode = 2
@@ -432,12 +453,13 @@ preco = 300
 textura_item = ExtResource("27_uvbks")
 
 [node name="Pescoço" type="GridContainer" parent="HBoxContainer/Abas"]
+visible = false
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
 columns = 4
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
 [node name="Medalha" parent="HBoxContainer/Abas/Pescoço" instance=ExtResource("1_grlex")]
 layout_mode = 2
@@ -542,7 +564,7 @@ layout_mode = 2
 size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
 columns = 4
-metadata/_tab_index = 3
+metadata/_tab_index = 4
 
 [node name="Avental de cozinha" parent="HBoxContainer/Abas/Roupas" instance=ExtResource("1_grlex")]
 layout_mode = 2
@@ -647,7 +669,7 @@ layout_mode = 2
 size_flags_stretch_ratio = 2.0
 theme_override_constants/h_separation = 15
 columns = 4
-metadata/_tab_index = 4
+metadata/_tab_index = 5
 
 [node name="Sapato branco" parent="HBoxContainer/Abas/Sapatos" instance=ExtResource("1_grlex")]
 layout_mode = 2
@@ -743,12 +765,15 @@ expand_icon = true
 
 [node name="SFX Botão" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("63_4f047")
+bus = &"SFX"
 
 [node name="SFX Compra" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("64_t8hfp")
+bus = &"SFX"
 
 [node name="SFX Sair" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("65_ddjvy")
+bus = &"SFX"
 
 [connection signal="pressed" from="HBoxContainer/Provador/botao_acao" to="." method="_on_botao_acao_pressed"]
 [connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]

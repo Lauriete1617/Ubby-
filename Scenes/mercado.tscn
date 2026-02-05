@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsbg6t3fq7f7g"]
+[gd_scene load_steps=10 format=3 uid="uid://bsbg6t3fq7f7g"]
 
 [ext_resource type="Texture2D" uid="uid://h1yrfkw5tkpt" path="res://Assets/Sprites/Ícones/Ícone fechar.png" id="1_5yqv4"]
 [ext_resource type="Script" uid="uid://b83oj45y6it1h" path="res://Scripts/mercado.gd" id="1_f5yog"]
 [ext_resource type="PackedScene" uid="uid://bci64wgd76opg" path="res://Scenes/item_loja.tscn" id="2_3g11d"]
+[ext_resource type="Texture2D" uid="uid://bayxvm5sp4jms" path="res://Assets/Sprites/Ícones/Ícone moeda.png" id="3_gedkf"]
 [ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="4_y2kuj"]
 [ext_resource type="AudioStream" uid="uid://dpikhp6tw354w" path="res://Assets/Efeitos sonoros/Compra.wav" id="5_77mib"]
 [ext_resource type="AudioStream" uid="uid://b2bmayia14l02" path="res://Assets/Efeitos sonoros/Negado.wav" id="6_sghwp"]
@@ -36,6 +37,7 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_f5yog")
 
 [node name="Label_bem_vindo" type="Label" parent="HBoxContainer/painel de informacoes"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,7 +68,14 @@ offset_bottom = 29.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.25882354, 0.21176471, 0.43137255, 1)
 theme_override_font_sizes/font_size = 32
-text = "🪙 000  "
+text = "000  "
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/painel de informacoes/text moedas"]
+layout_mode = 0
+offset_left = -38.0
+offset_right = -4.0
+offset_bottom = 30.0
+texture = ExtResource("3_gedkf")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/painel de informacoes"]
 layout_mode = 1
@@ -81,7 +90,6 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Informacoes" type="VBoxContainer" parent="HBoxContainer/painel de informacoes/MarginContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 1
@@ -111,6 +119,14 @@ text = "Preco"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes/Label_preco"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -6.0
+offset_right = 73.0
+offset_bottom = 34.0
+texture = ExtResource("3_gedkf")
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
@@ -172,6 +188,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -186,12 +203,15 @@ columns = 4
 
 [node name="SFX Botão" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("4_y2kuj")
+bus = &"SFX"
 
 [node name="SFX Compra" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("5_77mib")
+bus = &"SFX"
 
 [node name="SFX Sair" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("6_sghwp")
+bus = &"SFX"
 
 [connection signal="pressed" from="HBoxContainer/painel de informacoes/MarginContainer/Informacoes/botao_acao" to="." method="_on_botao_acao_pressed"]
 [connection signal="pressed" from="HBoxContainer/painel de informacoes/Fechar" to="." method="_on_fechar_pressed"]

@@ -30,25 +30,18 @@ func _ready() -> void:
 	informacoes.visible = false
 	label_bem_vindo.visible = true
 	atualizar_moedas_visual()
-	# Limpa a lista antiga (caso tenha botões de teste)
 	for filho in grid_container.get_children():
 		filho.queue_free()
-		
 	# Cria os novos botões baseados no Global
 	for id in Global.CARDAPIO:
 		var dados = Global.CARDAPIO[id]
 		var novo_botao = item_loja.instantiate()
-		
 		# Preenche os dados do botão
 		novo_botao.id_item = id
 		novo_botao.preco = dados["preco"]
 		novo_botao.tipo = "comida"
 		novo_botao.textura_item = load(dados["icon"])
-		
-		# Adiciona na tela
 		grid_container.add_child(novo_botao)
-		
-		# Conecta o clique (IMPORTANTE: usando .bind para passar o ID)
 		novo_botao.pressed.connect(_on_item_clicado.bind(id))
 
 # Chamada quando clica num item da lista
@@ -66,7 +59,7 @@ func _on_item_clicado(id_recebido: String):
 	label_descricao.text = dados["desc"]
 	
 	# Usamos str() para converter números em texto
-	label_preco.text = "Preço: 🪙 " + str(dados["preco"])
+	label_preco.text = "Preço:  " + str(dados["preco"])
 	imagem_comida.texture = load(dados["icon"])
 	label_fome.text = "Sacia: 🍖 " + str(dados["fome"])
 	
@@ -131,7 +124,7 @@ func _on_botao_acao_pressed() -> void:
 		print("Dinheiro insuficiente!")
 
 func atualizar_moedas_visual():
-	text_moedas.text = "🪙 " + str(Global.moedas)
+	text_moedas.text = str(Global.moedas)
 
 func _on_fechar_pressed() -> void:
 	print("Terminando as compras...")

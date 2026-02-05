@@ -1,14 +1,21 @@
-[gd_scene load_steps=24 format=3 uid="uid://hun4tcrgvufd"]
+[gd_scene load_steps=32 format=3 uid="uid://hun4tcrgvufd"]
 
 [ext_resource type="Texture2D" uid="uid://2gvuy8cewd6c" path="res://Assets/Sprites/Ubby/Ubby Default.png" id="1_fgfy8"]
 [ext_resource type="Script" uid="uid://bpxdgw33bhcku" path="res://Scripts/ubby.gd" id="1_w3r7f"]
 [ext_resource type="Texture2D" uid="uid://b3gw3hnrtsfik" path="res://Assets/Sprites/Ubby/Ubby comemorando.png" id="3_1ajfk"]
+[ext_resource type="Texture2D" uid="uid://bs1l8pqqf33i1" path="res://Assets/Sprites/Ubby/Ubby andando1.png" id="4_0ymqb"]
 [ext_resource type="Texture2D" uid="uid://c44p2iwsh1g0v" path="res://Assets/Sprites/Partículas/Corações.png" id="4_dtxv0"]
+[ext_resource type="Texture2D" uid="uid://bv4osfry8i3bi" path="res://Assets/Sprites/Ubby/Ubby andando2.png" id="5_2urlu"]
 [ext_resource type="Texture2D" uid="uid://dgxp3x6dov6ea" path="res://Assets/Sprites/Ubby/Ubby Comendo1.png" id="5_pqpop"]
 [ext_resource type="Texture2D" uid="uid://dk4dpquqrmuvm" path="res://Assets/Sprites/Ubby/Ubby Comendo2.png" id="6_6mka7"]
 [ext_resource type="Texture2D" uid="uid://e8liipwd5nc3" path="res://Assets/Sprites/Partículas/estrelas.png" id="6_arljs"]
 [ext_resource type="Texture2D" uid="uid://blwvvf6t56quv" path="res://Assets/Sprites/Ubby/Ubby Comendo3.png" id="7_0tmpd"]
 [ext_resource type="AudioStream" uid="uid://4umqjrejxsx0" path="res://Assets/Efeitos sonoros/Carinho.wav" id="9_6mka7"]
+[ext_resource type="Texture2D" uid="uid://cidnvm8qgeot7" path="res://Assets/Sprites/Ubby/Ubby acenando1.png" id="9_raldl"]
+[ext_resource type="Texture2D" uid="uid://dk7w503kf8ump" path="res://Assets/Sprites/Ubby/Ubby acenando2.png" id="10_i1alg"]
+[ext_resource type="Texture2D" uid="uid://ydpu0syrdtgt" path="res://Assets/Sprites/Ubby/Ubby Triste1.png" id="11_0ymqb"]
+[ext_resource type="Texture2D" uid="uid://bvd7isqtisbi0" path="res://Assets/Sprites/Ubby/Ubby Triste2.png" id="12_2urlu"]
+[ext_resource type="Texture2D" uid="uid://clukmidv4dt" path="res://Assets/Sprites/Ubby/Ubby Triste3.png" id="13_7fe66"]
 
 [sub_resource type="Gradient" id="Gradient_ed5l2"]
 offsets = PackedFloat32Array(0.9537037, 0.9814815, 1)
@@ -62,8 +69,23 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("1_fgfy8")
 region = Rect2(0, 128, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj854"]
+atlas = ExtResource("11_0ymqb")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_w7uwx"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0ymqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2urlu")
+}],
+"loop": true,
+"name": &"Andando",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ed5l2")
@@ -116,6 +138,43 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_raldl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i1alg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_raldl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i1alg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_raldl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i1alg")
+}],
+"loop": false,
+"name": &"Oi",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj854")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2urlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7fe66")
+}],
+"loop": true,
+"name": &"Triste",
+"speed": 1.0
 }]
 
 [node name="Ubby" type="CharacterBody2D"]
@@ -166,19 +225,19 @@ shape = SubResource("CapsuleShape2D_ed5l2")
 [node name="Corpo" type="AnimatedSprite2D" parent="Visual"]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_w7uwx")
-animation = &"Comendo"
+animation = &"Andando"
 autoplay = "Idle"
+frame_progress = 0.25735092
 
 [node name="Acessórios" type="Node2D" parent="Visual"]
 
 [node name="SlotOculos" type="Sprite2D" parent="Visual/Acessórios"]
 z_index = 6
-position = Vector2(0.5, -2)
 scale = Vector2(1, 1.019)
 
 [node name="SlotChapeu" type="Sprite2D" parent="Visual/Acessórios"]
 z_index = 5
-position = Vector2(0.5, -2)
+position = Vector2(0, -1)
 scale = Vector2(1, 1.019)
 
 [node name="SlotPescoço" type="Sprite2D" parent="Visual/Acessórios"]

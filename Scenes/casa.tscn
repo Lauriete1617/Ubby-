@@ -1,5 +1,6 @@
-[gd_scene load_steps=65 format=3 uid="uid://b0og1r8bdrfe1"]
+[gd_scene load_steps=81 format=3 uid="uid://b0og1r8bdrfe1"]
 
+[ext_resource type="Script" uid="uid://c5ewg71abbrut" path="res://Scripts/casa.gd" id="1_j84cm"]
 [ext_resource type="Texture2D" uid="uid://co1a6xum441p3" path="res://Assets/Sprites/Cenário/Background.png" id="1_mnn6b"]
 [ext_resource type="Texture2D" uid="uid://chqf817qqhkqr" path="res://Assets/Sprites/Cenário/Cama e abajur (aceso).png" id="2_cnf3q"]
 [ext_resource type="Texture2D" uid="uid://c7xp0rwinelui" path="res://Assets/Sprites/Cenário/Cama e abajur6.png" id="2_wg2mn"]
@@ -29,9 +30,19 @@
 [ext_resource type="Script" uid="uid://db4yciqureqx" path="res://Scripts/mesa.gd" id="26_36ky3"]
 [ext_resource type="AudioStream" uid="uid://cko0qd7tbmyaf" path="res://Assets/Efeitos sonoros/Geladeira.wav" id="27_4djbf"]
 [ext_resource type="AudioStream" uid="uid://1m3s4xk15bye" path="res://Assets/Efeitos sonoros/Abajur.wav" id="27_4kde6"]
+[ext_resource type="Texture2D" uid="uid://dwvxwaqf421vh" path="res://Assets/Sprites/Cenário/Janela.png" id="28_kqar6"]
 [ext_resource type="AudioStream" uid="uid://cr8u43xpwuukp" path="res://Assets/Efeitos sonoros/Armário.wav" id="29_36ky3"]
+[ext_resource type="Texture2D" uid="uid://bys4ybamhy22e" path="res://Assets/Sprites/Cenário/Relógio.png" id="29_v2h3b"]
 [ext_resource type="AudioStream" uid="uid://2qhhpuoi6geq" path="res://Assets/Efeitos sonoros/Ronco.wav" id="30_a1gkn"]
+[ext_resource type="Texture2D" uid="uid://b7xyhxrtjlcib" path="res://Assets/Sprites/Cenário/Chaleira.png" id="30_v2h3b"]
 [ext_resource type="AudioStream" uid="uid://bjdtiskt3at2f" path="res://Assets/Efeitos sonoros/TV.ogg" id="31_4djbf"]
+[ext_resource type="Texture2D" uid="uid://colhtag11s4ho" path="res://Assets/Sprites/Cenário/Estante cozinha.png" id="31_v06xv"]
+[ext_resource type="Texture2D" uid="uid://sn6u20w4vj2e" path="res://Assets/Sprites/Cenário/Vaso de planta.png" id="32_b842e"]
+[ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="33_2mqvh"]
+[ext_resource type="PackedScene" uid="uid://dnhldrdkq0yq3" path="res://Scenes/ui_status.tscn" id="33_a1gkn"]
+[ext_resource type="Texture2D" uid="uid://cyw8lq2qsbsb7" path="res://Assets/Sprites/Ícones/Ícone configuração.png" id="34_d5p6k"]
+[ext_resource type="Texture2D" uid="uid://befydb0j2vcgy" path="res://Assets/Sprites/Ícones/Ícone menu.png" id="35_ohfl7"]
+[ext_resource type="Texture2D" uid="uid://mopet8ax8rap" path="res://Assets/Sprites/Ícones/Ícone minijogo.png" id="40_btp0e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlrcj"]
 atlas = ExtResource("2_wg2mn")
@@ -115,6 +126,17 @@ size = Vector2(51, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohfl7"]
 size = Vector2(28, 57)
+
+[sub_resource type="Gradient" id="Gradient_btp0e"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.67346936, 0.96938777, 0.97959185, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.35649925, 0.35649925, 0.35649925, 0.8410175, 0.28571427, 0.28571427, 0.28571427, 0.8235294, 0.41066694, 0.41066694, 0.41066694, 0.8544001, 0, 0, 0, 0.7529412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5fqkj"]
+gradient = SubResource("Gradient_btp0e")
+fill = 1
+fill_from = Vector2(0.5068493, 0.55136985)
+fill_to = Vector2(0.5, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bewnq"]
 atlas = ExtResource("4_socb4")
@@ -204,6 +226,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kde6"]
 size = Vector2(50, 28)
 
+[sub_resource type="Gradient" id="Gradient_v2h3b"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.20408164, 0.5408163, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5638801, 0.5638801, 0.5638801, 0.9110658, 0.43635732, 0.43635732, 0.43635732, 0.88506114, 0, 0, 0, 0.79607844)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_btp0e"]
+gradient = SubResource("Gradient_v2h3b")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kde6"]
 atlas = ExtResource("13_scnwl")
 region = Rect2(0, 0, 96, 64)
@@ -278,8 +311,21 @@ size = Vector2(38, 77)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgknj"]
 size = Vector2(63, 42)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohfl7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21950099, 0.21950105, 0.21950084, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Casa" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_j84cm")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(1.066, 1)
@@ -293,13 +339,13 @@ anchor_mode = 0
 zoom = Vector2(3.6, 3.6)
 limit_smoothed = true
 
-[node name="Moveis" type="Node" parent="."]
+[node name="Moveis" type="Node2D" parent="."]
 
 [node name="Cama+Abajur" type="AnimatedSprite2D" parent="Moveis"]
 position = Vector2(15, 101)
 sprite_frames = SubResource("SpriteFrames_0ecbw")
-animation = &"Apagado (Ocupado)"
-autoplay = "Aceso (Vazio)"
+animation = &"Apagado (Vazio)"
+autoplay = "Apagado (Vazio)"
 centered = false
 script = ExtResource("8_ks7rd")
 
@@ -314,6 +360,12 @@ shape = SubResource("RectangleShape2D_omsfj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moveis/Cama+Abajur/Abajur"]
 position = Vector2(66, 26.5)
 shape = SubResource("RectangleShape2D_ohfl7")
+
+[node name="PointLight2D" type="PointLight2D" parent="Moveis/Cama+Abajur"]
+position = Vector2(66, 14)
+color = Color(0.8980392, 0.8784314, 0.27450982, 1)
+energy = 0.4
+texture = SubResource("GradientTexture2D_5fqkj")
 
 [node name="Armario" type="AnimatedSprite2D" parent="Moveis"]
 position = Vector2(123, 102)
@@ -341,6 +393,14 @@ script = ExtResource("11_fckpr")
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_4kde6")
 
+[node name="PointLight2D" type="PointLight2D" parent="Moveis/TV+Rack"]
+z_index = 15
+position = Vector2(4.7683716e-07, -17.999996)
+scale = Vector2(1.4765625, 1.2265625)
+color = Color(0, 0.8171119, 0.82672405, 1)
+energy = 0.8
+texture = SubResource("GradientTexture2D_btp0e")
+
 [node name="Sofa" type="AnimatedSprite2D" parent="Moveis"]
 z_index = 2
 position = Vector2(184, 139)
@@ -350,7 +410,6 @@ autoplay = "default"
 [node name="Geladeira+Balcao" type="AnimatedSprite2D" parent="Moveis"]
 position = Vector2(286, 98)
 sprite_frames = SubResource("SpriteFrames_ks7rd")
-animation = &"Abrindo"
 autoplay = "default"
 script = ExtResource("23_2n0dc")
 
@@ -359,6 +418,13 @@ script = ExtResource("23_2n0dc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moveis/Geladeira+Balcao/Area2D"]
 position = Vector2(21, -1.5)
 shape = SubResource("RectangleShape2D_rlrcj")
+
+[node name="PointLight2D" type="PointLight2D" parent="Moveis/Geladeira+Balcao"]
+position = Vector2(21.000008, 16)
+scale = Vector2(0.6250001, 1)
+color = Color(0.8980392, 0.8784314, 0.27450982, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_5fqkj")
 
 [node name="Fogao" type="Sprite2D" parent="Moveis"]
 position = Vector2(230.99998, 123.00001)
@@ -376,6 +442,45 @@ script = ExtResource("26_36ky3")
 position = Vector2(-0.5, 11)
 shape = SubResource("RectangleShape2D_wgknj")
 
+[node name="Janela" type="TextureRect" parent="Moveis"]
+offset_left = 32.0
+offset_top = 55.0
+offset_right = 72.0
+offset_bottom = 95.0
+texture = ExtResource("28_kqar6")
+
+[node name="Relógio" type="TextureRect" parent="Moveis"]
+offset_left = 170.0
+offset_top = 42.0
+offset_right = 210.0
+offset_bottom = 82.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("29_v2h3b")
+
+[node name="Chaleira" type="TextureRect" parent="Moveis"]
+offset_left = 227.0
+offset_top = 94.0
+offset_right = 267.0
+offset_bottom = 134.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("30_v2h3b")
+
+[node name="Estante" type="TextureRect" parent="Moveis"]
+offset_left = 254.0
+offset_top = 60.999996
+offset_right = 294.0
+offset_bottom = 101.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("31_v06xv")
+
+[node name="Vaso de planta" type="TextureRect" parent="Moveis"]
+offset_left = 304.0
+offset_top = 46.0
+offset_right = 344.0
+offset_bottom = 86.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_b842e")
+
 [node name="Ubby" parent="." instance=ExtResource("17_f4bqc")]
 z_index = 5
 position = Vector2(163, 144)
@@ -384,19 +489,63 @@ position = Vector2(163, 144)
 
 [node name="SFX Geladeira" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("27_4djbf")
+bus = &"SFX"
 
 [node name="SFX Abajur" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("27_4kde6")
+bus = &"SFX"
 
 [node name="SFX Armário" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("29_36ky3")
+bus = &"SFX"
 
 [node name="SFX Ronco" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("30_a1gkn")
+bus = &"SFX"
+
+[node name="SFX Botão" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("33_2mqvh")
+bus = &"SFX"
 
 [node name="SFX TV" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("31_4djbf")
 volume_db = -15.0
+bus = &"SFX"
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="UI Status" parent="UI" instance=ExtResource("33_a1gkn")]
+position = Vector2(239, 11)
+
+[node name="Configurações" type="Button" parent="UI"]
+offset_left = 42.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohfl7")
+icon = ExtResource("34_d5p6k")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Minijogo" type="Button" parent="UI"]
+offset_left = 68.0
+offset_top = 10.0
+offset_right = 91.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohfl7")
+icon = ExtResource("40_btp0e")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Menu" type="Button" parent="UI"]
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 40.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohfl7")
+icon = ExtResource("35_ohfl7")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="input_event" from="Moveis/Cama+Abajur/Cama" to="Moveis/Cama+Abajur" method="_on_cama_input_event"]
 [connection signal="input_event" from="Moveis/Cama+Abajur/Abajur" to="Moveis/Cama+Abajur" method="_on_abajur_input_event"]
@@ -404,3 +553,6 @@ volume_db = -15.0
 [connection signal="input_event" from="Moveis/TV+Rack/Area2D" to="Moveis/TV+Rack" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="Moveis/Geladeira+Balcao/Area2D" to="Moveis/Geladeira+Balcao" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="Moveis/Mesa/Area2D" to="Moveis/Mesa" method="_on_area_2d_input_event"]
+[connection signal="pressed" from="UI/Configurações" to="." method="_on_configurações_pressed"]
+[connection signal="pressed" from="UI/Minijogo" to="." method="_on_minijogo_pressed"]
+[connection signal="pressed" from="UI/Menu" to="." method="_on_menu_pressed"]

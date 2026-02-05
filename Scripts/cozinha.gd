@@ -15,6 +15,7 @@ var lista_ids = []
 var indice_atual = 0
 var arrastando = false
 var posicao_prato_inicio
+var nome_comida
 
 var ajuste_escala = {
 	"brigadeiro": Vector2 (0.5, 0.5),
@@ -28,11 +29,16 @@ var ajuste_escala = {
 	"xis": Vector2 (1.1, 1.1),
 	"guarana": Vector2 (0.7, 0.7),
 	"massa": Vector2 (1.2, 1.2),
-	"acai": Vector2 (0.9, 0.9)
+	"acai": Vector2 (0.9, 0.9),
+	"agua": Vector2 (0.7, 0.7),
+	"suco_uva": Vector2 (0.8, 0.8),
+	"suco_laranja": Vector2 (0.8, 0.8),
+	"sorvete": Vector2 (0.9, 0.9)
 }
 
 func _ready() -> void:
 	ubby.animation.play("Esperando comida")
+	ubby.na_sala = false
 	carregar_lista_comidas()
 	atualizar_prato()
 
@@ -55,7 +61,7 @@ func carregar_lista_comidas():
 func atualizar_prato():
 	if lista_ids.size() == 0:
 		return
-	var nome_comida = lista_ids[indice_atual]
+	nome_comida = lista_ids[indice_atual]
 	prato_animation.play(nome_comida)
 	prato_animation.frame = 0
 	prato_animation.stop()
@@ -109,9 +115,24 @@ func comer():
 	ubby.animation.play("Comendo")
 	prato_animation.play()
 	await prato_animation.animation_finished
-	devolver_mesa()
+	prato_animation.visible = false
+	Global.consumir_item(nome_comida)
+	carregar_lista_comidas()
+	if lista_ids.size() > 0:
+		indice_atual = 0
+		devolver_mesa()
+	else:
+		prato.visible = false
+		print("Você comeu tudo!")
+		ubby.animation.play("Esperando comida")
 
 func devolver_mesa():
 	var tween = create_tween()
+	await 30
+	prato_animation.visible = true
 	tween.tween_property(prato, "global_position", posicao_prato_inicio, 0.2)
 	ubby.animation.play("Esperando comida")
+
+func _on_geladeira_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		get_tree().change_scene_to_file("res://Scenes/mercado.tscn")

@@ -8,15 +8,12 @@ extends Button
 @onready var texto_preço: Label = $Preço
 
 func _ready():
-	# 1. Configura o ícone nativo do botão
 	if textura_item:
 		icon = textura_item
-		expand_icon = true # Importante: faz a imagem crescer para caber no botão
-		icon_alignment = HORIZONTAL_ALIGNMENT_CENTER # Centraliza
-		vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP # Põe a imagem mais para cima
-
-	# 2. Configura o preço
-	texto_preço.text = "🪙 " + str(preco)
+		expand_icon = true
+		icon_alignment = HORIZONTAL_ALIGNMENT_CENTER 
+		vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP 
+	texto_preço.text = str(preco)
 
 func _on_pressed() -> void:
 	print("Selecionei " + id_item)

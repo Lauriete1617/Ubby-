@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6hs4l3l5dn3o"]
+
+[ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="1_iri8g"]
+[ext_resource type="Texture2D" uid="uid://befydb0j2vcgy" path="res://Assets/Sprites/Ícones/Ícone menu.png" id="2_wm846"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iri8g"]
+bg_color = Color(0.7254902, 0.6, 0.654902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm846"]
+bg_color = Color(0.505054, 0.23901218, 0.14768091, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbdq1"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21950099, 0.21950105, 0.21950084, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Jogo chovendo moedas" type="Node2D"]
+
+[node name="Ubby" parent="." instance=ExtResource("1_iri8g")]
+position = Vector2(167, 153)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(166, 93)
+zoom = Vector2(3.5, 3.5)
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 331.0
+offset_bottom = 174.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iri8g")
+
+[node name="Chão" type="Panel" parent="."]
+offset_left = -4.0
+offset_top = 173.0
+offset_right = 334.0
+offset_bottom = 188.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm846")
+
+[node name="Pause" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 33.0
+offset_bottom = 29.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_dbdq1")
+icon = ExtResource("2_wm846")
+icon_alignment = 1
+expand_icon = true

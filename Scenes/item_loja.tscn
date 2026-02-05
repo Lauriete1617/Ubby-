@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bci64wgd76opg"]
+[gd_scene load_steps=6 format=3 uid="uid://bci64wgd76opg"]
 
 [ext_resource type="Script" uid="uid://c1u2psuaboatw" path="res://Scripts/item_loja.gd" id="1_loxgc"]
+[ext_resource type="Texture2D" uid="uid://bayxvm5sp4jms" path="res://Assets/Sprites/Ícones/Ícone moeda.png" id="2_wkfx5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loxgc"]
 bg_color = Color(0.19215687, 0.1882353, 0.30980393, 0.4117647)
@@ -55,12 +56,23 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -29.0
+offset_left = -74.0
+offset_top = -38.000015
+offset_right = -46.0
+offset_bottom = -10.000015
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1, 0.9494632)
 theme_override_font_sizes/font_size = 32
-text = "🪙 0  "
+text = " 0"
+
+[node name="Ícone moeda" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 146.0
+offset_right = 180.0
+offset_bottom = 186.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_wkfx5")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,8 +1,93 @@
-[gd_scene format=3 uid="uid://dnhldrdkq0yq3"]
+[gd_scene load_steps=7 format=3 uid="uid://dnhldrdkq0yq3"]
+
+[ext_resource type="Texture2D" uid="uid://b36sx5e7xqd0l" path="res://Assets/Sprites/Ícones/Ícone barra progresso1.png" id="1_313y7"]
+[ext_resource type="Script" uid="uid://d0eevymv6plr5" path="res://Scripts/ui_status.gd" id="1_dbg3f"]
+[ext_resource type="Texture2D" uid="uid://2yw8ovyx1ybf" path="res://Assets/Sprites/Ícones/Ícone barra progresso2.png" id="2_dbg3f"]
+[ext_resource type="Texture2D" uid="uid://b4vxnh1lu04hp" path="res://Assets/Sprites/Ícones/Ícone fome.png" id="4_sqyq0"]
+[ext_resource type="Texture2D" uid="uid://cwosm8hp1y7es" path="res://Assets/Sprites/Ícones/Ícone energia.png" id="5_w1n0b"]
+[ext_resource type="Texture2D" uid="uid://sudryk1l3l01" path="res://Assets/Sprites/Ícones/ícone felicidade.png" id="6_k8rek"]
 
 [node name="UI Status" type="Node2D"]
+z_index = 12
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_dbg3f")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 106.0
+offset_bottom = 32.0
+theme_override_constants/separation = 5
+
+[node name="Status Fome" type="TextureProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
 fill_mode = 3
+texture_under = ExtResource("1_313y7")
+texture_progress = ExtResource("2_dbg3f")
+tint_progress = Color(0.5605231, 0.6872395, 0.2864826, 1)
+
+[node name="Ícone fome" type="TextureRect" parent="HBoxContainer/Status Fome"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.812499
+offset_top = -8.874999
+offset_right = 9.812499
+offset_bottom = 8.874999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_sqyq0")
+
+[node name="Status Energia" type="TextureProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("1_313y7")
+texture_progress = ExtResource("2_dbg3f")
+tint_progress = Color(0.6461457, 0.59703207, 0.7894925, 1)
+
+[node name="Ícone fome" type="TextureRect" parent="HBoxContainer/Status Energia"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.812499
+offset_top = -8.874999
+offset_right = 9.812499
+offset_bottom = 8.874999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_w1n0b")
+
+[node name="Status Felicidade" type="TextureProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("1_313y7")
+texture_progress = ExtResource("2_dbg3f")
+tint_progress = Color(0.78431374, 0.654902, 0.33333334, 1)
+
+[node name="Ícone fome" type="TextureRect" parent="HBoxContainer/Status Felicidade"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.812499
+offset_top = -8.874999
+offset_right = 9.812499
+offset_bottom = 8.874999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_k8rek")

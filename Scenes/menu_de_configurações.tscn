@@ -1,0 +1,236 @@
+[gd_scene load_steps=13 format=3 uid="uid://c1jv4byg7crja"]
+
+[ext_resource type="Script" uid="uid://dgy5s5n56dn5n" path="res://Scripts/menu_de_configurações.gd" id="1_43n5w"]
+[ext_resource type="Texture2D" uid="uid://befydb0j2vcgy" path="res://Assets/Sprites/Ícones/Ícone menu.png" id="1_k0ese"]
+[ext_resource type="Texture2D" uid="uid://bbxdbt24kdvrq" path="res://Assets/Sprites/Ícones/Ícone SFX.png" id="2_3o130"]
+[ext_resource type="Texture2D" uid="uid://dkqf7vugoa3if" path="res://Assets/Sprites/Ícones/Ícone música.png" id="3_n6iy2"]
+[ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="3_s8xcg"]
+[ext_resource type="AudioStream" uid="uid://b2bmayia14l02" path="res://Assets/Efeitos sonoros/Negado.wav" id="4_qgm8k"]
+[ext_resource type="Texture2D" uid="uid://dwkg3ldayei7c" path="res://Assets/Sprites/Ícones/Ícone casa.png" id="5_l0nan"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iac14"]
+bg_color = Color(0.11933493, 0.14593515, 0.27537927, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0ese"]
+bg_color = Color(0.9508919, 0.39022857, 0.4046801, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grcev"]
+border_width_left = 5
+border_width_top = 3
+border_width_right = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4xp8"]
+bg_color = Color(0.38675672, 0.3867566, 0.38675654, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oe3if"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21950099, 0.21950105, 0.21950084, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Menu de configurações" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_43n5w")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iac14")
+
+[node name="Panel" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -251.0
+offset_right = 317.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k0ese")
+
+[node name="Menu" type="VBoxContainer" parent="Background/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = 53.0
+offset_right = -78.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Volume SFX" type="HSlider" parent="Background/Panel/Menu"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="Volume Música" type="HSlider" parent="Background/Panel/Menu"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HSeparator" type="HSeparator" parent="Background/Panel/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxFlat_grcev")
+
+[node name="Tela cheia" type="CheckButton" parent="Background/Panel/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+button_pressed = true
+text = "Tela cheia   "
+alignment = 2
+
+[node name="Botão resetar" type="Button" parent="Background/Panel/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_y4xp8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y4xp8")
+text = "Apagar salvamento"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Panel/Menu"]
+layout_mode = 2
+
+[node name="Aviso" type="VBoxContainer" parent="Background/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.5
+offset_top = -77.5
+offset_right = 258.5
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="texto1" type="Label" parent="Background/Panel/Aviso"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Você tem certeza
+ que quer apagar
+seu progresso?"
+horizontal_alignment = 1
+
+[node name="texto2" type="Label" parent="Background/Panel/Aviso"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Esta ação não pode ser desfeita"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Panel/Aviso"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Botão sim" type="Button" parent="Background/Panel/Aviso/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_y4xp8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y4xp8")
+text = "Sim"
+
+[node name="Botão não" type="Button" parent="Background/Panel/Aviso/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_y4xp8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y4xp8")
+text = "Não"
+
+[node name="Ícone SFX" type="TextureRect" parent="Background/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_right = 30.5
+offset_bottom = 58.0
+grow_horizontal = 2
+texture = ExtResource("2_3o130")
+
+[node name="Ícone Música" type="TextureRect" parent="Background/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = 118.0
+offset_right = 25.0
+offset_bottom = 162.0
+grow_horizontal = 2
+texture = ExtResource("3_n6iy2")
+
+[node name="Menu" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 23.0
+offset_right = 101.0
+offset_bottom = 92.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oe3if")
+icon = ExtResource("1_k0ese")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Casa" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 25.0
+offset_right = 200.0
+offset_bottom = 94.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oe3if")
+icon = ExtResource("5_l0nan")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sons" type="Node" parent="."]
+
+[node name="SFX botão" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("3_s8xcg")
+bus = &"SFX"
+
+[node name="SFX apagar" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("4_qgm8k")
+bus = &"SFX"
+
+[connection signal="value_changed" from="Background/Panel/Menu/Volume SFX" to="." method="_on_volume_sfx_value_changed"]
+[connection signal="value_changed" from="Background/Panel/Menu/Volume Música" to="." method="_on_volume_música_value_changed"]
+[connection signal="toggled" from="Background/Panel/Menu/Tela cheia" to="." method="_on_tela_cheia_toggled"]
+[connection signal="pressed" from="Background/Panel/Menu/Botão resetar" to="." method="_on_botão_resetar_pressed"]
+[connection signal="pressed" from="Background/Panel/Aviso/HBoxContainer/Botão sim" to="." method="_on_botão_sim_pressed"]
+[connection signal="pressed" from="Background/Panel/Aviso/HBoxContainer/Botão não" to="." method="_on_botão_não_pressed"]
+[connection signal="pressed" from="Background/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Background/Casa" to="." method="_on_casa_pressed"]

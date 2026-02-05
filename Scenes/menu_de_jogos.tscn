@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://horber7wfdiu"]
+
+[ext_resource type="Texture2D" uid="uid://befydb0j2vcgy" path="res://Assets/Sprites/Ícones/Ícone menu.png" id="1_0o5v8"]
+[ext_resource type="Script" uid="uid://cvsjixa6x54ig" path="res://Scripts/menu_de_jogos.gd" id="1_2cjbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh1bt"]
+bg_color = Color(0.11764706, 0.14509805, 0.27450982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxdcv"]
+bg_color = Color(0.9508919, 0.39022857, 0.4046801, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae112"]
+bg_color = Color(0.38675672, 0.3867566, 0.38675654, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcmoq"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21950099, 0.21950105, 0.21950084, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Menu de jogos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2cjbi")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nh1bt")
+
+[node name="Panel" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.5
+offset_top = -251.0
+offset_right = 441.5
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxdcv")
+
+[node name="Sobre jogo selecionado" type="VBoxContainer" parent="Background/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.5
+offset_top = -212.0
+offset_right = 268.5
+offset_bottom = 210.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+
+[node name="título_jogo" type="Label" parent="Background/Panel/Sobre jogo selecionado"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "ta chovendo moeda"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="descrição_jogo" type="Label" parent="Background/Panel/Sobre jogo selecionado"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 32
+text = "Pegue o máximo de moedas que puder, mas cuidado com as bombas..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Botão jogar" type="Button" parent="Background/Panel/Sobre jogo selecionado"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ae112")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ae112")
+text = "Jogar"
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 23.0
+offset_right = 101.0
+offset_bottom = 92.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_pcmoq")
+icon = ExtResource("1_0o5v8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SFX Botão" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="Background/Panel/Sobre jogo selecionado/Botão jogar" to="." method="_on_botão_jogar_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

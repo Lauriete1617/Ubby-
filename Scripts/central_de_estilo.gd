@@ -15,6 +15,7 @@ extends Control
 # --- VARIÁVEIS DE CONTROLE ---
 var item_selecionado = null 
 @export var grades_de_itens: Array[GridContainer]
+@onready var ícone_moeda: TextureRect = $"Ícone moeda"
 
 # --- SONS ---
 @onready var sfx_botão: AudioStreamPlayer2D = $"Sons/SFX Botão"
@@ -22,22 +23,19 @@ var item_selecionado = null
 @onready var sfx_sair: AudioStreamPlayer2D = $"Sons/SFX Sair"
 
 func _ready():
-	# Começa escondendo o botão grande e atualizando o dinheiro
 	botao_acao.visible = false
 	atualizar_moedas_visual()
 	
-	# Conecta todos os botões das grades automaticamente
 	for grade in grades_de_itens:
 		for botao in grade.get_children():
 			if botao.has_signal("pressed"):
 				botao.pressed.connect(_on_item_clicado.bind(botao))
-				
-				# Se eu já comprei o item, esconde a etiqueta de preço na prateleira
 				if botao.id_item in Global.itens_desbloqueados:
 					botao.texto_preço.visible = false
+					ícone_moeda.visible = false
 
 func atualizar_moedas_visual():
-	text_moedas.text = "🪙 " + str(Global.moedas)
+	text_moedas.text = str(Global.moedas)
 
 # --- QUANDO CLICAS NUM ITEM NA PRATELEIRA ---
 func _on_item_clicado(botao):
@@ -79,7 +77,7 @@ func _on_item_clicado(botao):
 	else:
 		# Se não tenho, o botão serve para comprar... SE tiver dinheiro!
 		if Global.moedas >= botao.preco:
-			botao_acao.text = "COMPRAR " + str(botao.preco) + " 🪙"
+			botao_acao.text = "COMPRAR " + str(botao.preco)
 			botao_acao.disabled = false 
 		else:
 			# Feedback visual no próprio botão
@@ -124,10 +122,7 @@ func _on_botao_acao_pressed():
 			Global.moedas -= item_selecionado.preco
 			Global.itens_desbloqueados.append(item_selecionado.id_item)
 			Global.salvar_jogo()
-			
 			atualizar_moedas_visual()
-			
-			# Atualiza o botão instantaneamente para "EQUIPAR"
 			_on_item_clicado(item_selecionado)
 			
 		else:

@@ -1,5 +1,13 @@
 extends Node
 
+# --- CONFIGURAÇÕES ---
+var vol_sfx: float = 1.0
+var vol_musica: float = 1.0
+var fullscreen: bool = true
+var last_login_time = 0
+# Arquivo separado para guardar as configurações
+var config_path = "user://settings.cfg"
+
 # --- VISUAL ATUAL---
 var acessorios = {
 	"oculos": -1,
@@ -10,20 +18,22 @@ var acessorios = {
 }
 
 # --- ITENS ADQUIRIDOS ---
-var moedas: int = 1000 
+var moedas: int = 500 
 var itens_desbloqueados: Array = []
-
-# --- NOVO: INVENTÁRIO DE COMIDAS ---
-# Guarda o que o Ubby TEM na mochila. Ex: {"coxinha": 2, "cafe": 5}
 var inventario_comidas: Dictionary = {} 
+var cores_desbloqueadas: Array = []
 
 # --- ESTADOS ---
 var fome = 100
 var sono = 100
 var felicidade = 100
+var taxa_decaimento = 100.0/86400.0
+
+# --- OCUPAÇÕES ---
+var assistindo_tv = false
+var deitado = false
 
 # --- CARDAPIO (CONSTANTE) ---
-# Corrigido: Usando ':' em vez de '=' e padronizado "preco"
 const CARDAPIO = {
 	"acai": {
 		"nome": "Açaí completo",
@@ -33,6 +43,33 @@ const CARDAPIO = {
 		"felicidade": 15,
 		"desc": "Energia em uma tigela",
 		"icon": "res://Assets/Sprites/Comidas/Açaí1.png"
+	},
+	"agua": {
+		"nome": "Água mineral",
+		"preco": 9,
+		"fome": 2,
+		"energia": 10,
+		"felicidade": 4,
+		"desc": "HIDRATE-SE!!!",
+		"icon": "res://Assets/Sprites/Comidas/Água.png" 
+	},
+	"banana": {
+		"nome": "Banana prata",
+		"preco": 18,
+		"fome": 12,
+		"energia": 5,
+		"felicidade": 3,
+		"desc": "POTÁSSIO",
+		"icon": "res://Assets/Sprites/Comidas/Banana.png"
+	},
+	"batata_frita": {
+		"nome": "Batata frita",
+		"preco": 18,
+		"fome": 15,
+		"energia": 2,
+		"felicidade": 10,
+		"desc": "Gordurosas e deliciosas",
+		"icon": "res://Assets/Sprites/Comidas/Batata frita.png"
 	},
 	"brigadeiro": {
 		"nome": "Brigadeiro",
@@ -142,6 +179,33 @@ const CARDAPIO = {
 		"desc": "Refrescante e colorida",
 		"icon": "res://Assets/Sprites/Comidas/Salada de frutas1.png"
 	},
+	"sorvete": {
+		"nome": "Sorvete",
+		"preco": 32,
+		"fome": 15,
+		"felicidade": 25,
+		"energia": 8,
+		"desc": "O clássico napolitano",
+		"icon": "res://Assets/Sprites/Comidas/Sorvete.png"
+	},
+	"suco_laranja": {
+		"nome": "Suco de laranja",
+		"preco": 10,
+		"fome": 6, 
+		"felicidade": 8,
+		"energia": 12,
+		"desc": "Cheio de vitamina C e açúcar",
+		"icon": "res://Assets/Sprites/Comidas/Suco de laranja.png"
+	},
+	"suco_uva": {
+		"nome": "Suco de uva",
+		"preco": 10,
+		"fome": 6,
+		"felicidade": 8,
+		"energia": 12,
+		"desc": "Suco natural pra fingir que é vinho",
+		"icon": "res://Assets/Sprites/Comidas/Suco de uva 1.png"
+	},
 	"xis": {
 		"nome": "Xis tudo",
 		"preco": 45,
@@ -150,38 +214,53 @@ const CARDAPIO = {
 		"energia": -20,
 		"desc": "Gigante e beeem recheado",
 		"icon": "res://Assets/Sprites/Comidas/Xis1.png"
-	} # Removida a vírgula extra no final
+	} 
 }
 
 func _ready():
 	carregar_jogo()
+	carregar_config()
+
+func _process(delta: float) -> void:
+	if fome > 0:
+		fome -= taxa_decaimento * delta
+	else:
+		fome = 0
+	if sono > 0:
+		sono -= taxa_decaimento * delta
+	else:
+		sono = 0
+	if felicidade > 0:
+		felicidade -= taxa_decaimento * delta
+	else:
+		felicidade = 0
 
 func carregar_jogo():
 	if not FileAccess.file_exists("user://savegame.save"):
 		return 
-
 	var file = FileAccess.open("user://savegame.save", FileAccess.READ)
 	var dados_salvos = file.get_var()
-	
 	if dados_salvos:
 		acessorios = dados_salvos["acessorios"]
 		fome = dados_salvos["fome"]
 		sono = dados_salvos["sono"]
 		felicidade = dados_salvos["felicidade"]
 		
-		# NÃO carregamos o CARDAPIO, ele é fixo no código.
-		
 		moedas = dados_salvos.get("moedas", 500) 
 		itens_desbloqueados = dados_salvos.get("itens_desbloqueados", [])
-		
-		# Carregamos o inventário de comidas (se existir, senão cria vazio)
 		inventario_comidas = dados_salvos.get("inventario_comidas", {})
+		
+		if dados_salvos.has("timestamp"):
+			var tempo_salvo = dados_salvos["timestamp"]
+			var agora = Time.get_unix_time_from_system()
+			var segundos_offline = agora - tempo_salvo
+			print("Você ficou fora por " + str(segundos_offline) + " segundos")
+			aplicar_decaimento_offline(segundos_offline)
 		
 		print("Jogo carregado! Moedas: ", moedas)
 
 func salvar_jogo():
 	var file = FileAccess.open("user://savegame.save", FileAccess.WRITE)	
-	
 	file.store_var({
 		"acessorios": acessorios,
 		"fome": fome,
@@ -189,8 +268,8 @@ func salvar_jogo():
 		"felicidade": felicidade,
 		"moedas": moedas,
 		"itens_desbloqueados": itens_desbloqueados,
-		"inventario_comidas": inventario_comidas # Salvamos o inventário!
-		# Não salvamos o CARDAPIO aqui.
+		"inventario_comidas": inventario_comidas,
+		"timestamp": Time.get_unix_time_from_system()
 	})
 	print("Jogo salvo com sucesso!")
 
@@ -207,10 +286,71 @@ func consumir_item(id_item: String):
 	sono = clamp(sono, 0, 100)
 	felicidade += dados["felicidade"]
 	felicidade = clamp(felicidade, 0 ,100)
-# --- DMINUIR DO INVENTARIO --- 
+# --- DIMINUIR DO INVENTARIO --- 
 	if inventario_comidas.has(id_item):
 		inventario_comidas[id_item] -= 1
 		if inventario_comidas[id_item] <= 0:
 			inventario_comidas.erase(id_item)
 			print(dados["nome"] + " acabou")
 	salvar_jogo()
+
+func resetar_dados():
+# --- VARIAVEIS SIMPLES ---
+	fome = 100
+	sono = 100
+	felicidade = 100
+	moedas = 500
+# --- DICIONARIOS ---
+	inventario_comidas.clear()
+	itens_desbloqueados.clear()
+	cores_desbloqueadas.clear()
+	acessorios = {
+	"oculos": -1,
+	"chapeu": -1,
+	"roupa": -1,
+	"sapato": -1,
+	"pescoço": -1
+}
+
+func carregar_config():
+	var config = ConfigFile.new()
+	var erro = config.load(config_path)
+	# Se o arquivo existir (erro == OK) carrega, senão vai o padrão
+	if erro == OK:
+		vol_musica = config.get_value("Audio", "Musica",1.0)
+		vol_sfx = config.get_value("Audio", "SFX", 1.0)
+		fullscreen = config.get_value("Video", "fullscreen",true)
+		aplicar_audio()
+		aplicar_video()
+
+func salvar_config():
+	var config = ConfigFile.new()
+	# Seção de áudio nas configurações
+	config.set_value("Audio","Musica", vol_musica)
+	config.set_value("Audio", "SFX", vol_sfx)
+	# Seção de vídeo nas configurações
+	config.set_value("Video","fullscreen",fullscreen)
+	# Salvar as configurações no disco
+	config.save(config_path)
+
+func aplicar_audio():
+	var bus_sfx = AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_volume_db(bus_sfx,linear_to_db(vol_sfx))
+	var bus_musica = AudioServer.get_bus_index("Música")
+	AudioServer.set_bus_volume_db(bus_musica,linear_to_db(vol_musica))
+
+func aplicar_video():
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func aplicar_decaimento_offline(segundos):
+	var tempo_total_para_zerar = 86400.0
+	var pontos_perdidos = (segundos / tempo_total_para_zerar)*100
+	fome -= pontos_perdidos
+	sono -= pontos_perdidos
+	felicidade -= pontos_perdidos
+	fome = clamp(fome, 0, 100)
+	sono = clamp(sono, 0 ,100)
+	felicidade = clamp(felicidade, 0 ,100)

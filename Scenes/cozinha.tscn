@@ -1,20 +1,28 @@
-[gd_scene load_steps=78 format=3 uid="uid://f80c84m7557g"]
+[gd_scene load_steps=102 format=3 uid="uid://f80c84m7557g"]
 
 [ext_resource type="Texture2D" uid="uid://bn08oqwkb3lvk" path="res://Assets/Sprites/Cenário/Background cozinha.png" id="1_3oghi"]
 [ext_resource type="Script" uid="uid://ccn5jvr5yd6cj" path="res://Scripts/cozinha.gd" id="1_e6ek4"]
 [ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="2_tl1eq"]
 [ext_resource type="Texture2D" uid="uid://ctxwc85u2yidk" path="res://Assets/Sprites/Cenário/Mesa cozinha.png" id="3_e6ek4"]
+[ext_resource type="Texture2D" uid="uid://b7xyhxrtjlcib" path="res://Assets/Sprites/Cenário/Chaleira.png" id="3_tn0yt"]
 [ext_resource type="Texture2D" uid="uid://qdh0ovil8ymt" path="res://Assets/Sprites/Ubby/Garfo e faca.png" id="5_54nwf"]
 [ext_resource type="Texture2D" uid="uid://d3h1xjbg25jrx" path="res://Assets/Sprites/Cenário/Jogo americano.png" id="6_iupae"]
 [ext_resource type="Texture2D" uid="uid://b6vbd17lkui3v" path="res://Assets/Sprites/Comidas/Açaí1.png" id="7_ew3xw"]
 [ext_resource type="Texture2D" uid="uid://dxovoe7hyrq33" path="res://Assets/Sprites/Comidas/Açaí2.png" id="8_gh2n8"]
 [ext_resource type="Texture2D" uid="uid://b5cgaq210ucug" path="res://Assets/Sprites/Comidas/Açaí3.png" id="9_sqqck"]
+[ext_resource type="Texture2D" uid="uid://vk7q3slgnyiu" path="res://Assets/Sprites/Comidas/Água.png" id="10_2a1go"]
 [ext_resource type="Texture2D" uid="uid://boh4mv20d0xfj" path="res://Assets/Sprites/Comidas/Brigadeiro1.png" id="10_73km8"]
+[ext_resource type="Texture2D" uid="uid://fm5d1p0ll83q" path="res://Assets/Sprites/Comidas/Água 2.png" id="11_278uf"]
 [ext_resource type="Texture2D" uid="uid://boba7jh48fjgx" path="res://Assets/Sprites/Comidas/Brigadeiro2.png" id="11_ddjjm"]
 [ext_resource type="Texture2D" uid="uid://ep7r1moy8se1" path="res://Assets/Sprites/Comidas/Brigadeiro3.png" id="12_36d6d"]
+[ext_resource type="Texture2D" uid="uid://btlrbjx1lvgct" path="res://Assets/Sprites/Comidas/Água 3.png" id="12_tn0yt"]
+[ext_resource type="Texture2D" uid="uid://bvywmc8aetkce" path="res://Assets/Sprites/Comidas/Batata frita.png" id="13_0tuyb"]
 [ext_resource type="Texture2D" uid="uid://b03x3txi1mwu2" path="res://Assets/Sprites/Comidas/Café1.png" id="13_nmadc"]
+[ext_resource type="Texture2D" uid="uid://dl2owpmrr0huf" path="res://Assets/Sprites/Comidas/Banana.png" id="14_0tuyb"]
 [ext_resource type="Texture2D" uid="uid://bjn46tv76bi3q" path="res://Assets/Sprites/Comidas/Café2.png" id="14_b1avh"]
+[ext_resource type="Texture2D" uid="uid://y132d2yxavlv" path="res://Assets/Sprites/Comidas/Batata frita 2.png" id="14_eiipu"]
 [ext_resource type="Texture2D" uid="uid://xp82cihxi2r0" path="res://Assets/Sprites/Comidas/Café3.png" id="15_gc0qc"]
+[ext_resource type="Texture2D" uid="uid://de0c7in01adui" path="res://Assets/Sprites/Comidas/Batata frita 3.png" id="15_ua065"]
 [ext_resource type="Texture2D" uid="uid://50gcrxxcwqlk" path="res://Assets/Sprites/Comidas/Chimarrão1.png" id="16_4j7s1"]
 [ext_resource type="Texture2D" uid="uid://bk6iwlm670b85" path="res://Assets/Sprites/Comidas/Chimarrão2.png" id="17_ht4ha"]
 [ext_resource type="Texture2D" uid="uid://c45l4ojbjq3dr" path="res://Assets/Sprites/Comidas/Chimarrão3.png" id="18_fv1m6"]
@@ -45,12 +53,25 @@
 [ext_resource type="Texture2D" uid="uid://3trsscyy74eu" path="res://Assets/Sprites/Comidas/Salada de frutas3.png" id="43_8qbkw"]
 [ext_resource type="Texture2D" uid="uid://cxlrb0j1j5iem" path="res://Assets/Sprites/Comidas/Xis1.png" id="44_vh1q0"]
 [ext_resource type="Texture2D" uid="uid://btjuf5y2tp34y" path="res://Assets/Sprites/Comidas/Xis2.png" id="45_8sdgr"]
+[ext_resource type="Texture2D" uid="uid://briygujwu6hwo" path="res://Assets/Sprites/Comidas/Sorvete.png" id="45_c16me"]
+[ext_resource type="Texture2D" uid="uid://dwdqxy4rfl7gb" path="res://Assets/Sprites/Comidas/Suco de laranja.png" id="46_lfs70"]
 [ext_resource type="Texture2D" uid="uid://d1d5ciaxis4g6" path="res://Assets/Sprites/Comidas/Xis3.png" id="46_v0cq2"]
+[ext_resource type="Texture2D" uid="uid://d3ws5yyi3m4h4" path="res://Assets/Sprites/Comidas/Suco de uva.png" id="47_g16oj"]
 [ext_resource type="Texture2D" uid="uid://cey6k8b4ntt1g" path="res://Assets/Sprites/Ícones/Ícone flecha.png" id="47_s3mah"]
 [ext_resource type="Texture2D" uid="uid://h1yrfkw5tkpt" path="res://Assets/Sprites/Ícones/Ícone fechar.png" id="48_ddjjm"]
+[ext_resource type="PackedScene" uid="uid://dnhldrdkq0yq3" path="res://Scenes/ui_status.tscn" id="49_gc0qc"]
 [ext_resource type="AudioStream" uid="uid://b2bmayia14l02" path="res://Assets/Efeitos sonoros/Negado.wav" id="49_nmadc"]
 [ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="50_b1avh"]
 [ext_resource type="AudioStream" uid="uid://c0u80pm803ngf" path="res://Assets/Efeitos sonoros/Comendo.wav" id="51_b1avh"]
+[ext_resource type="Texture2D" uid="uid://c8blcoxv7svoc" path="res://Assets/Sprites/Comidas/Sorvete 2.png" id="51_nxa7n"]
+[ext_resource type="Texture2D" uid="uid://dhp7drbn3vxn0" path="res://Assets/Sprites/Comidas/Sorvete 3.png" id="52_ox3up"]
+[ext_resource type="Texture2D" uid="uid://cjkw653vdx5eq" path="res://Assets/Sprites/Comidas/Suco de laranja 2.png" id="54_hcccy"]
+[ext_resource type="Texture2D" uid="uid://c5yvnx3fqpshd" path="res://Assets/Sprites/Comidas/Suco de laranja 3.png" id="55_87jmd"]
+[ext_resource type="Texture2D" uid="uid://fprsbu0ftm5l" path="res://Assets/Sprites/Comidas/Suco de uva 1.png" id="56_dk8tg"]
+[ext_resource type="Texture2D" uid="uid://dhe61b1sq76pl" path="res://Assets/Sprites/Comidas/Suco de uva 2.png" id="57_a2axt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_278uf"]
+size = Vector2(34, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_276l7"]
 atlas = ExtResource("7_ew3xw")
@@ -62,6 +83,14 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i21om"]
 atlas = ExtResource("9_sqqck")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6hp5"]
+atlas = ExtResource("10_2a1go")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiipu"]
+atlas = ExtResource("14_0tuyb")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yi0wr"]
@@ -148,6 +177,18 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("34_ua065")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_57tl3"]
+atlas = ExtResource("45_c16me")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdyax"]
+atlas = ExtResource("46_lfs70")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyca1"]
+atlas = ExtResource("47_g16oj")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dexej"]
 animations = [{
 "frames": [{
@@ -162,6 +203,42 @@ animations = [{
 }],
 "loop": false,
 "name": &"acai",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6hp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_278uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tn0yt")
+}],
+"loop": false,
+"name": &"agua",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiipu")
+}],
+"loop": false,
+"name": &"banana",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_0tuyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_eiipu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ua065")
+}],
+"loop": false,
+"name": &"batata_frita",
 "speed": 1.5
 }, {
 "frames": [{
@@ -328,6 +405,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_57tl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_nxa7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ox3up")
+}],
+"loop": false,
+"name": &"sorvete",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdyax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_hcccy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_87jmd")
+}],
+"loop": false,
+"name": &"suco_laranja",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_dk8tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_a2axt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyca1")
+}],
+"loop": false,
+"name": &"suco_uva",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("44_vh1q0")
 }, {
 "duration": 1.0,
@@ -353,11 +472,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -2.0
 offset_top = -1.0
-offset_right = 145.0
+offset_right = 146.0
 offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3oghi")
+
+[node name="Chaleira" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 2.0
+offset_right = 64.0
+offset_bottom = 42.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_tn0yt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(72, 40)
@@ -388,13 +516,19 @@ texture = ExtResource("6_iupae")
 [node name="Boca" type="Marker2D" parent="."]
 position = Vector2(71, 33)
 
+[node name="Geladeira" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geladeira"]
+position = Vector2(128, 35)
+shape = SubResource("RectangleShape2D_278uf")
+
 [node name="Prato selecionado" type="Area2D" parent="."]
 position = Vector2(71, 63)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Prato selecionado"]
 z_index = 10
 sprite_frames = SubResource("SpriteFrames_dexej")
-animation = &"xis"
+animation = &"banana"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Prato selecionado"]
 shape = SubResource("RectangleShape2D_nmadc")
@@ -435,17 +569,25 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="UI Status" parent="Interface" instance=ExtResource("49_gc0qc")]
+position = Vector2(99.99999, 1.9999999)
+scale = Vector2(0.4, 0.4)
+
 [node name="Sons" type="Node2D" parent="."]
 
 [node name="SFX Sair" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("49_nmadc")
+bus = &"SFX"
 
 [node name="SFX Botões" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("50_b1avh")
+bus = &"SFX"
 
 [node name="SFX Comer" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("51_b1avh")
+bus = &"SFX"
 
+[connection signal="input_event" from="Geladeira" to="." method="_on_geladeira_input_event"]
 [connection signal="input_event" from="Prato selecionado" to="." method="_on_prato_selecionado_input_event"]
 [connection signal="pressed" from="Interface/Botão direita" to="." method="_on_botão_direita_pressed"]
 [connection signal="pressed" from="Interface/Botão esquerda" to="." method="_on_botão_esquerda_pressed"]

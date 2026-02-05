@@ -14,6 +14,18 @@ extends CharacterBody2D
 @onready var slot_sapato: Sprite2D = $Visual/Acessórios/SlotSapato
 @onready var slot_roupa: Sprite2D = $Visual/Acessórios/SlotRoupa
 
+# --- CORES DE PELOS ---
+var cores_pelo = {
+	"padrao": "fffeff",
+	"dourado": "fffeac",
+	"roxo": "fc8aff",
+	"vermelho": "fc887b",
+	"verde": "a9ff9b",
+	"azul": "68feff",
+	"rosa": "ff8ac8",
+	"marrom": "e98566"
+}
+
 # --- CATÁLOGOS ---
 var catalogo_oculos = {
 	"oculos_roxo": preload("res://Assets/Sprites/Acessórios/Óculos roxo.png"), 
@@ -42,7 +54,8 @@ var catalogo_chapeu = {
 	"brincos": preload("res://Assets/Sprites/Acessórios/Brincos.png"),
 	"tiara": preload("res://Assets/Sprites/Acessórios/Tiara.png"),
 	"touca_cetim": preload("res://Assets/Sprites/Acessórios/Touca de cetim.png"),
-	"cartola": preload("res://Assets/Sprites/Acessórios/Cartola.png")
+	"cartola": preload("res://Assets/Sprites/Acessórios/Cartola.png"),
+	"cesto_cabeça": preload("res://Assets/Sprites/Acessórios/Cesto na cabeça.png")
 }
 
 var catalogo_pescoço = {
@@ -90,55 +103,47 @@ var catalogo_sapato = {
 
 func _ready() -> void:
 	atualizar_visual()
+	animation.play("Oi")
+	await animation.animation_finished
 	animation.play("Idle")
 
 func atualizar_visual():
-	# Agora chamamos a função auxiliar para CADA parte do corpo
-	# (O Slot Visual, O ID salvo no Global, O Catálogo correto)
-	
 	# 1. Óculos
 	atualizar_slot_individual(slot_oculos, Global.acessorios["oculos"], catalogo_oculos)
-	
 	# 2. Chapéu
 	atualizar_slot_individual(slot_chapeu, Global.acessorios["chapeu"], catalogo_chapeu)
-	
-	# 3. Pescoço (Cuidado com a chave no Global se tem cedilha ou não)
-	# Assumindo que no Global.gd a chave é "pescoço"
+	# 3. Pescoço
 	atualizar_slot_individual(slot_pescoço, Global.acessorios["pescoço"], catalogo_pescoço)
-	
 	# 4. Roupa
 	atualizar_slot_individual(slot_roupa, Global.acessorios["roupa"], catalogo_roupa)
-	
-	# 5. Sapatos (No Global.gd a chave é "sapato" ou "sapatos"? Verifica isso!)
-	# Vou usar "sapato" igual ao botão da loja
+	# 5. Sapatos
 	atualizar_slot_individual(slot_sapato, Global.acessorios["sapato"], catalogo_sapato)
-
-# --- NOVA FUNÇÃO INTELIGENTE ---
-# Ela recebe o slot e o item e faz o trabalho sujo de verificar tudo
-func atualizar_slot_individual(sprite_slot, id_item, catalogo):
-	# Segurança: Converte para string
-	var id_str = str(id_item)
+	# 6. Cor do pêlo
 	
-	# 1. Verifica se é para remover (vazio, -1, null)
+
+func atualizar_slot_individual(sprite_slot, id_item, catalogo):
+	var id_str = str(id_item)
 	if id_str == "-1" or id_str == "" or id_str == "null":
 		sprite_slot.visible = false
 		sprite_slot.texture = null
-		
 	# 2. Verifica se o item existe no catálogo específico
 	elif id_item in catalogo:
 		sprite_slot.visible = true
 		sprite_slot.texture = catalogo[id_item]
-		# print("Equipado: ", id_item) # Descomenta se quiser debug
-		
+		print("Equipado: ", id_item)
 	# 3. Se deu erro (tá no Global mas não no catálogo)
 	else:
 		print("Erro visual: Item '", id_item, "' não encontrado neste catálogo.")
 		sprite_slot.visible = false
 
-# --- INTERAÇÃO ---
+# --- INTERAÇÃO DE CARINHO---
+var na_sala = true
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-		dar_carinho()
+		if na_sala:
+			dar_carinho()
+		else:
+			return
 
 func dar_carinho():
 	sfx_carinho.play()
@@ -146,3 +151,7 @@ func dar_carinho():
 	animation.play("Carinho")
 	await animation.animation_finished
 	animation.play("Idle")
+	Global.felicidade += 2
+
+# --- MOVIMENTAÇÃO MINIGAME ---
+var jogando = false
