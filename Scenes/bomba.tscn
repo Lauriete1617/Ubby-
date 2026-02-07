@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt1dl07mxjtnb"]
+
+[ext_resource type="Script" uid="uid://d0ucejxt2nwl0" path="res://Scripts/bomba.gd" id="1_gurh3"]
+[ext_resource type="Texture2D" uid="uid://0dovyansld7e" path="res://Assets/Sprites/Ícones/Bomba.png" id="1_lcqd8"]
+[ext_resource type="Texture2D" uid="uid://bvc1vm213xywe" path="res://Assets/Sprites/Ícones/Bomba2.png" id="2_gurh3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8nt3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lcqd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gurh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v62er"]
+radius = 3.0
+
+[node name="Bomba" type="Area2D"]
+script = ExtResource("1_gurh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s8nt3")
+autoplay = "default"
+frame_progress = 0.2687565
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_v62er")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

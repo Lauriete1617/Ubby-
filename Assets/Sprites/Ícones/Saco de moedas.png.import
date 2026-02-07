@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckgr2agatpk60"
-path="res://.godot/imported/Moeda.jpg-646c6e6bb8672c726755207328f8a026.ctex"
+uid="uid://yexv6hrnc88o"
+path="res://.godot/imported/Saco de moedas.png-764fc817649deebf39381c11ae88f572.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ícones/Moeda.jpg"
-dest_files=["res://.godot/imported/Moeda.jpg-646c6e6bb8672c726755207328f8a026.ctex"]
+source_file="res://Assets/Sprites/Ícones/Saco de moedas.png"
+dest_files=["res://.godot/imported/Saco de moedas.png-764fc817649deebf39381c11ae88f572.ctex"]
 
 [params]
 

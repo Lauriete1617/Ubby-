@@ -155,3 +155,33 @@ func dar_carinho():
 
 # --- MOVIMENTAÇÃO MINIGAME ---
 var jogando = false
+const VELOCIDADE = 300.0
+
+func _physics_process(delta: float) -> void:
+	if not jogando:
+		return
+	var direcao = 0.0
+	var input_teclado = Input.get_axis("Esquerda", "Direita")
+	if input_teclado != 0:
+		direcao = input_teclado
+	# 2. MOUSE
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		var mouse_x = get_global_mouse_position().x 
+		var distancia = mouse_x - global_position.x
+		if abs(distancia) > 10:
+			direcao = sign(distancia)
+	# 3. APLICAR MOVIMENTO
+	if direcao:
+		velocity.x = direcao * VELOCIDADE
+		animation.play("Andando")
+		# Flip horizontal
+		if direcao < 0:
+			$Visual.scale.x = -1
+		else:
+			$Visual.scale.x = 1
+	else:
+		velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
+		animation.play("Idle")
+	move_and_slide()
+	# 4. LIMITE DA TELA
+	global_position.x = clamp(global_position.x, 20, 296)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6hs4l3l5dn3o"]
+[gd_scene load_steps=7 format=3 uid="uid://b6hs4l3l5dn3o"]
 
+[ext_resource type="Script" uid="uid://b3cuhais2j06b" path="res://Scripts/jogo_chovendo_moedas.gd" id="1_dbdq1"]
 [ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="1_iri8g"]
-[ext_resource type="Texture2D" uid="uid://befydb0j2vcgy" path="res://Assets/Sprites/Ícones/Ícone menu.png" id="2_wm846"]
+[ext_resource type="Texture2D" uid="uid://cmrnlov4ndpou" path="res://Assets/Sprites/Ícones/Ícone pause.png" id="3_dbdq1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iri8g"]
 bg_color = Color(0.7254902, 0.6, 0.654902, 1)
@@ -22,6 +23,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="Jogo chovendo moedas" type="Node2D"]
+script = ExtResource("1_dbdq1")
 
 [node name="Ubby" parent="." instance=ExtResource("1_iri8g")]
 position = Vector2(167, 153)
@@ -48,6 +50,13 @@ offset_top = 6.0
 offset_right = 33.0
 offset_bottom = 29.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_dbdq1")
-icon = ExtResource("2_wm846")
+icon = ExtResource("3_dbdq1")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Spawner timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="timeout" from="Spawner timer" to="." method="_on_spawner_timer_timeout"]
