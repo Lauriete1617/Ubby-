@@ -15,7 +15,7 @@ extends Control
 # --- VARIÁVEIS DE CONTROLE ---
 var item_selecionado = null 
 @export var grades_de_itens: Array[GridContainer]
-@onready var ícone_moeda: TextureRect = $"Ícone moeda"
+@onready var ícone_moeda: TextureRect = $"HBoxContainer/Provador/Moedas/Ícone moeda"
 
 # --- SONS ---
 @onready var sfx_botão: AudioStreamPlayer2D = $"Sons/SFX Botão"
