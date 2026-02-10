@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://horber7wfdiu"]
+[gd_scene load_steps=8 format=3 uid="uid://horber7wfdiu"]
 
-[ext_resource type="Texture2D" uid="uid://befydb0j2vcgy" path="res://Assets/Sprites/Ícones/Ícone menu.png" id="1_0o5v8"]
 [ext_resource type="Script" uid="uid://cvsjixa6x54ig" path="res://Scripts/menu_de_jogos.gd" id="1_2cjbi"]
+[ext_resource type="Texture2D" uid="uid://dwkg3ldayei7c" path="res://Assets/Sprites/Ícones/Ícone casa.png" id="2_2cjbi"]
+[ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="3_2cjbi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh1bt"]
 bg_color = Color(0.11764706, 0.14509805, 0.27450982, 1)
@@ -98,18 +99,19 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ae112")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ae112")
 text = "Jogar"
 
-[node name="Menu" type="Button" parent="."]
+[node name="Casa" type="Button" parent="."]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 23.0
 offset_right = 101.0
 offset_bottom = 92.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_pcmoq")
-icon = ExtResource("1_0o5v8")
+icon = ExtResource("2_2cjbi")
 icon_alignment = 1
 expand_icon = true
 
 [node name="SFX Botão" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2cjbi")
 
 [connection signal="pressed" from="Background/Panel/Sobre jogo selecionado/Botão jogar" to="." method="_on_botão_jogar_pressed"]
-[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Casa" to="." method="_on_casa_pressed"]

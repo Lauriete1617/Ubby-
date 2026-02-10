@@ -50,7 +50,7 @@ func _on_spawner_timer_timeout() -> void:
 		return
 	var sorteio = randi() %100
 	var novo_item
-	if sorteio < 70:
+	if sorteio < 60:
 		novo_item = cena_moeda.instantiate()
 	elif sorteio < 90:
 		novo_item = cena_bomba.instantiate()

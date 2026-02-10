@@ -55,7 +55,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Spawner timer" type="Timer" parent="."]
-wait_time = 0.8
+wait_time = 0.6
 autostart = true
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

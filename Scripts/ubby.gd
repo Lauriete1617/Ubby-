@@ -37,7 +37,7 @@ var catalogo_oculos = {
 	"oculos_nerd": preload("res://Assets/Sprites/Acessórios/Óculos nerd.png"),
 	"oculos_redondo": preload("res://Assets/Sprites/Acessórios/Óculos redondo.png"),
 	"mascara_dormir": preload("res://Assets/Sprites/Acessórios/Máscara de dormir.png"),
-	"oculos_de_sol": preload("res://Assets/Sprites/Acessórios/Óculos de madame.png"),
+	"oculos_madame": preload("res://Assets/Sprites/Acessórios/Óculos de madame.png"),
 	"oculos_vermelho": preload("res://Assets/Sprites/Acessórios/Óculos vermelho.png"),
 	"oculos_meme": preload("res://Assets/Sprites/Acessórios/Óculos meme.png")
 }
