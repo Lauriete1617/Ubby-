@@ -1,11 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6hs4l3l5dn3o"]
+[gd_scene load_steps=14 format=3 uid="uid://b6hs4l3l5dn3o"]
 
 [ext_resource type="Script" uid="uid://b3cuhais2j06b" path="res://Scripts/jogo_chovendo_moedas.gd" id="1_dbdq1"]
 [ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="1_iri8g"]
+[ext_resource type="Texture2D" uid="uid://c44p2iwsh1g0v" path="res://Assets/Sprites/Partículas/Corações.png" id="3_5p4pb"]
 [ext_resource type="Texture2D" uid="uid://cmrnlov4ndpou" path="res://Assets/Sprites/Ícones/Ícone pause.png" id="3_dbdq1"]
+[ext_resource type="Texture2D" uid="uid://bayxvm5sp4jms" path="res://Assets/Sprites/Ícones/Ícone moeda.png" id="3_hxjgk"]
+[ext_resource type="Texture2D" uid="uid://b36sx5e7xqd0l" path="res://Assets/Sprites/Ícones/Ícone barra progresso1.png" id="4_6tc17"]
+[ext_resource type="Texture2D" uid="uid://2yw8ovyx1ybf" path="res://Assets/Sprites/Ícones/Ícone barra progresso2.png" id="5_5p4pb"]
+[ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="8_u6nj3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iri8g"]
 bg_color = Color(0.7254902, 0.6, 0.654902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6nj3"]
+bg_color = Color(0.003921569, 0.10980392, 0.21960784, 0.8352941)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtx8h"]
+bg_color = Color(0.38675672, 0.3867566, 0.38675654, 1)
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm846"]
 bg_color = Color(0.505054, 0.23901218, 0.14768091, 1)
@@ -23,10 +39,12 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="Jogo chovendo moedas" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_dbdq1")
 
 [node name="Ubby" parent="." instance=ExtResource("1_iri8g")]
-position = Vector2(167, 153)
+process_mode = 1
+position = Vector2(165, 153)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(166, 93)
@@ -36,6 +54,187 @@ zoom = Vector2(3.5, 3.5)
 offset_right = 331.0
 offset_bottom = 174.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iri8g")
+
+[node name="Panel" type="Panel" parent="Background"]
+process_mode = 3
+z_index = 12
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -79.75
+offset_right = 103.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u6nj3")
+
+[node name="Game over tela" type="VBoxContainer" parent="Background/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -67.75
+offset_right = 80.5
+offset_bottom = 67.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Título" type="Label" parent="Background/Panel/Game over tela"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Background/Panel/Game over tela"]
+layout_mode = 2
+
+[node name="Moedas" type="HBoxContainer" parent="Background/Panel/Game over tela"]
+layout_mode = 2
+
+[node name="Moedas ícone" type="TextureRect" parent="Background/Panel/Game over tela/Moedas"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_hxjgk")
+
+[node name="Moedas texto" type="Label" parent="Background/Panel/Game over tela/Moedas"]
+layout_mode = 2
+text = "000"
+
+[node name="Vidas" type="HBoxContainer" parent="Background/Panel/Game over tela"]
+layout_mode = 2
+
+[node name="Vidas ícone" type="TextureRect" parent="Background/Panel/Game over tela/Vidas"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_5p4pb")
+expand_mode = 1
+
+[node name="Vidas texto" type="Label" parent="Background/Panel/Game over tela/Vidas"]
+layout_mode = 2
+text = "000"
+
+[node name="Score" type="Label" parent="Background/Panel/Game over tela"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "score: 00000"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Panel/Game over tela"]
+layout_mode = 2
+
+[node name="Botão jogar" type="Button" parent="Background/Panel/Game over tela/HBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtx8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtx8h")
+text = "Jogar"
+
+[node name="Botão sair" type="Button" parent="Background/Panel/Game over tela/HBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtx8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtx8h")
+text = "Sair"
+
+[node name="Pause tela" type="VBoxContainer" parent="Background/Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -70.375
+offset_right = 85.0
+offset_bottom = 70.375
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="titulo pause" type="Label" parent="Background/Panel/Pause tela"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Background/Panel/Pause tela"]
+layout_mode = 2
+
+[node name="Botão play" type="Button" parent="Background/Panel/Pause tela"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtx8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtx8h")
+text = "Jogar"
+
+[node name="Botão recomeçar" type="Button" parent="Background/Panel/Pause tela"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtx8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtx8h")
+text = "Recomeçar"
+
+[node name="Botão fechar" type="Button" parent="Background/Panel/Pause tela"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtx8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtx8h")
+text = "Sair"
+
+[node name="Vidas visualizador" type="HBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.25
+offset_right = 62.25
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Vida1" type="TextureRect" parent="Background/Vidas visualizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_5p4pb")
+expand_mode = 5
+
+[node name="Vida2" type="TextureRect" parent="Background/Vidas visualizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_5p4pb")
+expand_mode = 5
+
+[node name="Vida3" type="TextureRect" parent="Background/Vidas visualizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_5p4pb")
+expand_mode = 5
 
 [node name="Chão" type="Panel" parent="."]
 offset_left = -4.0
@@ -55,8 +254,57 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Spawner timer" type="Timer" parent="."]
+process_mode = 1
 wait_time = 0.6
 autostart = true
 
+[node name="Timer partida" type="TextureProgressBar" parent="."]
+process_mode = 1
+offset_left = 292.0
+offset_top = 4.0
+offset_right = 324.0
+offset_bottom = 36.0
+max_value = 45.0
+value = 45.0
+fill_mode = 4
+texture_under = ExtResource("4_6tc17")
+texture_progress = ExtResource("5_5p4pb")
+tint_progress = Color(1, 0.4627451, 0.4117647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Game Timer" type="Timer" parent="Timer partida"]
+wait_time = 45.0
+one_shot = true
+autostart = true
+
+[node name="números" type="Label" parent="Timer partida"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -7.5
+offset_right = 10.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "45"
+horizontal_alignment = 1
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="SFX botão" type="AudioStreamPlayer2D" parent="SFX"]
+process_mode = 3
+stream = ExtResource("8_u6nj3")
+bus = &"SFX"
+
+[connection signal="pressed" from="Background/Panel/Game over tela/HBoxContainer/Botão jogar" to="." method="_on_botão_jogar_pressed"]
+[connection signal="pressed" from="Background/Panel/Game over tela/HBoxContainer/Botão sair" to="." method="_on_botão_sair_pressed"]
+[connection signal="pressed" from="Background/Panel/Pause tela/Botão play" to="." method="_on_botão_play_pressed"]
+[connection signal="pressed" from="Background/Panel/Pause tela/Botão recomeçar" to="." method="_on_botão_recomeçar_pressed"]
+[connection signal="pressed" from="Background/Panel/Pause tela/Botão fechar" to="." method="_on_botão_fechar_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="timeout" from="Spawner timer" to="." method="_on_spawner_timer_timeout"]
+[connection signal="timeout" from="Timer partida/Game Timer" to="." method="_on_game_timer_timeout"]

@@ -2,6 +2,7 @@ extends Area2D
 
 var velocidade_queda = 180
 var explodiu = false
+@onready var sfx_bomba: AudioStreamPlayer2D = $"SFX Bomba"
 
 func _process(delta: float) -> void:
 	if explodiu:
@@ -15,4 +16,6 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	if get_parent().has_method("coletar_item"):
 		get_parent().coletar_item("bomba")
-	queue_free()
+		sfx_bomba.play()
+		await sfx_bomba.finished
+		queue_free()

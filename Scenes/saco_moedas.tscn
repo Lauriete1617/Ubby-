@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dag7olljqwlx1"]
+[gd_scene load_steps=5 format=3 uid="uid://dag7olljqwlx1"]
 
 [ext_resource type="Texture2D" uid="uid://yexv6hrnc88o" path="res://Assets/Sprites/Ícones/Saco de moedas.png" id="1_1dxj2"]
 [ext_resource type="Script" uid="uid://dbdrj4ktbyyre" path="res://Scripts/saco_moedas.gd" id="1_x0ods"]
+[ext_resource type="AudioStream" uid="uid://sfjbi2js8a2y" path="res://Assets/Efeitos sonoros/Saco de moedas.wav" id="3_2rtbu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x0ods"]
-radius = 7.0
+radius = 12.0415945
 
 [node name="Saco moedas" type="Area2D"]
 script = ExtResource("1_x0ods")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_1dxj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_x0ods")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2rtbu")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwti3c5p15tiv"]
+[gd_scene load_steps=11 format=3 uid="uid://cwti3c5p15tiv"]
 
 [ext_resource type="Script" uid="uid://ctolhcx043ols" path="res://Scripts/moeda.gd" id="1_nkxsh"]
 [ext_resource type="Texture2D" uid="uid://tj27n77i4bv4" path="res://Assets/Sprites/Ícones/Moeda.png" id="1_q2npr"]
+[ext_resource type="AudioStream" uid="uid://dwx3swq5ht3yy" path="res://Assets/Efeitos sonoros/moeda.wav" id="3_58fel"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58fel"]
 atlas = ExtResource("1_q2npr")
@@ -60,5 +61,9 @@ frame_progress = 0.3999238
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_nkxsh")
+
+[node name="SFX Moeda" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_58fel")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

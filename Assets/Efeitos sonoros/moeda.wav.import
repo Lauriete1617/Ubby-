@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwx3swq5ht3yy"
+path="res://.godot/imported/moeda.wav-165d4077b320b4cefce72862ee9ed787.sample"
+
+[deps]
+
+source_file="res://Assets/Efeitos sonoros/moeda.wav"
+dest_files=["res://.godot/imported/moeda.wav-165d4077b320b4cefce72862ee9ed787.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

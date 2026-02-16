@@ -29,6 +29,9 @@ var sono = 100
 var felicidade = 100
 var taxa_decaimento = 100.0/86400.0
 
+# --- MINIJOGOS ---
+var recorde_chovendo_moedas = 0
+
 # --- OCUPAÇÕES ---
 var assistindo_tv = false
 var deitado = false
@@ -245,7 +248,7 @@ func carregar_jogo():
 		fome = dados_salvos["fome"]
 		sono = dados_salvos["sono"]
 		felicidade = dados_salvos["felicidade"]
-		
+		recorde_chovendo_moedas = dados_salvos["recorde_chovendo_moedas"]
 		moedas = dados_salvos.get("moedas", 500) 
 		itens_desbloqueados = dados_salvos.get("itens_desbloqueados", [])
 		inventario_comidas = dados_salvos.get("inventario_comidas", {})
@@ -269,7 +272,8 @@ func salvar_jogo():
 		"moedas": moedas,
 		"itens_desbloqueados": itens_desbloqueados,
 		"inventario_comidas": inventario_comidas,
-		"timestamp": Time.get_unix_time_from_system()
+		"timestamp": Time.get_unix_time_from_system(),
+		"recorde_chovendo_moedas": recorde_chovendo_moedas
 	})
 	print("Jogo salvo com sucesso!")
 
