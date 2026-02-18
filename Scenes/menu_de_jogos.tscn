@@ -76,16 +76,22 @@ theme_override_constants/separation = 70
 
 [node name="título_jogo" type="Label" parent="Background/Panel/Sobre jogo selecionado"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 72
 text = "ta chovendo moeda"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="HSeparator" type="HSeparator" parent="Background/Panel/Sobre jogo selecionado/título_jogo"]
+layout_mode = 0
+offset_top = 54.0
+offset_right = 537.0
+offset_bottom = 131.0
+
 [node name="descrição_jogo" type="Label" parent="Background/Panel/Sobre jogo selecionado"]
 layout_mode = 2
 theme_override_constants/line_spacing = 5
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Pegue o máximo de moedas que puder, mas cuidado com as bombas..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -94,7 +100,7 @@ autowrap_mode = 3
 [node name="Botão jogar" type="Button" parent="Background/Panel/Sobre jogo selecionado"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_ae112")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ae112")
 text = "Jogar"

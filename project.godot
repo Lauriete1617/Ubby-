@@ -14,6 +14,7 @@ config/name="Ubby!"
 config/version="1.0"
 run/main_scene="uid://ctr5cnofcimwc"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.4443225, 0.12309959, 0.42042607, 1)
 config/icon="uid://cf2ayovdrsuf5"
 
 [autoload]
@@ -27,7 +28,7 @@ window/stretch/mode="canvas_items"
 
 [gui]
 
-theme/custom_font="uid://svutdssk2u0s"
+theme/custom_font="uid://c0lka5jcijhfl"
 
 [input]
 

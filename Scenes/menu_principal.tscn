@@ -62,7 +62,7 @@ theme_override_constants/separation = 15
 [node name="botão iniciar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_y4xp8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xe6lt")
 text = "Iniciar"
@@ -70,7 +70,7 @@ text = "Iniciar"
 [node name="botão opções" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_y4xp8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xe6lt")
 text = "Opções"
@@ -78,7 +78,7 @@ text = "Opções"
 [node name="botão sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_y4xp8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xe6lt")
 text = "Sair"

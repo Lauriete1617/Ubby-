@@ -51,7 +51,7 @@ offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.25882354, 0.21176471, 0.43137255, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "Bem vindo(a) ao mercado!
 Escolha sua compra!"
 horizontal_alignment = 1
@@ -67,14 +67,15 @@ offset_left = -48.0
 offset_bottom = 29.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.25882354, 0.21176471, 0.43137255, 1)
-theme_override_font_sizes/font_size = 32
-text = "000  "
+theme_override_font_sizes/font_size = 48
+text = "000 "
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/painel de informacoes/text moedas"]
 layout_mode = 0
 offset_left = -38.0
+offset_top = 5.0
 offset_right = -4.0
-offset_bottom = 30.0
+offset_bottom = 37.0
 texture = ExtResource("3_gedkf")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/painel de informacoes"]
@@ -97,7 +98,7 @@ alignment = 1
 [node name="Label_nome" type="Label" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
 text = "Nome"
 horizontal_alignment = 1
@@ -113,20 +114,12 @@ stretch_mode = 5
 [node name="Label_preco" type="Label" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
 text = "Preco"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes/Label_preco"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = -6.0
-offset_right = 73.0
-offset_bottom = 34.0
-texture = ExtResource("3_gedkf")
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
@@ -135,7 +128,7 @@ theme_override_constants/separation = 15
 [node name="Label_fome" type="Label" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
 text = "Saciedade"
 horizontal_alignment = 1
@@ -145,7 +138,7 @@ autowrap_mode = 3
 [node name="Label_felicidade" type="Label" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
 text = "Felicidade"
 horizontal_alignment = 1
@@ -155,7 +148,7 @@ autowrap_mode = 3
 [node name="Label_bonus" type="Label" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
 text = "Bonus"
 horizontal_alignment = 1
@@ -165,7 +158,7 @@ autowrap_mode = 3
 [node name="Label_descricao" type="Label" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2586006, 0.21075454, 0.42966357, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3g11d")
 text = "Descricao funny"
 horizontal_alignment = 1
@@ -174,7 +167,7 @@ autowrap_mode = 3
 
 [node name="botao_acao" type="Button" parent="HBoxContainer/painel de informacoes/MarginContainer/Informacoes"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Comprar"
 
 [node name="Fechar" type="Button" parent="HBoxContainer/painel de informacoes"]

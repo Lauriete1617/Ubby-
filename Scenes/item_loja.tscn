@@ -62,15 +62,15 @@ offset_bottom = -10.000015
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1, 0.9494632)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = " 0"
 
 [node name="Ícone moeda" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 146.0
-offset_right = 180.0
-offset_bottom = 186.0
+offset_left = 136.0
+offset_top = 138.0
+offset_right = 185.99998
+offset_bottom = 188.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_wkfx5")
 
