@@ -14,5 +14,6 @@
 - **Comprar outras cores de pêlo pro Ubby:** Para isso funcionar, usarei a propriedade `Modulate` na cena do Ubby, e em momentos de animação como no sofá ou cama, vou ter que fazer cada variante;
 - **Mais opções de roupas e comidas:** Mantendo o mesmo processo feito antes;
 - **Suporte para android, windows e linux:** Vou ter que aprender como fazer, mas vale muito a pena;
+- **Desmaio e hospital:** Se todos os status chegarem a zero, o Ubby desmaia e vai parar no hospital, onde ele é recuperado e pode comprar um remédio que deixa todos os status no máximo;
 
 `Futuramente penso em fazer atualizações e deixar o jogo mais completo, mas na primeira versão serão apenas essas features, pois a ideia é ser o meu primeiro projeto finalizado e bem básico, mas acabei me apegando, então quero que ele continue melhorando de tempos em tempos.`
