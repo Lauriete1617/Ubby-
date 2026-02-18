@@ -25,6 +25,7 @@ var item_selecionado = null
 func _ready():
 	botao_acao.visible = false
 	atualizar_moedas_visual()
+	AudioManager.tocar("central_estilo")
 	
 	for grade in grades_de_itens:
 		for botao in grade.get_children():

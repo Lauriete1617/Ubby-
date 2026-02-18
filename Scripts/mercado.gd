@@ -27,6 +27,7 @@ extends Control
 var item_selecionado = ""
 
 func _ready() -> void:
+	AudioManager.tocar("mercado")
 	informacoes.visible = false
 	label_bem_vindo.visible = true
 	atualizar_moedas_visual()

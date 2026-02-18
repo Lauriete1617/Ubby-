@@ -38,6 +38,7 @@ func _ready() -> void:
 	ubby.jogando = true
 	ubby.atualizar_slot_individual(ubby.slot_chapeu, "cesto_cabeça", ubby.catalogo_chapeu)
 	atualizar_vidas()
+	AudioManager.tocar("minijogo")
 
 func _process(delta: float) -> void:
 	var tempo = game_timer.time_left
@@ -104,6 +105,7 @@ func _on_spawner_timer_timeout() -> void:
 func _on_game_timer_timeout() -> void:
 	Global.moedas += dinheiro
 	score += vidas * 100
+	Global.sono -= 20
 	if score > Global.recorde_chovendo_moedas:
 		Global.recorde_chovendo_moedas = score
 		score_text.text =  "Novo recorde: " + str(score)

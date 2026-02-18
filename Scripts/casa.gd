@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	ubby.na_sala = true
+	AudioManager.tocar("casa")
 
 func _on_configurações_pressed() -> void:
 	print("Configurações")

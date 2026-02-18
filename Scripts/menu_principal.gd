@@ -3,6 +3,9 @@ extends Control
 @onready var sfx_botão: AudioStreamPlayer2D = $"Sons/SFX botão"
 @onready var sfx_sair: AudioStreamPlayer2D = $"Sons/SFX sair"
 
+func _ready() -> void:
+	AudioManager.tocar("menu")
+
 func _on_botão_iniciar_pressed() -> void:
 	print("Começando jogo!")
 	sfx_botão.play()

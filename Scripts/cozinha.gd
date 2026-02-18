@@ -41,6 +41,7 @@ func _ready() -> void:
 	ubby.na_sala = false
 	carregar_lista_comidas()
 	atualizar_prato()
+	AudioManager.tocar("cozinha")
 
 func _process(delta: float) -> void:
 	if arrastando:

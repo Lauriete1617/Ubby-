@@ -22,6 +22,7 @@ func _ready() -> void:
 	volume_música.value = Global.vol_musica
 	volume_sfx.value = Global.vol_sfx
 	tela_cheia.button_pressed = Global.fullscreen
+	AudioManager.tocar("menu")
 
 func _on_menu_pressed() -> void:
 	print("Voltando ao menu principal")
