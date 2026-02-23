@@ -24,7 +24,9 @@ AudioManager="*res://Scenes/audio_manager.tscn"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/mode=3
+window/size/borderless=true
+window/stretch/mode="viewport"
 
 [gui]
 

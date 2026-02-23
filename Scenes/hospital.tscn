@@ -1,0 +1,234 @@
+[gd_scene load_steps=28 format=3 uid="uid://cl0bqwm61bqww"]
+
+[ext_resource type="Texture2D" uid="uid://bpv0so4h6ut73" path="res://Assets/Sprites/Cenário/Background hospital.png" id="1_3vfaj"]
+[ext_resource type="Script" uid="uid://maewdkie73ih" path="res://Scripts/hospital.gd" id="1_g4h3g"]
+[ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="2_lx58d"]
+[ext_resource type="Texture2D" uid="uid://dwvxwaqf421vh" path="res://Assets/Sprites/Cenário/Janela.png" id="2_s5hq5"]
+[ext_resource type="Texture2D" uid="uid://d2f6dmjl6ungm" path="res://Assets/Sprites/Cenário/Cama hospitalar.png" id="3_33qyi"]
+[ext_resource type="Texture2D" uid="uid://hvi8hpr81tj6" path="res://Assets/Sprites/Cenário/Monitor soro hospital.png" id="4_il5gi"]
+[ext_resource type="Texture2D" uid="uid://btbawsmmc0yke" path="res://Assets/Sprites/Cenário/Soro hospital.png" id="5_n15le"]
+[ext_resource type="Texture2D" uid="uid://dxcw5fm82yj27" path="res://Assets/Sprites/Cenário/Estante.png" id="7_g4h3g"]
+[ext_resource type="Texture2D" uid="uid://d3oek8njjmsof" path="res://Assets/Sprites/Itens/Kit saúde.png" id="8_xje3q"]
+[ext_resource type="Texture2D" uid="uid://bhwfsuhy4jm36" path="res://Assets/Sprites/Itens/Remédio sono.png" id="9_ifr3g"]
+[ext_resource type="Texture2D" uid="uid://cdcr40gobdgbf" path="res://Assets/Sprites/Itens/Remédio felicidade.png" id="10_q5n4d"]
+[ext_resource type="Texture2D" uid="uid://dgnqlgbfmfgh1" path="res://Assets/Sprites/Itens/Remédio fome.png" id="11_1wk82"]
+[ext_resource type="Texture2D" uid="uid://bayxvm5sp4jms" path="res://Assets/Sprites/Ícones/Ícone moeda.png" id="12_n15le"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01wij"]
+atlas = ExtResource("3_33qyi")
+region = Rect2(0, 64, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axfqn"]
+atlas = ExtResource("3_33qyi")
+region = Rect2(80, 64, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hakmb"]
+atlas = ExtResource("3_33qyi")
+region = Rect2(0, 128, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gwy8"]
+atlas = ExtResource("3_33qyi")
+region = Rect2(80, 128, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvxsg"]
+atlas = ExtResource("3_33qyi")
+region = Rect2(0, 128, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv2o6"]
+atlas = ExtResource("3_33qyi")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtcmy"]
+atlas = ExtResource("3_33qyi")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ou3pc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01wij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axfqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hakmb")
+}],
+"loop": false,
+"name": &"Deitando",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gwy8")
+}],
+"loop": true,
+"name": &"Ocupado (Aceso)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvxsg")
+}],
+"loop": true,
+"name": &"Ocupado (Apagado)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv2o6")
+}],
+"loop": true,
+"name": &"Vazio (Aceso)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtcmy")
+}],
+"loop": true,
+"name": &"Vazio (Apagado)",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6lhy"]
+size = Vector2(50, 58.000004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf26j"]
+size = Vector2(26, 55.333336)
+
+[sub_resource type="Gradient" id="Gradient_btp0e"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.67346936, 0.96938777, 0.97959185, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.35649925, 0.35649925, 0.35649925, 0.8410175, 0.28571427, 0.28571427, 0.28571427, 0.8235294, 0.41066694, 0.41066694, 0.41066694, 0.8544001, 0, 0, 0, 0.7529412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_il5gi"]
+gradient = SubResource("Gradient_btp0e")
+fill = 1
+fill_from = Vector2(0.5068493, 0.55136985)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4h3g"]
+size = Vector2(26, 18.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m50n5"]
+size = Vector2(63.5, 64)
+
+[node name="Hospital" type="Node2D"]
+script = ExtResource("1_g4h3g")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(145, 81)
+scale = Vector2(2, 2)
+texture = ExtResource("1_3vfaj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(123, 107)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ou3pc")
+animation = &"Vazio (Aceso)"
+autoplay = "Vazio (Aceso)"
+
+[node name="Cama" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(-77.333336, -68)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/Cama"]
+position = Vector2(63.666668, 70.333336)
+shape = SubResource("RectangleShape2D_k6lhy")
+
+[node name="Abajur" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Abajur"]
+position = Vector2(25.999992, -4.666668)
+shape = SubResource("RectangleShape2D_pf26j")
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D/Abajur"]
+position = Vector2(25.333344, -20.666668)
+scale = Vector2(0.81249976, 0.7500001)
+color = Color(0.8980392, 0.8784314, 0.27450982, 1)
+energy = 0.4
+texture = SubResource("GradientTexture2D_il5gi")
+
+[node name="Ubby" parent="." instance=ExtResource("2_lx58d")]
+position = Vector2(228, 121)
+scale = Vector2(1.2, 1.2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(144, 81)
+zoom = Vector2(4, 4)
+
+[node name="Cenário" type="Node2D" parent="."]
+
+[node name="Monitor" type="Area2D" parent="Cenário"]
+position = Vector2(40, 56)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cenário/Monitor"]
+texture = ExtResource("4_il5gi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Monitor"]
+position = Vector2(0, -0.75)
+shape = SubResource("RectangleShape2D_g4h3g")
+
+[node name="Soro" type="Sprite2D" parent="Cenário"]
+position = Vector2(38, 115.00001)
+scale = Vector2(3, 3)
+texture = ExtResource("5_n15le")
+
+[node name="Janela" type="Sprite2D" parent="Cenário"]
+position = Vector2(144, 31)
+scale = Vector2(2, 2)
+texture = ExtResource("2_s5hq5")
+
+[node name="Estante" type="Sprite2D" parent="Cenário"]
+position = Vector2(234, 40)
+texture = ExtResource("7_g4h3g")
+
+[node name="Remédios" type="Node2D" parent="."]
+
+[node name="Kit saúde" type="Sprite2D" parent="Remédios"]
+position = Vector2(223, 30)
+texture = ExtResource("8_xje3q")
+
+[node name="Remédio sono" type="Sprite2D" parent="Remédios"]
+position = Vector2(248, 28)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9_ifr3g")
+
+[node name="Remédio felicidade" type="Sprite2D" parent="Remédios"]
+position = Vector2(220, 56)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_q5n4d")
+
+[node name="Remédio fome" type="Sprite2D" parent="Remédios"]
+position = Vector2(246, 57)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_1wk82")
+
+[node name="Compra" type="Area2D" parent="Remédios"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Remédios/Compra"]
+position = Vector2(234.25, 40)
+shape = SubResource("RectangleShape2D_m50n5")
+
+[node name="Moedas" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 37.0
+offset_top = -3.0
+offset_right = 106.0
+offset_bottom = 35.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.25882354, 0.21176471, 0.43137255, 1)
+theme_override_font_sizes/font_size = 32
+text = "000 "
+
+[node name="Ícone moeda" type="TextureRect" parent="Moedas"]
+z_index = 2
+layout_mode = 0
+offset_left = -21.0
+offset_top = 5.0
+offset_right = -2.0
+offset_bottom = 24.0
+texture = ExtResource("12_n15le")
