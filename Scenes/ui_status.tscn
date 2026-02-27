@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2yw8ovyx1ybf" path="res://Assets/Sprites/Ícones/Ícone barra progresso2.png" id="2_dbg3f"]
 [ext_resource type="Texture2D" uid="uid://b4vxnh1lu04hp" path="res://Assets/Sprites/Ícones/Ícone fome.png" id="4_sqyq0"]
 [ext_resource type="Texture2D" uid="uid://cwosm8hp1y7es" path="res://Assets/Sprites/Ícones/Ícone energia.png" id="5_w1n0b"]
-[ext_resource type="Texture2D" uid="uid://sudryk1l3l01" path="res://Assets/Sprites/Ícones/ícone felicidade.png" id="6_k8rek"]
+[ext_resource type="Texture2D" uid="uid://b3gdab5n20gil" path="res://Assets/Sprites/Ícones/Ícone felicidade.png" id="6_k8rek"]
 
 [node name="UI Status" type="Node2D"]
 z_index = 12

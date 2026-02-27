@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://cl0bqwm61bqww"]
+[gd_scene load_steps=38 format=3 uid="uid://cl0bqwm61bqww"]
 
 [ext_resource type="Texture2D" uid="uid://bpv0so4h6ut73" path="res://Assets/Sprites/Cenário/Background hospital.png" id="1_3vfaj"]
 [ext_resource type="Script" uid="uid://maewdkie73ih" path="res://Scripts/hospital.gd" id="1_g4h3g"]
 [ext_resource type="PackedScene" uid="uid://hun4tcrgvufd" path="res://Scenes/ubby.tscn" id="2_lx58d"]
-[ext_resource type="Texture2D" uid="uid://dwvxwaqf421vh" path="res://Assets/Sprites/Cenário/Janela.png" id="2_s5hq5"]
 [ext_resource type="Texture2D" uid="uid://d2f6dmjl6ungm" path="res://Assets/Sprites/Cenário/Cama hospitalar.png" id="3_33qyi"]
 [ext_resource type="Texture2D" uid="uid://hvi8hpr81tj6" path="res://Assets/Sprites/Cenário/Monitor soro hospital.png" id="4_il5gi"]
 [ext_resource type="Texture2D" uid="uid://btbawsmmc0yke" path="res://Assets/Sprites/Cenário/Soro hospital.png" id="5_n15le"]
@@ -13,6 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://cdcr40gobdgbf" path="res://Assets/Sprites/Itens/Remédio felicidade.png" id="10_q5n4d"]
 [ext_resource type="Texture2D" uid="uid://dgnqlgbfmfgh1" path="res://Assets/Sprites/Itens/Remédio fome.png" id="11_1wk82"]
 [ext_resource type="Texture2D" uid="uid://bayxvm5sp4jms" path="res://Assets/Sprites/Ícones/Ícone moeda.png" id="12_n15le"]
+[ext_resource type="Texture2D" uid="uid://dwkg3ldayei7c" path="res://Assets/Sprites/Ícones/Ícone casa.png" id="14_01wij"]
+[ext_resource type="AudioStream" uid="uid://1m3s4xk15bye" path="res://Assets/Efeitos sonoros/Abajur.wav" id="14_ifr3g"]
+[ext_resource type="PackedScene" uid="uid://dnhldrdkq0yq3" path="res://Scenes/ui_status.tscn" id="15_01wij"]
+[ext_resource type="Texture2D" uid="uid://c8oivnxdm7fip" path="res://Assets/Sprites/Ícones/Ícone voltar.png" id="15_axfqn"]
+[ext_resource type="AudioStream" uid="uid://2qhhpuoi6geq" path="res://Assets/Efeitos sonoros/Ronco.wav" id="15_q5n4d"]
+[ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="16_q5n4d"]
+[ext_resource type="AudioStream" uid="uid://dpikhp6tw354w" path="res://Assets/Efeitos sonoros/Compra.wav" id="19_axfqn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01wij"]
 atlas = ExtResource("3_33qyi")
@@ -114,35 +120,57 @@ size = Vector2(26, 18.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m50n5"]
 size = Vector2(63.5, 64)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hakmb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21950099, 0.21950105, 0.21950084, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvxsg"]
+bg_color = Color(0.9508919, 0.39022857, 0.4046801, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtcmy"]
+bg_color = Color(0.83881116, 0.2288773, 0.2728984, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6lhy"]
+bg_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
+shadow_size = 2
+
 [node name="Hospital" type="Node2D"]
 script = ExtResource("1_g4h3g")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(145, 81)
-scale = Vector2(2, 2)
+position = Vector2(144.5, 81)
+scale = Vector2(2.0069444, 2)
 texture = ExtResource("1_3vfaj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Cama+Abajur" type="AnimatedSprite2D" parent="."]
 position = Vector2(123, 107)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ou3pc")
-animation = &"Vazio (Aceso)"
+animation = &"Vazio (Apagado)"
 autoplay = "Vazio (Aceso)"
 
-[node name="Cama" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Cama" type="Area2D" parent="Cama+Abajur"]
 position = Vector2(-77.333336, -68)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/Cama"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cama+Abajur/Cama"]
 position = Vector2(63.666668, 70.333336)
 shape = SubResource("RectangleShape2D_k6lhy")
 
-[node name="Abajur" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Abajur" type="Area2D" parent="Cama+Abajur"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Abajur"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cama+Abajur/Abajur"]
 position = Vector2(25.999992, -4.666668)
 shape = SubResource("RectangleShape2D_pf26j")
 
-[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D/Abajur"]
+[node name="PointLight2D" type="PointLight2D" parent="Cama+Abajur/Abajur"]
 position = Vector2(25.333344, -20.666668)
 scale = Vector2(0.81249976, 0.7500001)
 color = Color(0.8980392, 0.8784314, 0.27450982, 1)
@@ -175,11 +203,6 @@ position = Vector2(38, 115.00001)
 scale = Vector2(3, 3)
 texture = ExtResource("5_n15le")
 
-[node name="Janela" type="Sprite2D" parent="Cenário"]
-position = Vector2(144, 31)
-scale = Vector2(2, 2)
-texture = ExtResource("2_s5hq5")
-
 [node name="Estante" type="Sprite2D" parent="Cenário"]
 position = Vector2(234, 40)
 texture = ExtResource("7_g4h3g")
@@ -211,24 +234,201 @@ texture = ExtResource("11_1wk82")
 position = Vector2(234.25, 40)
 shape = SubResource("RectangleShape2D_m50n5")
 
-[node name="Moedas" type="Label" parent="."]
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Moedas" type="Label" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 37.0
-offset_top = -3.0
-offset_right = 106.0
-offset_bottom = 35.0
+offset_left = 53.0
+offset_right = 76.0
+offset_bottom = 13.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.25882354, 0.21176471, 0.43137255, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "000 "
 
-[node name="Ícone moeda" type="TextureRect" parent="Moedas"]
+[node name="Ícone moeda" type="TextureRect" parent="UI/Moedas"]
 z_index = 2
 layout_mode = 0
-offset_left = -21.0
-offset_top = 5.0
-offset_right = -2.0
-offset_bottom = 24.0
+offset_left = -11.0
+offset_top = 3.0
+offset_right = 5.0
+offset_bottom = 19.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_n15le")
+
+[node name="Botão Casa" type="Button" parent="UI"]
+offset_left = 16.0
+offset_top = 3.0
+offset_right = 90.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hakmb")
+icon = ExtResource("14_01wij")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Interface compra" type="Node2D" parent="UI"]
+visible = false
+z_index = 10
+
+[node name="Fundo" type="Panel" parent="UI/Interface compra"]
+z_index = 10
+offset_left = -1.0
+offset_top = -10.0
+offset_right = 290.0
+offset_bottom = 175.0
+
+[node name="Panel grande" type="Panel" parent="UI/Interface compra/Fundo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.75
+offset_top = -69.25
+offset_right = 96.75
+offset_bottom = 69.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fvxsg")
+
+[node name="Panel menor" type="Panel" parent="UI/Interface compra/Fundo/Panel grande"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -88.25
+offset_top = -69.5
+offset_bottom = 69.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jtcmy")
+
+[node name="Botões" type="VBoxContainer" parent="UI/Interface compra/Fundo/Panel grande/Panel menor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -52.75
+offset_right = 35.5
+offset_bottom = 52.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Kit completo" type="Button" parent="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_k6lhy")
+text = "Kit Completo"
+
+[node name="Alegria" type="Button" parent="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_k6lhy")
+text = "Alegria"
+
+[node name="Energia" type="Button" parent="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_k6lhy")
+text = "Energia"
+
+[node name="Fome" type="Button" parent="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_k6lhy")
+text = "Fome"
+
+[node name="Botão Voltar" type="Button" parent="UI/Interface compra/Fundo/Panel grande"]
+layout_mode = 0
+offset_left = 3.25
+offset_top = 2.75
+offset_right = 53.25
+offset_bottom = 46.083332
+scale = Vector2(0.3, 0.3)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hakmb")
+icon = ExtResource("15_axfqn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sobre remédio" type="VBoxContainer" parent="UI/Interface compra/Fundo/Panel grande"]
+layout_mode = 0
+offset_left = 22.25
+offset_top = 4.75
+offset_right = 95.25
+offset_bottom = 128.75
+
+[node name="Nome remédio" type="Label" parent="UI/Interface compra/Fundo/Panel grande/Sobre remédio"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Kit completo"
+horizontal_alignment = 1
+
+[node name="Imagem remédio" type="TextureRect" parent="UI/Interface compra/Fundo/Panel grande/Sobre remédio"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_xje3q")
+expand_mode = 5
+
+[node name="Preço" type="Label" parent="UI/Interface compra/Fundo/Panel grande/Sobre remédio"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = " 500"
+horizontal_alignment = 1
+
+[node name="Ícone moeda" type="TextureRect" parent="UI/Interface compra/Fundo/Panel grande/Sobre remédio/Preço"]
+z_index = 2
+layout_mode = 0
+offset_left = 14.0
+offset_top = 3.0
+offset_right = 30.0
+offset_bottom = 19.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_n15le")
+
+[node name="Botão compra" type="Button" parent="UI/Interface compra/Fundo/Panel grande/Sobre remédio"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_k6lhy")
+text = "Comprar"
+
+[node name="UI Status" parent="UI" instance=ExtResource("15_01wij")]
+position = Vector2(104, 2)
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="SFX abajur" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("14_ifr3g")
+bus = &"SFX"
+
+[node name="SFX ronco" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("15_q5n4d")
+bus = &"SFX"
+
+[node name="SFX botão" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("16_q5n4d")
+bus = &"SFX"
+
+[node name="SFX compra" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("19_axfqn")
+bus = &"SFX"
+
+[connection signal="input_event" from="Cama+Abajur/Cama" to="." method="_on_cama_input_event"]
+[connection signal="input_event" from="Cama+Abajur/Abajur" to="." method="_on_abajur_input_event"]
+[connection signal="input_event" from="Remédios/Compra" to="." method="_on_compra_input_event"]
+[connection signal="pressed" from="UI/Botão Casa" to="." method="_on_botão_casa_pressed"]
+[connection signal="pressed" from="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões/Kit completo" to="." method="_on_kit_completo_pressed"]
+[connection signal="pressed" from="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões/Alegria" to="." method="_on_alegria_pressed"]
+[connection signal="pressed" from="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões/Energia" to="." method="_on_energia_pressed"]
+[connection signal="pressed" from="UI/Interface compra/Fundo/Panel grande/Panel menor/Botões/Fome" to="." method="_on_fome_pressed"]
+[connection signal="pressed" from="UI/Interface compra/Fundo/Panel grande/Botão Voltar" to="." method="_on_botão_voltar_pressed"]
+[connection signal="pressed" from="UI/Interface compra/Fundo/Panel grande/Sobre remédio/Botão compra" to="." method="_on_botão_compra_pressed"]
