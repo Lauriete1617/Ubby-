@@ -22,6 +22,12 @@ var moedas: int = 500
 var itens_desbloqueados: Array = []
 var inventario_comidas: Dictionary = {} 
 var cores_desbloqueadas: Array = []
+var inventario_remedios = {
+	"kit_completo": 0,
+	"felicidade": 0,
+	"energia": 0,
+	"fome": 0
+}
 
 # --- ESTADOS ---
 var fome = 100
@@ -273,7 +279,8 @@ func salvar_jogo():
 		"itens_desbloqueados": itens_desbloqueados,
 		"inventario_comidas": inventario_comidas,
 		"timestamp": Time.get_unix_time_from_system(),
-		"recorde_chovendo_moedas": recorde_chovendo_moedas
+		"recorde_chovendo_moedas": recorde_chovendo_moedas,
+		"inventario_remedios": inventario_remedios
 	})
 	print("Jogo salvo com sucesso!")
 

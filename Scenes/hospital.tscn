@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cl0bqwm61bqww"]
+[gd_scene load_steps=39 format=3 uid="uid://cl0bqwm61bqww"]
 
 [ext_resource type="Texture2D" uid="uid://bpv0so4h6ut73" path="res://Assets/Sprites/Cenário/Background hospital.png" id="1_3vfaj"]
 [ext_resource type="Script" uid="uid://maewdkie73ih" path="res://Scripts/hospital.gd" id="1_g4h3g"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://2qhhpuoi6geq" path="res://Assets/Efeitos sonoros/Ronco.wav" id="15_q5n4d"]
 [ext_resource type="AudioStream" uid="uid://cfb1m7qox0rub" path="res://Assets/Efeitos sonoros/Botão.wav" id="16_q5n4d"]
 [ext_resource type="AudioStream" uid="uid://dpikhp6tw354w" path="res://Assets/Efeitos sonoros/Compra.wav" id="19_axfqn"]
+[ext_resource type="AudioStream" uid="uid://chi70gd0h2f48" path="res://Assets/Efeitos sonoros/monitor.wav" id="20_hakmb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01wij"]
 atlas = ExtResource("3_33qyi")
@@ -154,7 +155,7 @@ texture = ExtResource("1_3vfaj")
 position = Vector2(123, 107)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ou3pc")
-animation = &"Vazio (Apagado)"
+animation = &"Deitando"
 autoplay = "Vazio (Aceso)"
 
 [node name="Cama" type="Area2D" parent="Cama+Abajur"]
@@ -420,6 +421,10 @@ bus = &"SFX"
 
 [node name="SFX compra" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("19_axfqn")
+bus = &"SFX"
+
+[node name="SFX monitor" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("20_hakmb")
 bus = &"SFX"
 
 [connection signal="input_event" from="Cama+Abajur/Cama" to="." method="_on_cama_input_event"]

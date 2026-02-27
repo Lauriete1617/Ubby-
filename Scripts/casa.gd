@@ -24,3 +24,9 @@ func _on_minijogo_pressed() -> void:
 	sfx_botão.play()
 	await sfx_botão.finished
 	get_tree().change_scene_to_file("res://Scenes/menu_de_jogos.tscn")
+
+func _on_hospital_pressed() -> void:
+	print("Indo pro hospital")
+	sfx_botão.play()
+	await sfx_botão.finished
+	get_tree().change_scene_to_file("res://Scenes/hospital.tscn")

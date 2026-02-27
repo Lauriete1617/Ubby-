@@ -20,6 +20,7 @@ extends Node2D
 @onready var sfx_ronco: AudioStreamPlayer2D = $"SFX/SFX ronco"
 @onready var sfx_botão: AudioStreamPlayer2D = $"SFX/SFX botão"
 @onready var sfx_compra: AudioStreamPlayer2D = $"SFX/SFX compra"
+@onready var sfx_monitor: AudioStreamPlayer2D = $"SFX/SFX monitor"
 # VARIÁVEIS
 var aceso = true
 var dormindo = false
@@ -30,6 +31,9 @@ func _ready() -> void:
 	atualizar_moedas()
 	interface_compra.visible = false
 	Global.salvar_jogo()
+	AudioManager.tocar("hospital")
+	ubby.atualizar_slot_individual(ubby.slot_roupa, "roupa_hospital", ubby.catalogo_roupa)
+	sfx_monitor.play()
 
 func _process(delta: float) -> void:
 	if dormindo:
@@ -61,6 +65,8 @@ func _on_cama_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 	if event.is_pressed() and InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not dormindo:
 			ubby.visible = false
+			cama_abajur.play("Deitando")
+			await cama_abajur.animation_finished
 		else:
 			ubby.visible = true
 		dormindo = not dormindo
@@ -122,6 +128,10 @@ func _on_botão_compra_pressed() -> void:
 	atualizar_botao()
 	atualizar_moedas()
 	Global.salvar_jogo()
+	if Global.inventario_remedios.has(remedio_selecionado):
+		Global.inventario_remedios[remedio_selecionado] += 1
+	else:
+		print("ERRO: Remédio não encontrado")
 
 func atualizar_botao():
 	if Global.moedas < preco_remedio_selecionado:
@@ -142,6 +152,7 @@ func _on_botão_voltar_pressed() -> void:
 	atualizar_visual_ubby()
 
 func _on_botão_casa_pressed() -> void:
+	sfx_monitor.stop()
 	sfx_botão.play()
 	await sfx_botão.finished
 	get_tree().change_scene_to_file("res://Scenes/casa.tscn")

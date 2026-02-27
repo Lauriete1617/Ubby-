@@ -10,7 +10,8 @@ var faixas = {
 	"central_estilo": preload("res://Assets/Músicas/musica central de estilo.wav"),
 	"minijogo": preload("res://Assets/Músicas/musica minijogo.wav"),
 	"cozinha": preload("res://Assets/Músicas/musica cozinha.wav"),
-	"patio": preload("res://Assets/Músicas/musica patio.wav")
+	"patio": preload("res://Assets/Músicas/musica patio.wav"),
+	"hospital": preload("res://Assets/Músicas/musica hospital.wav")
 }
 
 func _ready() -> void:

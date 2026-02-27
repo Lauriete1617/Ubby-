@@ -85,7 +85,8 @@ var catalogo_roupa = {
 	"jardineira": preload("res://Assets/Sprites/Acessórios/Jardineira.png"),
 	"basquete": preload("res://Assets/Sprites/Acessórios/Roupa basquete.png"),
 	"roupa_basica": preload("res://Assets/Sprites/Acessórios/Roupa básica.png"),
-	"terno": preload("res://Assets/Sprites/Acessórios/Terno.png")
+	"terno": preload("res://Assets/Sprites/Acessórios/Terno.png"),
+	"roupa_hospital": preload("res://Assets/Sprites/Acessórios/Roupa hospital.png")
 }
 
 var catalogo_sapato = {
@@ -185,3 +186,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	# 4. LIMITE DA TELA
 	global_position.x = clamp(global_position.x, 20, 296)
+
+func emocoes():
+	if Global.fome <= 30 or Global.felicidade <= 30:
+		animation.play("Triste")

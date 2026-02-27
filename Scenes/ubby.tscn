@@ -171,6 +171,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_7fe66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj854")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj854")
 }],
 "loop": true,
 "name": &"Triste",
@@ -225,9 +231,9 @@ shape = SubResource("CapsuleShape2D_ed5l2")
 [node name="Corpo" type="AnimatedSprite2D" parent="Visual"]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_w7uwx")
-animation = &"Andando"
+animation = &"Triste"
 autoplay = "Idle"
-frame_progress = 0.25735092
+frame_progress = 0.3729541
 
 [node name="Acessórios" type="Node2D" parent="Visual"]
 
