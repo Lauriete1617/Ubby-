@@ -57,3 +57,4 @@
 - Animação do monitor cardíaco e aumentar a animação da TV de casa com mais canais;
 - Começar a aprender e implementar tradução para o inglês;
 - Adaptações para mobile;
+- Cutscene adotando o Ubby;
