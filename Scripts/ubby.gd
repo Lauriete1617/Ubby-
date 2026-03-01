@@ -108,6 +108,9 @@ func _ready() -> void:
 	await animation.animation_finished
 	animation.play("Idle")
 
+func _process(delta: float) -> void:
+	emocoes()
+
 func atualizar_visual():
 	# 1. Óculos
 	atualizar_slot_individual(slot_oculos, Global.acessorios["oculos"], catalogo_oculos)
@@ -190,3 +193,5 @@ func _physics_process(delta: float) -> void:
 func emocoes():
 	if Global.fome <= 30 or Global.felicidade <= 30:
 		animation.play("Triste")
+	else:
+		animation.play("Idle")
