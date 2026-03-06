@@ -34,6 +34,7 @@ func _ready() -> void:
 	AudioManager.tocar("hospital")
 	ubby.atualizar_slot_individual(ubby.slot_roupa, "roupa_hospital", ubby.catalogo_roupa)
 	sfx_monitor.play()
+	Global.pode_desmaiar = false
 
 func _process(delta: float) -> void:
 	if dormindo:

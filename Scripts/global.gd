@@ -1,3 +1,4 @@
+# GLOBAL
 extends Node
 
 # --- CONFIGURAÇÕES ---
@@ -34,6 +35,8 @@ var fome = 100
 var sono = 100
 var felicidade = 100
 var taxa_decaimento = 100.0/86400.0
+var pode_desmaiar = false
+signal ubby_desmaiou
 
 # --- MINIJOGOS ---
 var recorde_chovendo_moedas = 0
@@ -41,6 +44,7 @@ var recorde_chovendo_moedas = 0
 # --- OCUPAÇÕES ---
 var assistindo_tv = false
 var deitado = false
+var cobranca_hospital = 200
 
 # --- CARDAPIO (CONSTANTE) ---
 const CARDAPIO = {
@@ -231,18 +235,24 @@ func _ready():
 	carregar_config()
 
 func _process(delta: float) -> void:
+	var problemas = 0
 	if fome > 0:
 		fome -= taxa_decaimento * delta
 	else:
 		fome = 0
+		problemas += 1
 	if sono > 0:
 		sono -= taxa_decaimento * delta
 	else:
 		sono = 0
+		problemas += 1
 	if felicidade > 0:
 		felicidade -= taxa_decaimento * delta
 	else:
 		felicidade = 0
+		problemas += 1
+	if problemas >= 2:
+		desmaio()
 
 func carregar_jogo():
 	if not FileAccess.file_exists("user://savegame.save"):
@@ -365,3 +375,18 @@ func aplicar_decaimento_offline(segundos):
 	fome = clamp(fome, 0, 100)
 	sono = clamp(sono, 0 ,100)
 	felicidade = clamp(felicidade, 0 ,100)
+
+func desmaio():
+	if pode_desmaiar:
+		pode_desmaiar = false
+		emit_signal("ubby_desmaiou")
+
+func aplica_penalidade_desmaio():
+	if moedas >= cobranca_hospital:
+		moedas -= cobranca_hospital
+	else:
+		moedas = 0
+	felicidade = 20
+	sono = 20
+	fome = 20
+	salvar_jogo()

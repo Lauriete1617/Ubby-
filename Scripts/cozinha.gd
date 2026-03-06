@@ -42,6 +42,7 @@ func _ready() -> void:
 	carregar_lista_comidas()
 	atualizar_prato()
 	AudioManager.tocar("cozinha")
+	Global.pode_desmaiar = true
 
 func _process(delta: float) -> void:
 	if arrastando:

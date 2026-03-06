@@ -39,6 +39,7 @@ func _ready() -> void:
 	ubby.atualizar_slot_individual(ubby.slot_chapeu, "cesto_cabeça", ubby.catalogo_chapeu)
 	atualizar_vidas()
 	AudioManager.tocar("minijogo")
+	Global.pode_desmaiar = false
 
 func _process(delta: float) -> void:
 	var tempo = game_timer.time_left

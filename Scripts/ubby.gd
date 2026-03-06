@@ -1,3 +1,4 @@
+# UBBY
 extends CharacterBody2D
 
 @onready var animation: AnimatedSprite2D = $Visual/Corpo
@@ -6,6 +7,7 @@ extends CharacterBody2D
 
 # --- EFEITOS SONOROS ---
 @onready var sfx_carinho: AudioStreamPlayer2D = $"Sons/SFX Carinho"
+@onready var sfx_desmaio: AudioStreamPlayer2D = $"Sons/SFX Desmaio"
 
 # --- REFERÊNCIAS VISUAIS (SLOTS) ---
 @onready var slot_oculos: Sprite2D = $Visual/Acessórios/SlotOculos
@@ -123,7 +125,6 @@ func atualizar_visual():
 	# 5. Sapatos
 	atualizar_slot_individual(slot_sapato, Global.acessorios["sapato"], catalogo_sapato)
 	# 6. Cor do pêlo
-	
 
 func atualizar_slot_individual(sprite_slot, id_item, catalogo):
 	var id_str = str(id_item)
@@ -155,7 +156,7 @@ func dar_carinho():
 	animation.play("Carinho")
 	await animation.animation_finished
 	animation.play("Idle")
-	Global.felicidade += 2
+	Global.felicidade += 5
 
 # --- MOVIMENTAÇÃO MINIGAME ---
 var jogando = false
