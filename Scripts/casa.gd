@@ -49,11 +49,10 @@ func iniciar_desmaio():
 	tela_preta.mouse_filter = Control.MOUSE_FILTER_STOP
 	set_process(false)
 	ubby.set_process(false)
-	ubby.set_physics_process(false)
 	print("Ubby desmaiou! Chamem a ambulância!")
 	# 2. Ubby faz seu drama
 	ubby.animation.play("Passando Mal")
-	await ubby.animation.animation_finished
+	ubby.animation.frame = 7
 	ubby.animation.pause()
 	# 3. Tela preta e som de queda
 	AudioManager.fade_out()
@@ -64,6 +63,5 @@ func iniciar_desmaio():
 		ubby.sfx_desmaio.play()
 		await ubby.animation.animation_finished
 	# 4. Vai pro hospital
-	Global.aplica_penalidade_desmaio()
-	Global.pode_desmaiar = false
+	Global.aplica_penalidade_desmaio() 
 	get_tree().change_scene_to_file("res://Scenes/hospital.tscn")
