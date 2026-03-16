@@ -52,6 +52,9 @@ func iniciar_desmaio():
 	print("Ubby desmaiou! Chamem a ambulância!")
 	# 2. Ubby faz seu drama
 	ubby.animation.play("Passando Mal")
+	await ubby.animation.animation_finished
+	# --- Força a animaço a parar no frame 7 ---
+	ubby.animation.play("Passando Mal")
 	ubby.animation.frame = 7
 	ubby.animation.pause()
 	# 3. Tela preta e som de queda
@@ -61,7 +64,7 @@ func iniciar_desmaio():
 	await tween.finished
 	if ubby.sfx_desmaio: 
 		ubby.sfx_desmaio.play()
-		await ubby.animation.animation_finished
+		await ubby.sfx_desmaio.finished
 	# 4. Vai pro hospital
 	Global.aplica_penalidade_desmaio() 
 	get_tree().change_scene_to_file("res://Scenes/hospital.tscn")

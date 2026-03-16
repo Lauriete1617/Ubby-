@@ -380,7 +380,6 @@ func desmaio():
 	if pode_desmaiar:
 		pode_desmaiar = false
 		emit_signal("ubby_desmaiou")
-
 func aplica_penalidade_desmaio():
 	if moedas >= cobranca_hospital:
 		moedas -= cobranca_hospital
